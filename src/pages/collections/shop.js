@@ -11,10 +11,13 @@ import Product5 from "../../img/product/prod5.jpg"
 import ProductOfCollection from "../../components/Reusable/ProductOfCollection"
 
 let currentCartItems = [];
+let total = 0;
 if (store.get("persist")) {
     currentCartItems=store.get("persist")
+    store.get("persist").map(item=>total+=item.saleprice)
 }else{
     currentCartItems = [];
+    total=0;
 }
 
 export class Shop extends Component {
@@ -23,6 +26,7 @@ export class Shop extends Component {
         categories:[],
         items:[],
         addToCartItems:currentCartItems,
+        totalState:total
     }
    
     componentDidMount(){
@@ -100,7 +104,8 @@ export class Shop extends Component {
     console.log("currently item pushed to current data ",currentData);
     this.setState({
         ...this.setState,
-        addToCartItems:currentData
+        addToCartItems:currentData,
+        totalState:this.state.totalState+item.saleprice
     })
     store.set("persist",currentData )
     console.log("store after adding item  => ",store.get("persist"));

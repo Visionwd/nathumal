@@ -27,10 +27,13 @@ import Restapitest from "../components/Restapitest";
 import store from "store"
 
 let currentCartItems = [];
+let total = 0;
 if (store.get("persist")) {
     currentCartItems=store.get("persist")
+    store.get("persist").map(item=>total+=item.saleprice)
 }else{
     currentCartItems = [];
+    total=0;
 }
 
 export class Home extends Component {
@@ -38,6 +41,7 @@ export class Home extends Component {
     state={
         items:[],
         addToCartItems:currentCartItems,
+        totalState:total
     }
 
     componentDidMount(){
@@ -74,12 +78,16 @@ export class Home extends Component {
         console.log("currently addtoCart state",currentData);
         currentData.push(item)
         console.log("currently item pushed to current data ",currentData);
+        // let sum = 0 ;
+        // currentData.map(item=>sum+=item.saleprice)
         this.setState({
             ...this.setState,
-            addToCartItems:currentData
+            addToCartItems:currentData,
+            totalState:this.state.totalState+item.saleprice
         })
-        store.set("persist",currentData )
+        store.set("persist",currentData)
         console.log("store after adding item  => ",store.get("persist"));
+       
        }
 
 

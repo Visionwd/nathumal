@@ -6,17 +6,20 @@ import CartContext from "../../context/CartContext"
 import store from "store";
 
 let currentCartItems = [];
+let total = 0;
 if (store.get("persist")) {
     currentCartItems=store.get("persist")
+    store.get("persist").map(item=>total+=Number(item.saleprice))
+    console.log(total);
 }else{
     currentCartItems = [];
+    total=0;
 }
 
 function Cartview() {
 
     const [items,setItems] = useState(currentCartItems)
-    const {products,removeItem,setCart} = useContext(CartContext);
-    const[myproduct,setMyproduct] = useState(products)
+    const [totalState,setTotalState] = useState(total)
     // const [total,setTotal] = useState(mytotal)
     
 
@@ -42,6 +45,9 @@ function Cartview() {
         currentCartItems= currentCartItems.filter(item=>item.id!==id)
         console.log("after filter",currentCartItems);
         setItems(items.filter(item=>item.id!==id))
+        let mytotal = 0;
+    currentCartItems.map(item=>mytotal+=Number(item.saleprice))
+    setTotalState(mytotal)
         store.set("persist",currentCartItems)
         console.log("after removing item",store.get("persist"));
       }
@@ -63,7 +69,7 @@ function Cartview() {
                                         <th>Image</th>
                                         <th>Product Name</th>
                                         <th>Until Price</th>
-                                        <th>Qty</th>
+                                        {/* <th>Qty</th> */}
                                         <th>Subtotal</th>
                                         <th>action</th>
                                     </tr>
@@ -92,16 +98,16 @@ function Cartview() {
                                         return(
                                             <tr key={index}>
                                             <td className="product-thumbnail">
-                                                <a href="#"><img src={cart1} alt="" /></a>
+                                                <a href="#"><img src={product.img} alt="" style={{width:"82px",height:"82px"}} /></a>
                                             </td>
                                             <td className="product-name"><a href="#">{product.name} </a></td>
-                                            <td className="product-price-cart"><span className="amount">{product.price}</span></td>
-                                            <td className="product-quantity">
+                                            <td className="product-price-cart"><span className="amount">₹{product.saleprice}</span></td>
+                                            {/* <td className="product-quantity">
                                                 <div className="cart-plus-minus">
                                                     <input className="cart-plus-minus-box" type="text" name="qtybutton" />
                                                 </div>
-                                            </td>
-                                            <td className="product-subtotal">{product.price}</td>
+                                            </td> */}
+                                            <td className="product-subtotal">₹{product.saleprice}</td>
                                             <td className="product-remove">
                                                 {/* <a href="#"><i className="fa fa-pencil"></i></a> */}
                                                 <a onClick={()=>handleDelete(product.id)} ><i  className="fa fa-times"></i></a>
@@ -194,15 +200,16 @@ function Cartview() {
                                 <div className="title-wrap">
                                     <h4 className="cart-bottom-title section-bg-gary-cart">Cart Total</h4>
                                 </div>
-                                <h5>Total products <span>{0}</span></h5>
+                                <h5>Total <span>₹{totalState}</span></h5>
                                 <div className="total-shipping">
                                     <h5>Total shipping</h5>
-                                    <ul>
+                                    <p>there is no shipping charges</p>
+                                    {/* <ul>
                                         <li><input type="checkbox" /> Standard <span>200.00</span></li>
                                         <li><input type="checkbox" /> Express <span>300.00</span></li>
-                                    </ul>
+                                    </ul> */}
                                 </div>
-                                <h4 className="grand-totall-title">Grand Total  <span>{200}</span></h4>
+                                <h4 className="grand-totall-title">Grand Total  <span>₹{totalState}</span></h4>
                                 <a href="#">Proceed to Checkout</a>
                             </div>
                         </div>

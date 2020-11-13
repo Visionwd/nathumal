@@ -8,10 +8,14 @@ import store from "store"
 // import {total} from "../components/Reusable/MyStore"
 
 let currentCartItems = [];
+let total = 0;
 if (store.get("persist")) {
     currentCartItems=store.get("persist")
+    store.get("persist").map(item=>total+=Number(item.saleprice))
+    console.log(total);
 }else{
     currentCartItems = [];
+    total=0;
 }
 
 function Header({className,navColor}) {
@@ -19,17 +23,21 @@ function Header({className,navColor}) {
     const {products,removeItem} = useContext(CartContext)
 
     const [items,setItems] = useState(currentCartItems)
-   
+    const [totalState,setTotalState] = useState(total)
      
 
   const handleDelete =(id)=>{
-      
+
     currentCartItems=store.get("persist");
     console.log("id to delete",id);
     console.log("before filter",currentCartItems);
     currentCartItems= currentCartItems.filter(item=>item.id!==id)
     console.log("after filter",currentCartItems);
     setItems(items.filter(item=>item.id!==id))
+    let mytotal = 0;
+    currentCartItems.map(item=>mytotal+=Number(item.saleprice))
+    console.log(mytotal);
+    setTotalState(mytotal)
     store.set("persist",currentCartItems)
     console.log("after removing item",store.get("persist"));
   }
@@ -110,12 +118,12 @@ function Header({className,navColor}) {
                                             
                                           return( <li className="single-shopping-cart" key={product.id}> 
                                            <div className="shopping-cart-img">
-                                                <a href="/"><img alt="banner1" src={cart1} /></a>
+                                                <a href="/"><img alt="banner1" src={product.img} style={{width:"82px",height:"82px"}}/></a>
                                             </div>
                                             <div className="shopping-cart-title">
                                                 <h4><a href="/">{product.name} </a></h4>
                                                 <h6>Qty: 01</h6>
-                                                <span>{product.price}</span>
+                                                <span>₹{product.saleprice}</span>
                                             </div>
                                             <div className="shopping-cart-delete">
                                                 <a onClick={()=>handleDelete(product.id)}><i className="fa fa-times-circle"></i></a>
@@ -126,9 +134,9 @@ function Header({className,navColor}) {
                                         }
                                     </ul>
                                     <div className="shopping-cart-total">
-                                        <h4>Shipping : <span>200.00</span></h4>
-                                        <h4>Total : <span className="shop-total">{
-                                          200
+                                        {/* <h4>Shipping : <span>200.00</span></h4> */}
+                                        <h4>Total : <span className="shop-total">₹{
+                                         totalState
                                         }</span></h4>
                                     </div>
                                     <div className="shopping-cart-btn btn-hover text-center">
