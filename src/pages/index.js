@@ -69,14 +69,17 @@ export class Home extends Component {
 
     AddTocart = (item)=>{
         // let currentData = store.get("persist");
-        let currentData = this.state.addToCartItems
+        console.log("item to cart",item);
+        let currentData = store.get("persist");
+        console.log("currently addtoCart state",currentData);
         currentData.push(item)
+        console.log("currently item pushed to current data ",currentData);
         this.setState({
             ...this.setState,
             addToCartItems:currentData
         })
         store.set("persist",currentData )
-        console.log("my products => ",this.state.addToCartItems);
+        console.log("store after adding item  => ",store.get("persist"));
        }
 
 

@@ -35,13 +35,16 @@ function Cartview() {
     //     console.log("total=>",total);
     // }
 
-    const handleDelete = (id)=>{
-
+    const handleDelete =(id)=>{
+        currentCartItems=store.get("persist");
+        console.log("id to delete",id);
+        console.log("before filter",currentCartItems);
         currentCartItems= currentCartItems.filter(item=>item.id!==id)
+        console.log("after filter",currentCartItems);
         setItems(items.filter(item=>item.id!==id))
         store.set("persist",currentCartItems)
-        
-  }
+        console.log("after removing item",store.get("persist"));
+      }
   
     return (
        
