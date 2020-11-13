@@ -33,7 +33,7 @@ function MyCarousel() {
                     <div className="col-lg-12 col-md-12 col-12 col-sm-12 text-white">
                         <div className="slider-content-7 slider-animated-1" >
                             <h3 className="animated">New Arrival</h3>
-                            <h1 className="animated">New Festival <br />Barfi</h1>
+                            <h1 className="animated">Dewali Festival <br />Barfi</h1>
                             <div className="slider-btn-9 btn-hover">
                                 <Link className="animated" to="/collections">SHOP NOW</Link>
                             </div>
