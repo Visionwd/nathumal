@@ -1,4 +1,4 @@
-
+import 'jquery/src/jquery';
 
 exports.onCreateWebpackConfig = ({
     actions,
