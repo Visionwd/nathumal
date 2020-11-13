@@ -1,19 +1,19 @@
-// const $ = require("jquery")
+const $ = require("jquery")
 
 export const onInitialClientRender = () => {
-//   $(document).ready(function () {
+  $(document).ready(function () {
 
     /* Cart search */
-    // $(".account-satting-active , .search-active").on("click", function(e) {
-    //     e.preventDefault();
-    //     $(this).parent().find('.account-dropdown , .search-content').slideToggle('medium');
-    // })
+    $(".account-satting-active , .search-active").on("click", function(e) {
+        e.preventDefault();
+        $(this).parent().find('.account-dropdown , .search-content').slideToggle('medium');
+    })
     
     /* Cart dropdown */
-    // var iconCart = $('.icon-cart');
-    // iconCart.on('click', function() {
-    //     $('.shopping-cart-content').toggleClass('cart-visible');
-    // })
+    var iconCart = $('.icon-cart');
+    iconCart.on('click', function() {
+        $('.shopping-cart-content').toggleClass('cart-visible');
+    })
     
     // /* Slider active */
     // $('.slider-active').owlCarousel({
@@ -668,7 +668,7 @@ export const onInitialClientRender = () => {
     
     
 
-// });
+});
 
 
 }
