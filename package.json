@@ -1,0 +1,46 @@
+{
+  "name": "gatsby-starter-hello-world",
+  "private": true,
+  "description": "A simplified bare-bones starter for Gatsby",
+  "version": "0.1.0",
+  "license": "0BSD",
+  "proxy": "http://localhost:8000/",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "dependencies": {
+    "@loadable/component": "^5.14.1",
+    "axios": "^0.21.0",
+    "bootstrap": "^4.5.3",
+    "formik": "^2.2.4",
+    "gatsby": "^2.25.1",
+    "gatsby-source-apiserver": "^2.1.7",
+    "gatsby-source-contentful": "^3.1.3",
+    "gatsby-source-multi-api": "^1.0.5",
+    "gatsby-source-sanity": "^6.0.4",
+    "jquery": "^3.5.1",
+    "owl.carousel": "^2.3.4",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^6.1.0",
+    "react-owl-carousel": "^2.3.1",
+    "react-responsive-carousel": "^3.2.10",
+    "store": "^2.0.12"
+  },
+  "devDependencies": {
+    "prettier": "2.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  }
+}
