@@ -57,6 +57,7 @@ export class CartCheckout extends Component {
         .then(res=>{
             console.log("success: ",res);
             store.set("persist",[])
+            store.set("order",[res.data])
             navigate("/success/thanks",{
                 state:{
                     data:res.data
