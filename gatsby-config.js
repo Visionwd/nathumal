@@ -7,14 +7,14 @@
 module.exports = {
   /* Your site config here */
   plugins: [
-    {
-      resolve: `gatsby-source-contentful`,
-      options: {
-        spaceId: `mn2jgcjeonqf`,
-        // Learn about environment variables: https://gatsby.dev/env-vars
-        accessToken: `TvZqr9I0vb1DNOo84R8Jrh44lc981-vgJtBuIeQghqc`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-contentful`,
+    //   options: {
+    //     spaceId: `mn2jgcjeonqf`,
+    //     // Learn about environment variables: https://gatsby.dev/env-vars
+    //     accessToken: `TvZqr9I0vb1DNOo84R8Jrh44lc981-vgJtBuIeQghqc`,
+    //   },
+    // },
   
   ],
 }

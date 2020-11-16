@@ -35,7 +35,7 @@ function MyCarousel() {
                             <h3 className="animated">New Arrival</h3>
                             <h1 className="animated">Dewali Festival <br />Barfi</h1>
                             <div className="slider-btn-9 btn-hover">
-                                <Link className="animated" to="/collections">SHOP NOW</Link>
+                                <Link className="animated" to="/collections/shop">SHOP NOW</Link>
                             </div>
                         </div>
                     </div>
@@ -50,7 +50,7 @@ function MyCarousel() {
                             <h3 className="animated">New Arrival</h3>
                             <h1 className="animated">New Festival <br />Sweets</h1>
                             <div className="slider-btn-9 btn-hover">
-                                <Link className="animated" to="/collections">SHOP NOW</Link>
+                                <Link className="animated" to="/collections/shop">SHOP NOW</Link>
                             </div>
                         </div>
                     </div>

@@ -5,7 +5,7 @@ import "../css/style.css"
 import "../css/icons.min.css"
 
 import Footer from './Footer'
-import Header from './Headery'
+import Header from './Header'
 
 import CartContext from "../context/CartContext"
 import store from "store"

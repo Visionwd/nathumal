@@ -7,6 +7,8 @@ import "../css/style.css"
 import "../css/icons.min.css"
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import MyCarousel from "../components/Carousel"
 
@@ -28,6 +30,7 @@ import store from "store"
 
 let currentCartItems = [];
 let total = 0;
+let value = true
 if (store.get("persist")) {
     currentCartItems=store.get("persist")
     store.get("persist").map(item=>total+=item.saleprice)
@@ -41,7 +44,8 @@ export class Home extends Component {
     state={
         items:[],
         addToCartItems:currentCartItems,
-        totalState:total
+        totalState:total,
+        quantityState:true
     }
 
     componentDidMount(){
@@ -73,10 +77,37 @@ export class Home extends Component {
 
     AddTocart = (item)=>{
         // let currentData = store.get("persist");
+        toast.success(item.name+" added to the cart!",{
+            autoClose:2000
+        })
         console.log("item to cart",item);
-        let currentData = store.get("persist");
+        let currentData = store.get("persist")?store.get("persist"):[];
         console.log("currently addtoCart state",currentData);
-        currentData.push(item)
+
+       
+       
+        function containsObject(item, currentData) {
+            var i;
+            for (i = 0; i < currentData.length; i++) {
+                if (currentData[i].id === item.id) {
+                    return true;
+                }
+            }
+        
+            return false;
+        }
+       
+          if (!containsObject(item,currentData)) {
+            currentData.push({...item,quantity:1})
+          }else{
+            currentData.map(cartitem => {
+                if (cartitem.id===item.id) {
+                    console.log("identical");
+                    cartitem.quantity=cartitem.quantity+1
+                }
+            })
+          }
+       
         console.log("currently item pushed to current data ",currentData);
         // let sum = 0 ;
         // currentData.map(item=>sum+=item.saleprice)
@@ -101,6 +132,7 @@ export class Home extends Component {
             <HeaderLinks  /> 
             <Restapitest />
            <Header className={"transparent-bar"} navColor={"text-white"} />
+           <ToastContainer />
       <MyCarousel />
    
    <div className="welcome-area pb-90">
@@ -108,7 +140,7 @@ export class Home extends Component {
            <div className="welcome-content text-center">
                <h5>Who Are We</h5>
                <h1>Welcome To Nathu Mal & Ghudoo Mal</h1>
-               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt labor et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo consequat irure </p>
+               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do  tempor incididunt labor et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo consequat irure </p>
            </div>
        </div>
    </div>
@@ -129,16 +161,7 @@ export class Home extends Component {
                             return <Product id={item_id} AddTocart={this.AddTocart} key={item_id} name={item_name} img={"https://www.heydemo.ml/nathumalapi/uploads/"+item_img} price={item_price} saleprice={item_saleprice} />
                         })
                     }
-                       {/* <Product productName="Bengali Sweet" productImg={Product1} price={400} />
-                       <Product productName="Gajar ka Halwa" productImg={Product2} price={300} />
-                       <Product productName="cake" productImg={Product3} price={500} />
-                       <Product productName="Gulab Jamun" productImg={Product4} price={200} />
-                       <Product productName="Son Papdi" productImg={Product5} price={350} />
-                       <Product productName="cake" productImg={Product3} price={500} />
-                       <Product productName="Gulab Jamun" productImg={Product4} price={200} />
-                       <Product productName="Son Papdi" productImg={Product5} price={350} />
-                       <Product productName="Bengali Sweet" productImg={Product1} price={400} />
-                       <Product productName={data.allContentfulSweet.edges[0].node.name} productImg={data.allContentfulSweet.edges[0].node.productImage.file.url} price={data.allContentfulSweet.edges[0].node.price} /> */}
+                      
                    </div>
                </div>
    

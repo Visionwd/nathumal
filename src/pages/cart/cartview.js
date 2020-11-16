@@ -1,15 +1,13 @@
 import React,{useContext,useState} from 'react'
 import Layout from '../../components/Layout'
-import cart1 from "../../img/cart/cart-1.png";
-import cart2 from "../../img/cart/cart-2.png";
-import CartContext from "../../context/CartContext"
+
 import store from "store";
 
 let currentCartItems = [];
 let total = 0;
 if (store.get("persist")) {
     currentCartItems=store.get("persist")
-    store.get("persist").map(item=>total+=Number(item.saleprice))
+    store.get("persist").map(item=>total+=(Number(item.saleprice)*item.quantity))
     console.log(total);
 }else{
     currentCartItems = [];
@@ -20,23 +18,43 @@ function Cartview() {
 
     const [items,setItems] = useState(currentCartItems)
     const [totalState,setTotalState] = useState(total)
-    // const [total,setTotal] = useState(mytotal)
     
 
-    // const handleDelete = (deleteProduct) => {
-     
-    //     let currentData = store.get("persist");
-    //     console.log(currentData);
-    //     // currentData = currentData.filter(product => product != deleteProduct);
-    //     store.set("persist", store.get("persist").filter(product => product.productName!=deleteProduct.productName))
-    //     // setMyproduct(store.get("persist").filter(product => product.productName!=deleteProduct.productName))
-    //     setMyproduct(currentData.filter(product => product != deleteProduct))
-    //     console.log("my products => ",myproduct);
-    //     if(total>deleteProduct.price){
-    //         setTotal(total-deleteProduct.price)
-    //     }
-    //     console.log("total=>",total);
-    // }
+    const handleDecrement = (id) =>{
+        currentCartItems=store.get("persist");
+        console.log("id to delete",id);
+        console.log("before decrement",currentCartItems);
+        currentCartItems.map(item=>{
+            if (item.id===id&&item.quantity>1) {
+                item.quantity=item.quantity-1
+            }
+        })
+        console.log("after decrement",currentCartItems);
+        setItems(currentCartItems)
+        let mytotal = 0;
+        currentCartItems.map(item=>mytotal+=(Number(item.saleprice)*item.quantity))
+        setTotalState(mytotal)
+        store.set("persist",currentCartItems)
+        console.log("after dec item",store.get("persist"));
+    }
+
+    const handleIncrement = (id) =>{
+        currentCartItems=store.get("persist");
+        console.log("id to delete",id);
+        console.log("before increment",currentCartItems);
+        currentCartItems.map(item=>{
+            if (item.id===id&&item.quantity) {
+                item.quantity=item.quantity+1
+            }
+        })
+        console.log("after increment",currentCartItems);
+        setItems(currentCartItems)
+        let mytotal = 0;
+        currentCartItems.map(item=>mytotal+=(Number(item.saleprice)*item.quantity))
+        setTotalState(mytotal)
+        store.set("persist",currentCartItems)
+        console.log("after removing item",store.get("persist"));
+    }
 
     const handleDelete =(id)=>{
         currentCartItems=store.get("persist");
@@ -46,10 +64,16 @@ function Cartview() {
         console.log("after filter",currentCartItems);
         setItems(items.filter(item=>item.id!==id))
         let mytotal = 0;
-    currentCartItems.map(item=>mytotal+=Number(item.saleprice))
-    setTotalState(mytotal)
+        currentCartItems.map(item=>mytotal+=(Number(item.saleprice)*item.quantity))
+        setTotalState(mytotal)
         store.set("persist",currentCartItems)
         console.log("after removing item",store.get("persist"));
+      }
+
+      const ClearAll = ()=>{
+         store.remove('persist')
+         setItems([]);
+         setTotalState(0)
       }
   
     return (
@@ -69,7 +93,7 @@ function Cartview() {
                                         <th>Image</th>
                                         <th>Product Name</th>
                                         <th>Until Price</th>
-                                        {/* <th>Qty</th> */}
+                                        <th>Qty</th>
                                         <th>Subtotal</th>
                                         <th>action</th>
                                     </tr>
@@ -102,12 +126,19 @@ function Cartview() {
                                             </td>
                                             <td className="product-name"><a href="#">{product.name} </a></td>
                                             <td className="product-price-cart"><span className="amount">₹{product.saleprice}</span></td>
-                                            {/* <td className="product-quantity">
+                                            <td className="product-quantity">
                                                 <div className="cart-plus-minus">
-                                                    <input className="cart-plus-minus-box" type="text" name="qtybutton" />
+                                                   
+                                                    <p> 
+                                                        {/* <button onClick={()=>handleDecrement(product.id)} className="btn btn-danger" style={{borderRadius:"50%"}}>-</button> */}
+                                                        <span style={{margin:"1rem 0.5rem"}}>{product.quantity}</span>
+                                                        {/* <button onClick={()=>handleIncrement(product.id)} className="btn btn-success" style={{borderRadius:"50%"}}>+</button> */}
+                                                    </p>
+                                                   
+                                                    {/* <input className="cart-plus-minus-box" type="text" name="qtybutton" /> */}
                                                 </div>
-                                            </td> */}
-                                            <td className="product-subtotal">₹{product.saleprice}</td>
+                                            </td>
+                                            <td className="product-subtotal">₹{product.saleprice*product.quantity}</td>
                                             <td className="product-remove">
                                                 {/* <a href="#"><i className="fa fa-pencil"></i></a> */}
                                                 <a onClick={()=>handleDelete(product.id)} ><i  className="fa fa-times"></i></a>
@@ -115,7 +146,8 @@ function Cartview() {
                                         </tr>
                                         )
                                     }):
-                                    <p>your cart is empty.</p>
+
+                                    <p className="text-center display-4"> Empty Cart</p>
                                 
     
                                         }
@@ -127,61 +159,17 @@ function Cartview() {
                             <div className="col-lg-12">
                                 <div className="cart-shiping-update-wrapper">
                                     <div className="cart-shiping-update">
-                                        <a href="#">Continue Shopping</a>
+                                        <a href="/collections/shop">Continue Shopping</a>
                                     </div>
                                     <div className="cart-clear">
-                                        <button>Update Shopping Cart</button>
-                                        <a href="#">Clear Shopping Cart</a>
+                                        <a onClick={ClearAll}>Clear Shopping Cart</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </form>
                     <div className="row">
-                        <div className="col-lg-4 col-md-6">
-                            <div className="cart-tax">
-                                <div className="title-wrap">
-                                    <h4 className="cart-bottom-title section-bg-gray">Estimate Shipping And Tax</h4>
-                                </div>
-                                <div className="tax-wrapper">
-                                    <p>Enter your destination to get a shipping estimate.</p>
-                                    <div className="tax-select-wrapper">
-                                        <div className="tax-select">
-                                            <label>
-                                                * Country
-                                            </label>
-                                            <select className="email s-email s-wid">
-                                                <option>Bangladesh</option>
-                                                <option>Albania</option>
-                                                <option>Åland Islands</option>
-                                                <option>Afghanistan</option>
-                                                <option>Belgium</option>
-                                            </select>
-                                        </div>
-                                        <div className="tax-select">
-                                            <label>
-                                                * Region / State
-                                            </label>
-                                            <select className="email s-email s-wid">
-                                                <option>Bangladesh</option>
-                                                <option>Albania</option>
-                                                <option>Åland Islands</option>
-                                                <option>Afghanistan</option>
-                                                <option>Belgium</option>
-                                            </select>
-                                        </div>
-                                        <div className="tax-select">
-                                            <label>
-                                                * Zip/Postal Code
-                                            </label>
-                                            <input type="text" />
-                                        </div>
-                                        <button className="cart-btn-2" type="submit">Get A Quote</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 col-md-6">
+                        {/* <div className="col-lg-4 col-md-6">
                             <div className="discount-code-wrapper">
                                 <div className="title-wrap">
                                     <h4 className="cart-bottom-title section-bg-gray">Use Coupon Code</h4> 
@@ -194,7 +182,7 @@ function Cartview() {
                                     </form>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                         <div className="col-lg-4 col-md-12">
                             <div className="grand-totall">
                                 <div className="title-wrap">
@@ -210,7 +198,9 @@ function Cartview() {
                                     </ul> */}
                                 </div>
                                 <h4 className="grand-totall-title">Grand Total  <span>₹{totalState}</span></h4>
-                                <a href="#">Proceed to Checkout</a>
+                               {
+                                   store.get("persist")? <a href="/cart/checkout">Proceed to Checkout</a>:null
+                               }
                             </div>
                         </div>
                     </div>

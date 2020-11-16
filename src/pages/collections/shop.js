@@ -2,11 +2,8 @@ import React, { Component } from 'react'
 import Layout from '../../components/Layout'
 import axios from "axios"
 import store from "store"
-import Product1 from "../../img/product/prod1.jpg"
-import Product2 from "../../img/product/prod2.jpg"
-import Product3 from "../../img/product/prod3.jpg"
-import Product4 from "../../img/product/prod4.jpg"
-import Product5 from "../../img/product/prod5.jpg"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import ProductOfCollection from "../../components/Reusable/ProductOfCollection"
 
@@ -97,10 +94,33 @@ export class Shop extends Component {
    
    AddTocart = (item)=>{
     // let currentData = store.get("persist");
+    toast.success(item.name+" added to the cart!",{
+        autoClose:2000
+    })
     console.log("item to cart",item);
-    let currentData = store.get("persist");
+    let currentData = store.get("persist")?store.get("persist"):[];
     console.log("currently addtoCart state",currentData);
-    currentData.push(item)
+    function containsObject(item, currentData) {
+        var i;
+        for (i = 0; i < currentData.length; i++) {
+            if (currentData[i].id === item.id) {
+                return true;
+            }
+        }
+    
+        return false;
+    }
+   
+      if (!containsObject(item,currentData)) {
+        currentData.push({...item,quantity:1})
+      }else{
+        currentData.map(cartitem => {
+            if (cartitem.id===item.id) {
+                console.log("identical");
+                cartitem.quantity=cartitem.quantity+1
+            }
+        })
+      }
     console.log("currently item pushed to current data ",currentData);
     this.setState({
         ...this.setState,
@@ -115,7 +135,7 @@ export class Shop extends Component {
     render() {
         return (
             <Layout>
-
+            <ToastContainer />
             <div className="shop-area pt-95 pb-100">
                 {
                     console.log("categories=>",this.state.categories)

@@ -1071,7 +1071,7 @@ textarea:-ms-input-placeholder {
   opacity: 1;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; }
 
-input {
+  input[type="text"] {
   background: #eceff8;
   border: 2px solid #eceff8;
   height: 45px;

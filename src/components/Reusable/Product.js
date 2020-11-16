@@ -2,7 +2,7 @@ import { Link } from 'gatsby'
 import React,{useContext} from 'react'
 import CartContext from '../../context/CartContext'
 import store from "store";
-function Product({img,price,name,saleprice,AddTocart,id}) {
+function Product({img,price,name,saleprice,AddTocart,id,quantity}) {
   
     // let arr = []
     // const {setCart,removeItem} =  useContext(CartContext)
@@ -19,7 +19,8 @@ function Product({img,price,name,saleprice,AddTocart,id}) {
                     <img className="default-img" src={img} alt="img" />
                     <img className="hover-img" src={img} alt="img" />
                 </Link>
-                <span className="glaucous">-10%</span>
+                {/* <span className="glaucous">-10%</span> */}
+                
                 <div className="product-action-2">
                     <a title="Add To Cart" onClick={()=>AddTocart({id,img,name,saleprice})}><i className="fa fa-shopping-cart"></i></a>
                     <a title="Quick View" href="/" data-toggle="modal" data-target="#exampleModal"><i className="fa fa-eye"></i></a>

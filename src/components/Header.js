@@ -8,26 +8,27 @@ import store from "store"
 // import {total} from "../components/Reusable/MyStore"
 
 let currentCartItems = [];
-let total = 0;
+let xtotal = 0;
 if (store.get("persist")) {
     currentCartItems=store.get("persist")
-    store.get("persist").map(item=>total+=Number(item.saleprice))
-    console.log(total);
+    store.get("persist").map(item=>xtotal+=(Number(item.saleprice)*item.quantity))
+    console.log(xtotal);
 }else{
     currentCartItems = [];
-    total=0;
+    xtotal=0;
 }
 
-function Header({className,navColor}) {
+function Header({className,navColor,total}) {
+    console.log(total);
 
     const {products,removeItem} = useContext(CartContext)
 
     const [items,setItems] = useState(currentCartItems)
-    const [totalState,setTotalState] = useState(total)
-     
+    const [totalState,setTotalState] = useState(xtotal)
+    //  setTotalState(total);
+    console.log("totalState",totalState);
 
   const handleDelete =(id)=>{
-
     currentCartItems=store.get("persist");
     console.log("id to delete",id);
     console.log("before filter",currentCartItems);
@@ -35,7 +36,7 @@ function Header({className,navColor}) {
     console.log("after filter",currentCartItems);
     setItems(items.filter(item=>item.id!==id))
     let mytotal = 0;
-    currentCartItems.map(item=>mytotal+=Number(item.saleprice))
+    currentCartItems.map(item=>mytotal+=(Number(item.saleprice)*item.quantity))
     console.log(mytotal);
     setTotalState(mytotal)
     store.set("persist",currentCartItems)
@@ -94,7 +95,7 @@ function Header({className,navColor}) {
                             <div className="same-style cart-wrap">
                           
                                 <button className="icon-cart" >
-                                        <a href="#"> <i className="pe-7s-shopbag" ></i></a>
+                                        <a href="/cart/cartview"> <i className="pe-7s-shopbag" ></i></a>
                                         <span className="count-style">{store.get("persist")?store.get("persist").length:0}</span>
                                 </button>
                                 <div className="shopping-cart-content">
@@ -122,7 +123,7 @@ function Header({className,navColor}) {
                                             </div>
                                             <div className="shopping-cart-title">
                                                 <h4><a href="/">{product.name} </a></h4>
-                                                <h6>Qty: 01</h6>
+                                                <h6>Qty:{product.quantity}</h6>
                                                 <span>₹{product.saleprice}</span>
                                             </div>
                                             <div className="shopping-cart-delete">
@@ -140,8 +141,8 @@ function Header({className,navColor}) {
                                         }</span></h4>
                                     </div>
                                     <div className="shopping-cart-btn btn-hover text-center">
-                                        <Link className="default-btn" to="/cart/cartview" >view cart</Link>
-                                        <Link className="default-btn" to="/cart/checkout" >checkout</Link>
+                                        <a className="default-btn" href="/cart/cartview" >view cart</a>
+                                        <a className="default-btn" href="/cart/checkout" >checkout</a>
                                     </div>
                                 </div>
                             </div>
