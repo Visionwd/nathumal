@@ -3,6 +3,22 @@ import store from "store"
 import axios from "axios"
 import { navigate } from "gatsby";
 import Layout from "../../components/Layout"
+import logo from "../../img/logo/logo.png"
+
+function loadScript(src) {
+	return new Promise((resolve) => {
+		const script = document.createElement('script')
+		script.src = src
+		script.onload = () => {
+			resolve(true)
+		}
+		script.onerror = () => {
+			resolve(false)
+		}
+		document.body.appendChild(script)
+	})
+}
+
 export class CartCheckout extends Component {
             state={
                 items:[],
@@ -21,8 +37,10 @@ export class CartCheckout extends Component {
          
     componentDidMount(){
         let currentTotal = 0;
-        store.get("persist").map(item=>currentTotal+=(Number(item.saleprice)*item.quantity))
-
+        if(store.get("persist"))
+        {
+            store.get("persist").map(item=>currentTotal+=(Number(item.saleprice)*item.quantity))
+        }
         this.setState({
             ...this.state,
             items:store.get("persist"),
@@ -38,6 +56,67 @@ export class CartCheckout extends Component {
         })
     }
 
+   
+    ///////////////////////////////////////////////////////////////////////////////////
+      displayRazorpay = async (id) => {
+        const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js')
+
+        if (!res) {
+            alert('Razorpay SDK failed to load. Are you online?')
+            return
+        }
+
+        // const data = await fetch('http://localhost:1337/razorpay', { method: 'POST' }).then((t) =>
+        //     t.json()
+        // )
+
+        // console.log(data)
+
+        const options = {
+            key:'rzp_test_b890oMoFJWdfB3',
+            currency: "INR",
+            amount: String(Number(this.state.total)*100),
+            order_id: id,
+            name: 'sweet payment',
+            description: 'Thank you for shopping. Pay money',
+            image: logo,
+            handler: function (response) {
+
+                axios.post("https://www.heydemo.ml/nathumalapi/appapi/update_order", {
+                    "service_request": {
+                        "params": {
+                            "payment_id":`${response.razorpay_payment_id}`,
+                            "order_id":`${response.razorpay_order_id}`,
+                            "payment_signature":`${response.razorpay_signature}`
+                        },
+                        "request_info": {
+                            "source_type": "android"
+                        }
+                    },
+                    "version": "1.0"
+                },{
+                    headers: {
+                        'Content-Type': 'application/json'
+                      }
+                   }).then(res=>{
+                    alert(response.razorpay_payment_id)
+                    alert(response.razorpay_order_id)
+                    alert(response.razorpay_signature)
+                   })
+                
+            },
+            prefill: {
+                name:this.state.firstname,
+                email: this.state.email,
+                phone_number: this.state.phone
+            }
+        }
+
+        const paymentObject = new window.Razorpay(options)
+        paymentObject.open()
+    }
+
+    //////////////////////////////////////////
     handleSubmit = () =>{
         console.log("state=> ",this.state);
         axios.post("https://www.heydemo.ml/nathumalapi/appapi/add_order",
@@ -56,6 +135,13 @@ export class CartCheckout extends Component {
            })
         .then(res=>{
             console.log("success: ",res);
+
+            //////////////////////////////////////////////////////
+            this.displayRazorpay(res.data.payorderid)
+            /////////////////////////////////////////////////////
+
+
+
             store.set("persist",[])
             store.set("order",[res.data])
             navigate("/success/thanks",{
@@ -133,7 +219,7 @@ export class CartCheckout extends Component {
                         <div className="col-lg-6 col-md-6">
                             <div className="billing-info mb-20">
                                 <label>country</label>
-                                <input onChange={this.handleChange} className="form-control" type="text" placeholder="India" readonly disabled />
+                                <input onChange={this.handleChange} className="form-control" type="text" placeholder="India" readOnly disabled />
                             </div>
                         </div>
                     </div>
@@ -202,8 +288,8 @@ export class CartCheckout extends Component {
                             </div>
                         </div>
                         <div className="payment-method">
-                        <div class="radio">
-                        <label><input type="radio" name="optradio" checked /> Razorpay</label>
+                        <div className="radio">
+                        <label><input type="radio" name="optradio" defaultChecked /> Razorpay</label>
                         </div>
                         {/* <img src="https://razorpay.com/assets/razorpay-logo-white.png" alt="razorpay"/> */}
                        

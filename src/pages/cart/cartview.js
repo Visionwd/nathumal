@@ -147,7 +147,7 @@ function Cartview() {
                                         )
                                     }):
 
-                                    <p className="text-center display-4"> Empty Cart</p>
+                                    <p className="text-center"> Empty Cart</p>
                                 
     
                                         }

@@ -33,7 +33,7 @@ function MyCarousel() {
                     <div className="col-lg-12 col-md-12 col-12 col-sm-12 text-white">
                         <div className="slider-content-7 slider-animated-1" >
                             <h3 className="animated">New Arrival</h3>
-                            <h1 className="animated">Dewali Festival <br />Barfi</h1>
+                            <h1 className="animated">Diwali Festival <br />Barfi</h1>
                             <div className="slider-btn-9 btn-hover">
                                 <Link className="animated" to="/collections/shop">SHOP NOW</Link>
                             </div>
@@ -68,36 +68,36 @@ function MyCarousel() {
 <div className="collections-area pb-95">
     <div className="container">
         <div className="collection-wrap-2">
-            <div className="collection-active-2 owl-carousel">
-                <Carousel centerMode infiniteLoop 
-                centerSlidePercentage={33}
+            <div className="collection-active-2 ">
+                {/* <Carousel centerMode 
+                infiniteLoop 
+                centerSlidePercentage={34}
                 showStatus={false}
                 showIndicators={false}
                 showArrows={false}
-                swipeable
-                emulateTouch
-                
-                >
-                <div className="collection-product-2 mx-4">
+                > */}
+               <div className="row">
+               <div className="collection-product-2 col-md-4 ">
                     <a href="/"><img src={category1} alt="sweeet category first" /></a>
                     <div className="collection-content-2 text-center">
                         <h3>Winter Special</h3> 
                     </div>
                 </div>
-                <div className="collection-product-2 mx-4">
+                <div className="collection-product-2 col-md-4 ">
                     <a href="/"><img src={category2} alt="sweeet category second" /></a>
                     <div className="collection-content-2 text-center">
                         <h3>Mithai</h3> 
                     </div>
                 </div>
-                <div className="collection-product-2 mx-4">
+                <div className="collection-product-2 col-md-4 ">
                     <a href="/"><img src={category3} alt="sweeet category third" /></a>
                     <div className="collection-content-2 text-center">
                         <h3>Dry Fruits Sweet</h3>
                     </div>
                 </div>
+               </div>
 
-            </Carousel>
+            {/* </Carousel> */}
             </div>
         </div>
     </div>

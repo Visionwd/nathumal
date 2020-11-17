@@ -71,7 +71,7 @@ function Header({className,navColor,total}) {
                     <div className="col-lg-5 col-md-4 col-12">
                         <div className="header-right-wrap">
                             <div className="same-style header-search">
-                                <a className="search-active" href="#" ><i className="pe-7s-search"></i></a>
+                                <a className="search-active" className={navColor} href="#" ><i className="pe-7s-search"></i></a>
                                 <div className="search-content">
                                     <form action="#">
                                         <input type="text" placeholder="Search" />
@@ -79,8 +79,8 @@ function Header({className,navColor,total}) {
                                     </form>
                                 </div> 
                             </div>
-                            <div className="same-style account-satting">
-                                <a className="account-satting-active" href="/" ><i className="pe-7s-user-female"></i></a>
+                            {/* <div className="same-style account-satting">
+                                <a className="account-satting-active" className={navColor} href="/" ><i className="pe-7s-user-female"></i></a>
                                 <div className="account-dropdown">
                                     <ul>
                                         <li><Link to="/account/login">Login/Register</Link></li>
@@ -88,14 +88,14 @@ function Header({className,navColor,total}) {
                                         <li><Link to="/account/myaccount">my account</Link></li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> */}
                             {/* <div className="same-style header-wishlist">
                                 <a href="#" className={navColor}><i className="pe-7s-like"></i></a>
                             </div> */}
                             <div className="same-style cart-wrap">
                           
                                 <button className="icon-cart" >
-                                        <a href="/cart/cartview"> <i className="pe-7s-shopbag" ></i></a>
+                                        <a href="/cart/cartview" className="account-satting-active" className={navColor}> <i className="pe-7s-shopbag"></i></a>
                                         <span className="count-style">{store.get("persist")?store.get("persist").length:0}</span>
                                 </button>
                                 <div className="shopping-cart-content">
@@ -134,15 +134,15 @@ function Header({className,navColor,total}) {
                                           <p>Add some product to cart</p>  
                                         }
                                     </ul>
-                                    <div className="shopping-cart-total">
-                                        {/* <h4>Shipping : <span>200.00</span></h4> */}
+                                    {/* <div className="shopping-cart-total">
+                                        <h4>Shipping : <span>200.00</span></h4>
                                         <h4>Total : <span className="shop-total">₹{
                                          totalState
                                         }</span></h4>
-                                    </div>
+                                    </div> */}
                                     <div className="shopping-cart-btn btn-hover text-center">
                                         <a className="default-btn" href="/cart/cartview" >view cart</a>
-                                        <a className="default-btn" href="/cart/checkout" >checkout</a>
+                                        {/* <a className="default-btn" href="/cart/checkout" >checkout</a> */}
                                     </div>
                                 </div>
                             </div>

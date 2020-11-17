@@ -153,7 +153,7 @@ export class Shop extends Component {
                                             <option value="">In stock</option>
                                         </select>
                                     </div>
-                                    <p>Showing 1–12 of 20 result</p>
+                                    {/* <p>Showing 1–12 of 20 result</p> */}
                                 </div>
                                 <div className="shop-tab nav">
                                     <a className="active" href="#shop-1" data-toggle="tab">
