@@ -83,6 +83,7 @@ class Productdetail extends Component {
   
  render(){
      const {id,img,price,name,saleprice} = store.get("product")
+     console.log(store.get("product"));
     return (
         <Layout>
         <ToastContainer />
