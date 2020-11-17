@@ -4031,7 +4031,15 @@ a.default-btn {
     margin: 20px 0 0; }
     .product-wrap .product-content h3 {
       font-size: 16px;
-      margin: 0; }
+      margin: 0;
+    
+    }
+    
+    .product-wrap .product-content h3 a{
+      text-decoration: none;
+      color: #000;
+    }
+
     .product-wrap .product-content .product-rating {
       margin: 3px 0 3px; }
       .product-wrap .product-content .product-rating i {

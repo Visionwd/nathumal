@@ -167,16 +167,13 @@ export class Home extends Component {
    
                <div className="tab-pane" id="product-2">
                    <div className="custom-row-4">
-                       <Product productName="Savouries" productImg={Product5} price={350} />
-                       <Product productName="Savouries" productImg={Product5} price={350} />
-                       <Product productName="Savouries" productImg={Product5} price={350} />
-                       <Product productName="Savouries" productImg={Product5} price={350} />
-                       <Product productName="Savouries" productImg={Product5} price={350} />
-                       <Product productName="Savouries" productImg={Product5} price={350} />
-                       <Product productName="Savouries" productImg={Product5} price={350} />
-                       <Product productName="Savouries" productImg={Product5} price={350} />
-                       <Product productName="Savouries" productImg={Product5} price={350} />
-                       <Product productName="Savouries" productImg={Product5} price={350} />
+                       
+                   {
+                        this.state.items.map(({item_id,item_name,item_img,item_price,item_saleprice})=>{
+                            return <Product id={item_id} AddTocart={this.AddTocart} key={item_id} name={item_name} img={"https://www.heydemo.ml/nathumalapi/uploads/"+item_img} price={item_price} saleprice={item_saleprice} />
+                        })
+                    }
+                       
                      </div>
                </div>
               

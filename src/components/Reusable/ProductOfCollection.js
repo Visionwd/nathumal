@@ -23,11 +23,11 @@ function ProductOfCollection({img,price,name,saleprice,AddTocart,id}) {
                 </div>
             </div>
             <div className="product-content text-center">
-                <h3><a href="product-details.html">{name}</a></h3>
+                <h3>{name}</h3>
                 {/* <div className="product-rating">
                     <i className="fa fa-star-o yellow"></i>
                     <i className="fa fa-star-o yellow"></i>
-                    <i className="fa fa-star-o yellow"></i>
+                    <i className="fa fa-star-o "></i>
                     <i className="fa fa-star-o"></i>
                     <i className="fa fa-star-o"></i>
                 </div> */}
