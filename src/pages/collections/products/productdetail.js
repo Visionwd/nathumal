@@ -82,7 +82,7 @@ class Productdetail extends Component {
 
   
  render(){
-     const {img,price,name,saleprice} = store.get("product")
+     const {id,img,price,name,saleprice} = store.get("product")?store.get("product"):null
      console.log(store.get("product"));
     return (
         <Layout>
@@ -187,7 +187,7 @@ class Productdetail extends Component {
                                     <input className="cart-plus-minus-box" type="text" name="qtybutton" />
                                 </div> */}
                                 <div className="pro-details-cart btn-hover">
-                                    <a onClick={()=>this.AddTocart({id:store.get("product").id,img,name,saleprice})}>{this.state.msg}</a>
+                                    <a onClick={()=>this.AddTocart({id,img,name,saleprice})}>{this.state.msg}</a>
                                 </div>
                                 {/* <div className="pro-details-wishlist">
                                     <a href="#"><i className="fa fa-heart-o"></i></a>
