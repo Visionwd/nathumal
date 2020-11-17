@@ -14,7 +14,7 @@ function Product({img,price,name,saleprice,AddTocart,id,quantity}) {
     // }
 
    const  handleClick = () =>{
-       store.set("product",{img,price,name,saleprice,id})
+       store.set("product",{id,img,price,name,saleprice})
     navigate("/collections/products/productdetail")
    }
     

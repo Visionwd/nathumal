@@ -133,8 +133,8 @@ class Productdetail extends Component {
                         <div className="product-details-content ml-70">
                             <h2>{name}</h2>
                             <div className="product-details-price">
-                                <span>{saleprice} </span>
-                                <span className="old">{price}</span>
+                                <span>₹{saleprice} </span>
+                                <span className="old">₹{price}</span>
                             </div>
                             {/* <div className="pro-details-rating-wrap">
                                 <div className="pro-details-rating">
@@ -173,7 +173,7 @@ class Productdetail extends Component {
                                         <ul>
                                             <li><a href="#">Full</a></li>
                                             <li><a href="#">Half</a></li>
-                                            
+
                                             {/* <li><a href="#">l</a></li>
                                             <li><a href="#">xl</a></li>
                                             <li><a href="#">xxl</a></li> */}
