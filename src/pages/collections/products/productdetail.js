@@ -22,15 +22,32 @@ class Productdetail extends Component {
    
     state={
         item:[],
-        msg:"Add To Cart"
+        msg:"Add To Cart",
+        product:{
+            id:0,
+            img:"",
+            price:0,
+            saleprice:0,
+            name:""
+
+        }
     }
    
     componentDidMount(){
-        console.log(store.get("product"));
-        // this.setState({...store.get("product")})
-        if (!store.get("product")) {
+        if(store.get("product")){
+            const {id,img,price,name,saleprice} = store.get("product")
+            this.setState({
+                ...this.state,
+                product:{id,img,price,name,saleprice}
+            })
+        }else{
             navigate("/")
         }
+        // console.log(store.get("product"));
+        // this.setState({...store.get("product")})
+        // if (!store.get("product")) {
+        //     navigate("/")
+        // }
     }
 
     AddTocart = (item)=>{
@@ -83,11 +100,7 @@ class Productdetail extends Component {
   
  render(){
      
-    if(store.get("product")){
-        var {id,img,price,name,saleprice} = store.get("product")
-    }else{
-        navigate("/")
-    }
+    const {id,img,price,name,saleprice} = this.state.product
     //  const {id,img,price,name,saleprice} = store.get("product")?store.get("product"):{id:0,img:"",price:0,name:"",saleprice:0}
     //  console.log(store.get("product"));
     return (
