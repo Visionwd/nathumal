@@ -82,8 +82,14 @@ class Productdetail extends Component {
 
   
  render(){
-     const {id,img,price,name,saleprice} = store.get("product")?store.get("product"):null
-     console.log(store.get("product"));
+     
+    if(store.get("product")){
+        var {id,img,price,name,saleprice} = store.get("product")
+    }else{
+        navigate("/")
+    }
+    //  const {id,img,price,name,saleprice} = store.get("product")?store.get("product"):{id:0,img:"",price:0,name:"",saleprice:0}
+    //  console.log(store.get("product"));
     return (
         <Layout>
         <ToastContainer />
