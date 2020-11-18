@@ -1,11 +1,19 @@
 import React from 'react'
-
+import store from "store";
+import { navigate } from "gatsby";
 function ProductOfCollection({img,price,name,saleprice,AddTocart,id}) {
+
+
+    
+   const  handleClick = () =>{
+    store.set("product",{id,img,price,name,saleprice})
+ navigate("/collections/products/productdetail")
+}
     return (
     <div className="col-xl-4 col-md-4 col-lg-4 col-sm-6">
         <div className="product-wrap mb-25 scroll-zoom">
             <div className="product-img">
-                <a href="#">
+                <a onClick={handleClick}>
                     <img className="default-img" src={img} alt="" />
                     <img className="hover-img" src={img} alt="" />
                 </a>
