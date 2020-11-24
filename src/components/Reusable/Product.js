@@ -43,10 +43,10 @@ function Product({img,price,name,saleprice,AddTocart,id,quantity}) {
                     </h3>
                     <div className="price-2">
                         <span>₹{saleprice}</span>
-                        <span className="old">₹{price}</span>
+                        {/* <span className="old">₹{price}</span> */}
                     </div>
                     <div>
-                    <button  className="btn btn-warning " onClick={()=>AddTocart({id,img,name,saleprice})}> <i className="fa fa-shopping-cart"></i></button>
+                    <button  className="btn  " onClick={()=>AddTocart({id,img,name,saleprice})}> <i className="fa fa-shopping-cart"></i></button>
                     </div>
                 </div>
                

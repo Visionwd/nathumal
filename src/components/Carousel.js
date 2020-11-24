@@ -12,14 +12,13 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 import { Link } from 'gatsby';
 
+
 function MyCarousel() {
     return (
         <div>
             <div className="slider-area">
     <div className="slider-active owl-carousel nav-style-1">
-{
-
-}
+        
     <Carousel
    autoPlay
    infiniteLoop

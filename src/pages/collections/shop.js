@@ -56,7 +56,8 @@ export class Shop extends Component {
     JSON.stringify({
          "service_request": {
              "params": {
-                "cat_id":""
+                "cat_id":"",
+                "page":"1"
              },
              "request_info": {
                  "source_type": "android"

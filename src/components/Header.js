@@ -45,11 +45,19 @@ function Header({className,navColor,total}) {
 
 
     return (
-        <header className="header-area clearfix header-hm9 " className={className}>
-        <div className="container">
+    
+    <header className="header-area clearfix header-hm9 mb-5" className={className}>
+        <div className="container-fluid">
             <div className="header-top-area">
                 <div className="row">
-                    <div className="col-lg-5 col-md-8 col-12">
+                <div className="col-lg-5 d-lg-block">
+                        <div className="logo-hm9 ">
+                            <a href="/" >
+                                <img alt="" src={logo} className="logoimg mt-2" />
+                            </a>
+                        </div>
+                    </div>
+                    <div className="col-lg-4 col-md-8 col-12">
                         <div className="main-menu">
                             <nav>
                                 <ul>
@@ -61,14 +69,8 @@ function Header({className,navColor,total}) {
                             </nav>
                         </div>
                     </div>
-                    <div className="col-lg-2 d-none d-lg-block">
-                        <div className="logo-hm9 text-center">
-                            <a href="index.html" >
-                                <img alt="" src={logo} style={{width: "100%"}} />
-                            </a>
-                        </div>
-                    </div>
-                    <div className="col-lg-5 col-md-4 col-12">
+                   
+                    <div className="col-lg-3 col-md-4 col-12">
                         <div className="header-right-wrap">
                             <div className="same-style header-search">
                                 <a className="search-active" className={navColor} href="#" ><i className="pe-7s-search"></i></a>
@@ -100,8 +102,8 @@ function Header({className,navColor,total}) {
                                 </button>
                                 <div className="shopping-cart-content">
                                     <ul>
-                                        {/* 
-                                        <li className="single-shopping-cart">
+                                        
+                                        {/* <li className="single-shopping-cart">
                                             <div className="shopping-cart-img">
                                                 <a href="/"><img alt="banner2" src={cart2} /></a>
                                             </div>
@@ -114,6 +116,7 @@ function Header({className,navColor,total}) {
                                                 <a href="/"><i className="fa fa-times-circle"></i></a>
                                             </div>
                                         </li> */}
+                                        
                                         {
                                    store.get("persist")?store.get("persist").map((product,index)=>{
                                             
@@ -151,23 +154,57 @@ function Header({className,navColor,total}) {
                 </div>
             </div>
         </div>
-        <div className="header-bottom sticky-bar header-res-padding header-padding-2">
-            <div className="container">
-                <div className="row">
-                    <div className="col-12 d-block d-lg-none">
-                        <div className="logo">
-                            <Link to="/">
-                                <img alt="" src={logo} />
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+       
     </header>
     
+
+// <nav className="navbar navbar-expand-lg navbar-light bg-transparent "  >
+//   <a className="navbar-brand" href="#"> <img alt="" src={logo} classNameName="logoimg mt-2" style={{width:"100px"}} /></a>
+//   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+//     <span className="navbar-toggler-icon"></span>
+//   </button>
+
+//   <div className="collapse navbar-collapse " id="navbarSupportedContent">
+    
+//     <ul className="navbar-nav mx-auto">
+//       <li className="nav-item active">
+//         <Link className="nav-link" to="/">Home <span className="sr-only">(current)</span></Link>
+//       </li>
+//       <li className="nav-item">
+//         <Link className="nav-link" to="/collections/shop">Shop</Link>
+//       </li>
+//       <li className="nav-item">
+//         <Link className="nav-link" to="/pages/about">About</Link>
+//       </li>
+//       <li className="nav-item">
+//         <Link className="nav-link" to="/pages/contact">Contact</Link>
+//       </li>
+//     </ul>
+
+//     <ul className="navbar-nav ml-auto">
+//       <li className="nav-item">
+//         <a className="nav-link" href="/"><i className="pe-7s-search"></i></a>
+//       </li>
+//       <li className="nav-item">
+//         <a className="nav-link" href="/cart/cartview"><i className="pe-7s-shopbag"></i></a>
+//       </li>
+
+//       {/* <li className="nav-item">
+//         <a className="nav-link" href="#">Contact</a>
+//       </li> */}
+//     </ul>
+
+    
+//   </div>
+// </nav>
     
     )
 }
 
 export default Header
+
+
+
+    
+    

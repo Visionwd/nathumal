@@ -17,6 +17,7 @@ import ProdLarge3 from "../../../img/product-details/large-3.jpg";
 
 import Prodsmall1 from "../../../img/product-details/small-1.jpg";
 import Testimonial from "../../../img/testimonial/1.jpg";
+import RelatedProduct from '../../../components/ProductDetail/RelatedProduct';
 
 class Productdetail extends Component {
    
@@ -246,7 +247,7 @@ class Productdetail extends Component {
             </div>
         </div>
         
-        
+        <RelatedProduct />
                 </Layout>
             )
  }

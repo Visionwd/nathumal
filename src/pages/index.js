@@ -4,6 +4,7 @@ import HeaderLinks from '../components/HeaderLinks'
 import axios from "axios"
 import "../css/fonts.css"
 import "../css/style.css"
+import "bootstrap/dist/css/bootstrap.min.css"
 import "../css/icons.min.css"
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -11,13 +12,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import MyCarousel from "../components/Carousel"
-
-import Product1 from "../img/product/prod1.jpg"
-import Product2 from "../img/product/prod2.jpg"
-import Product3 from "../img/product/prod3.jpg"
-import Product4 from "../img/product/prod4.jpg"
-import Product5 from "../img/product/prod5.jpg"
-
 import ProductPreview from "../img/product/quickview-l1.jpg"
 import quickPreview from "../img/product/quickview-s1.jpg"
 import Product from "../components/Reusable/Product";
@@ -27,6 +21,13 @@ import Restapitest from "../components/Restapitest";
 
 
 import store from "store"
+import Bhugga from '../components/Home/WinterSpecial/Bhugga';
+import Gachak from '../components/Home/WinterSpecial/Gachak';
+import Reodi from '../components/Home/WinterSpecial/Reodi';
+
+import Sweets from '../components/Home/Sweets';
+import Bhaji from '../components/Home/WeddingBhaji';
+
 
 let currentCartItems = [];
 let total = 0;
@@ -42,6 +43,7 @@ if (store.get("persist")) {
 export class Home extends Component {
 
     state={
+        divPush:[],
         items:[],
         addToCartItems:currentCartItems,
         totalState:total,
@@ -50,11 +52,12 @@ export class Home extends Component {
 
     componentDidMount(){
         
-    axios.post("https://heydemo.ml/nathumalapi/appapi/items",
+    axios.post("https://heydemo.ml/nathumalapi/appapi/items_homepage",
     JSON.stringify({
          "service_request": {
              "params": {
-                "cat_id":""
+                "cat_id":"5",
+               
              },
              "request_info": {
                  "source_type": "android"
@@ -68,6 +71,22 @@ export class Home extends Component {
 })
 .then(res=>{
     console.log(res);
+    let {divPush} = this.state
+    this.setState({
+        ...this.state,
+       divPush:[]
+    })
+    res.data.items.map(({item_id,item_name,item_img,item_price,item_saleprice})=>{
+
+        divPush.push(
+            <Product id={item_id} AddTocart={this.AddTocart} key={item_id} name={item_name} img={"https://www.heydemo.ml/nathumalapi/uploads/"+item_img}  price={item_price} saleprice={item_saleprice} />
+        )
+        this.setState({
+            ...this.state,
+           divPush
+        })
+    })
+
     this.setState({
         ...this.state,
         items:res.data.items
@@ -122,7 +141,45 @@ export class Home extends Component {
        }
 
 
-   
+    //    handleClick=(id)=>{
+    //     axios.post("https://heydemo.ml/nathumalapi/appapi/items",
+    //     JSON.stringify({
+    //          "service_request": {
+    //              "params": {
+    //                 "cat_id":String(id),
+    //                 "page":"1"
+    //              },
+    //              "request_info": {
+    //                  "source_type": "android"
+    //              }
+    //          },
+    //          "version": "1.0"
+    //      }),{
+    //  headers: {
+    //      'Content-Type': 'application/json'
+    //    }
+    // })
+    // .then(res=>{
+    //     console.log(res);
+    //     let {divPush} = this.state
+    //     res.data.items.map(({item_id,item_name,item_img,item_price,item_saleprice})=>{
+    
+    //         divPush.push(
+    //             <Product id={item_id} AddTocart={this.AddTocart} key={item_id} name={item_name} img={"https://www.heydemo.ml/nathumalapi/uploads/"+item_img}  price={item_price} saleprice={item_saleprice} />
+    //         )
+    //         this.setState({
+    //             ...this.state,
+    //            divPush
+    //         })
+    //     })
+    
+    //     this.setState({
+    //         ...this.state,
+    //         items:res.data.items
+    //     })
+    //  })
+
+    //    }
 
 
 
@@ -133,14 +190,15 @@ export class Home extends Component {
             <Restapitest />
            <Header className={"transparent-bar"} navColor={"text-white"} />
            <ToastContainer />
-      <MyCarousel />
+
+            <MyCarousel />
    
    <div className="welcome-area pb-90">
        <div className="container">
            <div className="welcome-content text-center">
-               <h5>Who Are We</h5>
-               <h1>Welcome To Nathu Mal & Ghudoo Mal</h1>
-               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do  tempor incididunt labor et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo consequat irure </p>
+               {/* <h5>Who Are We</h5> */}
+               <h1>Winter Specialities</h1>
+               {/* <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do  tempor incididunt labor et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo consequat irure </p> */}
            </div>
        </div>
    </div>
@@ -149,30 +207,41 @@ export class Home extends Component {
    <div className="product-area pb-60 hm9-section-padding">
        <div className="container-fluid">
            <div className="product-tab-list nav pb-55 text-center">
-               <a  className="active" href="#product-1" data-toggle="tab" ><h4>Mithai </h4> </a>
-               <a href="#product-2" data-toggle="tab"><h4>Savouries </h4></a>
+               <a  className="active" href="#product-1" data-toggle="tab" ><h4>Bhugga </h4> </a>
+               <a 
+               href="#product-2" 
+               data-toggle="tab"><h4>Gachak </h4></a>
+               <a
+                href="#product-3"
+                 data-toggle="tab"><h4 >Reodi </h4></a>
            </div>
            <div className="tab-content jump">
                <div className="tab-pane active" id="product-1">
                    <div className="custom-row-4">
-
-                   {
+ 
+                   {/* <Bhugga /> */}
+                    
+                    {
                         this.state.items.map(({item_id,item_name,item_img,item_price,item_saleprice})=>{
                             return <Product id={item_id} AddTocart={this.AddTocart} key={item_id} name={item_name} img={"https://www.heydemo.ml/nathumalapi/uploads/"+item_img} price={item_price} saleprice={item_saleprice} />
                         })
                     }
-                      
                    </div>
                </div>
    
                <div className="tab-pane" id="product-2">
+                       <Gachak AddTocart={this.AddTocart} />
+               </div>
+
+               <div className="tab-pane" id="product-3">
                    <div className="custom-row-4">
+                       <Reodi AddTocart={this.AddTocart}/>
                        
-                   {
+                   {/* {
                         this.state.items.map(({item_id,item_name,item_img,item_price,item_saleprice})=>{
                             return <Product id={item_id} AddTocart={this.AddTocart} key={item_id} name={item_name} img={"https://www.heydemo.ml/nathumalapi/uploads/"+item_img} price={item_price} saleprice={item_saleprice} />
                         })
-                    }
+                    } */}
                        
                      </div>
                </div>
@@ -180,7 +249,54 @@ export class Home extends Component {
            </div>
        </div>
    </div>
+
+   <div className="welcome-area pb-10">
+       <div className="container">
+           <div className="welcome-content text-center">
+               <h1>Sweets</h1>
+           </div>
+       </div>
+   </div>
    
+   
+   <div className="product-area pb-60 hm9-section-padding">
+       <div className="container-fluid">
+           <div className="product-tab-list nav pb-55 text-center">
+             
+           </div>
+           <div className="tab-content jump">
+               <div className="tab-pane active" id="product-1">
+                  <Sweets AddTocart={this.AddTocart} />
+               </div>
+           </div>
+       </div>
+   </div>
+
+
+   <div className="welcome-area pb-10">
+       <div className="container">
+           <div className="welcome-content text-center">
+               {/* <h5>Who Are We</h5> */}
+               <h1>Wedding Bhaji</h1>
+               {/* <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do  tempor incididunt labor et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo consequat irure </p> */}
+           </div>
+       </div>
+   </div>
+   
+   
+   <div className="product-area pb-60 hm9-section-padding">
+       <div className="container-fluid">
+           <div className="product-tab-list nav pb-55 text-center">
+
+           <div className="tab-content jump">
+               <div className="tab-pane active" id="product-1">
+                  <Bhaji AddTocart={this.AddTocart} />
+               </div>
+           </div>
+       </div>
+   </div>
+   </div>
+
        <Footer />
        </div>
     
