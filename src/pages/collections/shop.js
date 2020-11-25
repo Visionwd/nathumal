@@ -54,7 +54,7 @@ export class Shop extends Component {
     }
    
     handleLinking=()=>{
-        if (this.props.location.state) {
+        if (this.props.location.state.id) {
             console.log("location props",this.props);
             if (this.props.location.state.id===1) {
                 this.setState({
@@ -145,7 +145,7 @@ export class Shop extends Component {
         console.log(event.target.name);
         const category = this.state.catids
 
-        
+
        if(checked){
         category.push(event.target.name)
        }else{
@@ -156,14 +156,14 @@ export class Shop extends Component {
        this.setState({
         ...this.state,
         all:false,
-        [event.target.id]:checked,
+        [event.target.id]:event.target.checked,
         catids:category
     })
 
-    this.setState({
-        ...this.state,
-        catid:this.state.catids.join()
-    })
+    // this.setState({
+    //     ...this.state,
+    //     catid:this.state.catids.join()
+    // })
    
     this.FetchData(this.state.catids.length?this.state.catids.join():"",this.state.pageid)
        

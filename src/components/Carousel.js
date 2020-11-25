@@ -75,9 +75,9 @@ function MyCarousel() {
 
 <div className="collections-area  pt-40 pb-60 mb-70"  style={{backgroundImage:`url(${midbg})`,backgroundPosition:"center bottom",backgroundRepeat:"repeat-x"}}>
     <div className="container">
-        <div className="">
+        <div className="collection-wrap-2">
             <div className="collection-active-2 ">
-                
+               
                 
                <div className="row" >
                <div className="collection-product-2 col-md-4 mb-10 ">
@@ -110,6 +110,7 @@ function MyCarousel() {
                 </div>
                </div>
 
+           
             </div>
         </div>
     </div>
