@@ -17,7 +17,7 @@ function RelatedProduct() {
     return (
         <div className="related-product-area pb-95">
         <div className="container">
-            <div className="section-title text-center mb-50">
+            <div className="section-title text-center mb-80">
                 <h2>Related products</h2>
             </div>
 
@@ -25,13 +25,13 @@ function RelatedProduct() {
     <div className="container">
         <div className="collection-wrap-2">
             <div className="collection-active-2 ">
-                <Carousel centerMode 
+                {/* <Carousel centerMode 
                 infiniteLoop 
                 // centerSlidePercentage={34}
                 showStatus={false}
                 showIndicators={false}
                 showArrows={false}
-                >
+                > */}
                <div className="row">
                <div className="collection-product-2 col-md-4 ">
                    {/* <ProductOfCollection /> */}
@@ -54,7 +54,7 @@ function RelatedProduct() {
                 </div>
                </div>
 
-            </Carousel>
+            {/* </Carousel> */}
             </div>
         </div>
     </div>

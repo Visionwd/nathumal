@@ -1607,9 +1607,9 @@ a.default-btn {
           text-transform: capitalize;
           padding-top: 0px; }
           .main-menu nav ul li ul.submenu li a:hover {
-            color: #a749ff; }
+            color: #1860AB; }
           .main-menu nav ul li ul.submenu li a::before {
-            background: #a749ff none repeat scroll 0 0;
+            background: #1860AB none repeat scroll 0 0;
             border-radius: 50%;
             content: "";
             height: 7px;
@@ -1683,9 +1683,9 @@ a.default-btn {
             text-transform: capitalize;
             padding-top: 0px; }
             .main-menu nav ul li ul.mega-menu > li ul li a:hover {
-              color: #a749ff; }
+              color: #1860AB; }
             .main-menu nav ul li ul.mega-menu > li ul li a::before {
-              background: #a749ff none repeat scroll 0 0;
+              background: #1860AB none repeat scroll 0 0;
               border-radius: 50%;
               content: "";
               height: 7px;
@@ -1733,7 +1733,7 @@ a.default-btn {
         position: relative;
         top: 0px; }
     .main-menu nav ul li:hover a {
-      color: #a749ff; }
+      color: #1860AB; }
 
 .main-menu.menu-white nav ul {
   text-align: left; }
@@ -1755,7 +1755,7 @@ a.default-btn {
 .stick .main-menu.menu-white nav ul li a {
   color: #555252; }
   .stick .main-menu.menu-white nav ul li a:hover {
-    color: #a749ff; }
+    color: #1860AB; }
 
 .stick .main-menu nav ul li a {
   line-height: 75px; }
@@ -4050,12 +4050,17 @@ a.default-btn {
         -webkit-transform: translateY(20px);
         -ms-transform: translateY(20px);
         transform: translateY(20px);
-        background-color: #a749ff;
+        background-color: #FECD01;
+        
         -webkit-transition: all 0.5s ease;
         -o-transition: all 0.5s ease;
         transition: all 0.5s ease; }
         .product-wrap .product-img .product-action > div:hover {
-          background-color: #000; }
+          background-color: #000;
+         }
+         .product-wrap .product-img .product-action > div:hover a {
+          color: #fff;
+         }
       .product-wrap .product-img .product-action .pro-wishlist {
         width: 48px;
         border-right: 1px solid rgba(255, 255, 255, 0.2); }
@@ -4073,7 +4078,7 @@ a.default-btn {
         -o-transition-delay: .2s;
         transition-delay: .2s; }
       .product-wrap .product-img .product-action .pro-same-action a {
-        color: #fff;
+        color: #000;
         font-size: 16px;
         height: 48px;
         line-height: 48px;
@@ -6773,9 +6778,13 @@ a.default-btn {
       cursor: pointer;
       z-index: 999;
       width: auto; }
+      .sidebar-widget .sidebar-widget-list ul li .sidebar-widget-list-left a{
+        color: #000;
+        text-decoration: none;
+      }
       .sidebar-widget .sidebar-widget-list ul li .sidebar-widget-list-left input:checked ~ .checkmark {
-        background-color: #fa6bff;
-        border: 2px solid #fa6bff; }
+        background-color: #1860AB;
+        border: 2px solid #1860AB; }
       .sidebar-widget .sidebar-widget-list ul li .sidebar-widget-list-left input:checked ~ .checkmark::after {
         display: block; }
     .sidebar-widget .sidebar-widget-list ul li .sidebar-widget-list-left .checkmark {
@@ -7104,14 +7113,14 @@ a.default-btn {
     line-height: 43px;
     font-size: 16px;
     border-radius: 100%;
-    color: #a749ff;
+    color: #1860AB;
     -webkit-box-shadow: 0 0px 12px 0.8px rgba(0, 0, 0, 0.1);
     box-shadow: 0 0px 12px 0.8px rgba(0, 0, 0, 0.1); }
     .pro-pagination-style ul li a:hover {
-      background-color: #a749ff;
+      background-color: #1860AB;
       color: #fff; }
   .pro-pagination-style ul li a.active {
-    background-color: #a749ff;
+    background-color: #1860AB;
     color: #fff;
     -webkit-box-shadow: none;
     box-shadow: none; }
@@ -7120,13 +7129,13 @@ a.default-btn {
   .pro-pagination-style ul li a.prev,
   .pro-pagination-style ul li a.next {
     background-color: #f6f6f6;
-    color: #a749ff;
+    color: #1860AB;
     font-size: 17px;
     -webkit-box-shadow: none;
     box-shadow: none; }
     .pro-pagination-style ul li a.prev:hover,
     .pro-pagination-style ul li a.next:hover {
-      background-color: #a749ff;
+      background-color: #1860AB;
       color: #fff; }
 
 @media only screen and (max-width: 767px) {

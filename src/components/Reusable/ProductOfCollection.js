@@ -22,6 +22,7 @@ function ProductOfCollection({img,price,name,saleprice,AddTocart,id}) {
                     {/* <div className="pro-same-action pro-wishlist">
                         <a title="Wishlist" href="#"><i className="pe-7s-like"></i></a>
                     </div> */}
+                    
                     <div className="pro-same-action pro-cart">
                         <a title="Add To Cart"  onClick={()=>AddTocart({id,img,name,saleprice})}><i className="pe-7s-cart"></i> Add to cart</a>
                     </div>

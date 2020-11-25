@@ -41,6 +41,7 @@ function MyCarousel() {
                 </div>
             </div>
         </div>
+
         <div className="slider-height-7 bg-glaucous d-flex align-items-center" style={{background:`url(${cart2})`, backgroundSize: "cover", backgroundPosition: "center"}}>
             <div className="container">
                 <div className="row align-items-center slider-h9-mrg">
@@ -56,6 +57,7 @@ function MyCarousel() {
                 </div>
             </div>
         </div>
+
 
         </Carousel>
     </div>
@@ -75,20 +77,21 @@ function MyCarousel() {
                 showIndicators={false}
                 showArrows={false}
                 > */}
+                
                <div className="row">
-               <div className="collection-product-2 col-md-4 ">
+               <div className="collection-product-2 col-md-4 mb-10 ">
                     <a href="/"><img src={category1} alt="sweeet category first" /></a>
                     <div className="collection-content-2 text-center">
                         <h3>Winter Special</h3> 
                     </div>
                 </div>
-                <div className="collection-product-2 col-md-4 ">
+                <div className="collection-product-2 col-md-4 mb-10">
                     <a href="/"><img src={category2} alt="sweeet category second" /></a>
                     <div className="collection-content-2 text-center">
                         <h3>Mithai</h3> 
                     </div>
                 </div>
-                <div className="collection-product-2 col-md-4 ">
+                <div className="collection-product-2 col-md-4 mb-10">
                     <a href="/"><img src={category3} alt="sweeet category third" /></a>
                     <div className="collection-content-2 text-center">
                         <h3>Dry Fruits Sweet</h3>

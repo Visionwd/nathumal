@@ -114,8 +114,9 @@ class Productdetail extends Component {
                         <div className="product-details">
                             <div className="product-details-img">
                                 <div className="tab-content jump"> 
-                                    <div id="shop-details-1" className=" large-img-style">
+                                    <div id="shop-details-1" className=" large-img-style mb-20">
                                         <img src={img} alt="" />
+                                        
                                         {/* <span className="dec-price">-10%</span>
                                         <div className="img-popup-wrap">
                                             <a className="img-popup" href={ProdetailLarge1}><i className="pe-7s-expand1"></i></a>
@@ -151,7 +152,7 @@ class Productdetail extends Component {
                         </div>
                     </div>
                     <div className="col-lg-6 col-md-6">
-                        <div className="product-details-content ml-70">
+                        <div className="product-details-content ml-70 ">
                             <h2>{name}</h2>
                             <div className="product-details-price">
                                 <span>₹{saleprice} </span>

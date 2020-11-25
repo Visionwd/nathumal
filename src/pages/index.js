@@ -29,6 +29,7 @@ import Sweets from '../components/Home/Sweets';
 import Bhaji from '../components/Home/WeddingBhaji';
 
 
+
 let currentCartItems = [];
 let total = 0;
 let value = true
@@ -297,6 +298,8 @@ export class Home extends Component {
    </div>
    </div>
 
+
+{/* <OwlData /> */}
        <Footer />
        </div>
     
