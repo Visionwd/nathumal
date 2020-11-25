@@ -29,17 +29,18 @@ class Productdetail extends Component {
             img:"",
             price:0,
             saleprice:0,
-            name:""
+            name:"",
+            catid:0
 
         }
     }
    
     componentDidMount(){
         if(store.get("product")){
-            const {id,img,price,name,saleprice} = store.get("product")
+            const {id,img,price,name,saleprice,catid} = store.get("product")
             this.setState({
                 ...this.state,
-                product:{id,img,price,name,saleprice}
+                product:{id,img,price,name,saleprice,catid}
             })
         }else{
             navigate("/")
@@ -92,7 +93,7 @@ class Productdetail extends Component {
         store.set("persist",currentData)
         this.setState({
             items:currentData,
-            msg:"Added to Cart"
+            msg:"Add to Cart"
         })
         console.log("store after adding item  => ",store.get("persist"));
        
@@ -101,7 +102,8 @@ class Productdetail extends Component {
   
  render(){
      
-    const {id,img,price,name,saleprice} = this.state.product
+    const {id,img,price,name,saleprice,catid} = this.state.product
+
     //  const {id,img,price,name,saleprice} = store.get("product")?store.get("product"):{id:0,img:"",price:0,name:"",saleprice:0}
     //  console.log(store.get("product"));
     return (
@@ -247,8 +249,10 @@ class Productdetail extends Component {
                 </div>
             </div>
         </div>
-        
-        <RelatedProduct />
+        {
+            console.log("=>",id,catid)
+        }
+        <RelatedProduct AddTocart={this.AddTocart} id={this.state.product.id} catid={this.state.product.catid} />
                 </Layout>
             )
  }

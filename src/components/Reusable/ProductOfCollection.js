@@ -1,16 +1,16 @@
 import React from 'react'
 import store from "store";
 import { navigate } from "gatsby";
-function ProductOfCollection({img,price,name,saleprice,AddTocart,id}) {
+function ProductOfCollection({img,price,name,saleprice,AddTocart,id,style,catid}) {
 
 
     
    const  handleClick = () =>{
-    store.set("product",{id,img,price,name,saleprice})
+    store.set("product",{id,img,price,name,saleprice,catid})
  navigate("/collections/products/productdetail")
 }
     return (
-    <div className="col-xl-4 col-md-4 col-lg-4 col-sm-6">
+    <div className={style?style:"col-xl-4 col-md-4 col-lg-4 col-sm-6"}>
         <div className="product-wrap mb-25 scroll-zoom">
             <div className="product-img">
                 <a onClick={handleClick}>

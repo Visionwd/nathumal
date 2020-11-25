@@ -42,11 +42,47 @@ export class Shop extends Component {
     }
    
     componentDidMount(){
+       
         this.FetchCategories()
-        this.FetchData()
-        this.totalPaginate()
+        if(this.props.location.state.id){
+            this.handleLinking()
+        }else{
+            this.FetchData()
+        }
+        
+
     }
    
+    handleLinking=()=>{
+        if (this.props.location.state) {
+            console.log("location props",this.props);
+            if (this.props.location.state.id===1) {
+                this.setState({
+                    ...this.state,
+                    Gachak:true,
+                    Reodi:true,
+                    Bhugga:true
+                })
+                this.FetchData("1,4,5")
+            }
+            if (this.props.location.state.id===2) {
+                this.FetchData("2")
+                this.setState({
+                    ...this.state,
+                    Sweets:true
+                })
+            }
+            if (this.props.location.state.id===3) {
+                this.FetchData("3")
+                this.setState({
+                    ...this.state,
+                    "Sukhi Bhaaji":true
+                })
+            }
+        }else{
+            this.FetchData()
+        }
+    }
 
     FetchData=(catid="",pageid="1")=>{
         axios.post("https://heydemo.ml/nathumalapi/appapi/items",
@@ -223,8 +259,8 @@ export class Shop extends Component {
 
                                         <div className="row">
                                                 {
-                                                    this.state.items.map(({item_id,item_name,item_img,item_price,item_saleprice})=>{
-                                                        return <ProductOfCollection id={item_id} AddTocart={this.AddTocart} key={item_id} name={item_name} img={"https://www.heydemo.ml/nathumalapi/uploads/"+item_img} price={item_price} saleprice={item_saleprice} />
+                                                    this.state.items.map(({item_id,item_name,item_img,item_price,item_saleprice,cat_id})=>{
+                                                        return <ProductOfCollection id={item_id} catid={cat_id} AddTocart={this.AddTocart} key={item_id} name={item_name} img={"https://www.heydemo.ml/nathumalapi/uploads/"+item_img} price={item_price} saleprice={item_saleprice} />
                                                     })
                                                 }
                                         </div>
@@ -307,6 +343,7 @@ export class Shop extends Component {
                                                                  type="checkbox" 
                                                                  name={category.cat_id}
                                                                  onClick={this.filterHandler}
+                                                                 checked={this.state[category.category_title]}
                                                                  /> <a >{category.category_title}  </a> 
                                                                 <span className="checkmark"></span>
                                                             </div>

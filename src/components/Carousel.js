@@ -10,10 +10,17 @@ import category3 from "../img/product/cat33.jpg"
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import { Link } from 'gatsby';
+import { Link,navigate } from 'gatsby';
 
 
 function MyCarousel() {
+
+
+    // handleClick=()=>{
+
+    // }
+
+
     return (
         <div>
             <div className="slider-area">
@@ -80,21 +87,31 @@ function MyCarousel() {
                 
                <div className="row">
                <div className="collection-product-2 col-md-4 mb-10 ">
-                    <a href="/"><img src={category1} alt="sweeet category first" /></a>
+                    <Link 
+                    to="/collections/shop"
+                    state={{id:1}}
+                    >
+                    <img src={category1} alt="sweeet category first" /></Link>
                     <div className="collection-content-2 text-center">
                         <h3>Winter Special</h3> 
                     </div>
                 </div>
                 <div className="collection-product-2 col-md-4 mb-10">
-                    <a href="/"><img src={category2} alt="sweeet category second" /></a>
+                    <Link
+                    to="/collections/shop"
+                    state={{id:2}}
+                     ><img src={category2} alt="sweeet category second" /></Link>
                     <div className="collection-content-2 text-center">
                         <h3>Mithai</h3> 
                     </div>
                 </div>
                 <div className="collection-product-2 col-md-4 mb-10">
-                    <a href="/"><img src={category3} alt="sweeet category third" /></a>
+                    <Link 
+                    to="/collections/shop"
+                    state={{id:3}}
+                    ><img src={category3} alt="sweeet category third" /></Link>
                     <div className="collection-content-2 text-center">
-                        <h3>Dry Fruits Sweet</h3>
+                        <h3>Wedding Bhaaji</h3>
                     </div>
                 </div>
                </div>

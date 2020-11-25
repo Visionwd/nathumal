@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Carousel } from 'react-responsive-carousel';
-
+import axios from "axios"
+import store from "store"
 // import Product1 from "../../../img/product/prod1.jpg"
 // import Product2 from "../../../img/product/prod2.jpg"
 // import Product3 from "../../../img/product/prod3.jpg"
@@ -13,227 +14,65 @@ import category3 from "../../img/product/cat33.jpg"
 import ProductOfCollection from '../Reusable/ProductOfCollection';
 
 
-function RelatedProduct() {
-    return (
-        <div className="related-product-area pb-95">
-        <div className="container">
-            <div className="section-title text-center mb-80">
-                <h2>Related products</h2>
-            </div>
+class RelatedProduct extends Component {
+    state={
+        items:[],
+    }
 
-            <div className="collections-area pb-95">
-    <div className="container">
-        <div className="collection-wrap-2">
-            <div className="collection-active-2 ">
-                {/* <Carousel centerMode 
-                infiniteLoop 
-                // centerSlidePercentage={34}
-                showStatus={false}
-                showIndicators={false}
-                showArrows={false}
-                > */}
-               <div className="row">
-               <div className="collection-product-2 col-md-4 ">
-                   {/* <ProductOfCollection /> */}
-                    <a href="/"><img src={category1} alt="sweeet category first" /></a>
-                    <div className="collection-content-2 text-center">
-                        <h3>Winter Special</h3> 
-                    </div>
-                </div>
-                <div className="collection-product-2 col-md-4 ">
-                    <a href="/"><img src={category2} alt="sweeet category second" /></a>
-                    <div className="collection-content-2 text-center">
-                        <h3>Mithai</h3> 
-                    </div>
-                </div>
-                <div className="collection-product-2 col-md-4 ">
-                    <a href="/"><img src={category3} alt="sweeet category third" /></a>
-                    <div className="collection-content-2 text-center">
-                        <h3>Dry Fruits Sweet</h3>
-                    </div>
-                </div>
-               </div>
+    componentDidMount(){
+        const {id,catid} = store.get("product")
+        console.log("===>",id,catid)
+        axios.post("https://www.heydemo.ml/nathumalapi/appapi/relateditems",
+        JSON.stringify({
+             "service_request": {
+                 "params": {
+                    "cat_id":catid?String(catid):"1",
+                    "item_id" : id?String(id):"1"
+                 },
+                 "request_info": {
+                     "source_type": "android"
+                 }
+             },
+             "version": "1.0"
+         }),{
+     headers: {
+         'Content-Type': 'application/json'
+       }
+    })
+    .then(res=>{
+        this.setState({
+            ...this.state,
+            items:res.data.items
+        })
+     })
+        }
 
-            {/* </Carousel> */}
+    render(){
+        return (
+
+            <div className="related-product-area pb-95">
+            <div className="container">
+                <div className="section-title text-center mb-50">
+                    <h2>Related products</h2>
+                </div>
+
+                <div className="tab-content jump">
+                    <div id="shop-1" className="tab-pane active">
+
+                        <div className="row">
+                                {
+                                    this.state.items.map(({item_id,item_name,item_img,item_price,item_saleprice})=>{
+                                        return <ProductOfCollection style={"col-xl-3 col-md-3 col-lg-3 col-sm-3"} id={item_id} AddTocart={this.props.AddTocart} key={item_id} name={item_name} img={"https://www.heydemo.ml/nathumalapi/uploads/"+item_img} price={item_price} saleprice={item_saleprice} />
+                                    })
+                                }
+                        </div>
+                    </div>
+                    </div>
+
             </div>
         </div>
-    </div>
-</div>
-
-           {/*  <div className="related-product-active owl-carousel">
-                <div className="product-wrap">
-                    <div className="product-img">
-                        <a href="#">
-                            <img className="default-img" src={Product1} alt="" />
-                            <img className="hover-img" src={Product1} alt="" />
-                        </a>
-                        <span className="pink">-10%</span>
-                        <div className="product-action">
-                            <div className="pro-same-action pro-wishlist">
-                                <a title="Wishlist" href="#"><i className="pe-7s-like"></i></a>
-                            </div>
-                            <div className="pro-same-action pro-cart">
-                                <a title="Add To Cart" href="#"><i className="pe-7s-cart"></i> Add to cart</a>
-                            </div>
-                            <div className="pro-same-action pro-quickview">
-                                <a title="Quick View" href="#" data-toggle="modal" data-target="#exampleModal"><i className="pe-7s-look"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="product-content text-center">
-                        <h3><a href="product-details.html">T- Shirt And Jeans</a></h3>
-                        <div className="product-rating">
-                            <i className="fa fa-star-o yellow"></i>
-                            <i className="fa fa-star-o yellow"></i>
-                            <i className="fa fa-star-o yellow"></i>
-                            <i className="fa fa-star-o"></i>
-                            <i className="fa fa-star-o"></i>
-                        </div>
-                        <div className="product-price">
-                            <span>$ 60.00</span>
-                            <span className="old">$ 60.00</span>
-                        </div>
-                    </div>
-                </div>
-                <div className="product-wrap">
-                    <div className="product-img">
-                        <a href="single-product.html">
-                            <img className="default-img" src={Product2} alt="" />
-                            <img className="hover-img" src={Product2} alt="" />
-                        </a>
-                        <span className="purple">New</span>
-                        <div className="product-action">
-                            <div className="pro-same-action pro-wishlist">
-                                <a title="Wishlist" href="#"><i className="pe-7s-like"></i></a>
-                            </div>
-                            <div className="pro-same-action pro-cart">
-                                <a title="Add To Cart" href="#"><i className="pe-7s-cart"></i> Add to cart</a>
-                            </div>
-                            <div className="pro-same-action pro-quickview">
-                                <a title="Quick View" href="#" data-toggle="modal" data-target="#exampleModal"><i className="pe-7s-look"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="product-content text-center">
-                        <h3><a href="product-details.html">T- Shirt And Jeans</a></h3>
-                        <div className="product-rating">
-                            <i className="fa fa-star-o yellow"></i>
-                            <i className="fa fa-star-o yellow"></i>
-                            <i className="fa fa-star-o yellow"></i>
-                            <i className="fa fa-star-o"></i>
-                            <i className="fa fa-star-o"></i>
-                        </div>
-                        <div className="product-price">
-                            <span>$ 60.00</span>
-                        </div>
-                    </div>
-                </div>
-                <div className="product-wrap">
-                    <div className="product-img">
-                        <a href="#">
-                            <img className="default-img" src={Product3} alt="" />
-                            <img className="hover-img" src={Product3} alt="" />
-                        </a>
-                        <span className="pink">-10%</span>
-                        <div className="product-action">
-                            <div className="pro-same-action pro-wishlist">
-                                <a title="Wishlist" href="#"><i className="pe-7s-like"></i></a>
-                            </div>
-                            <div className="pro-same-action pro-cart">
-                                <a title="Add To Cart" href="#"><i className="pe-7s-cart"></i> Add to cart</a>
-                            </div>
-                            <div className="pro-same-action pro-quickview">
-                                <a title="Quick View" href="#" data-toggle="modal" data-target="#exampleModal"><i className="pe-7s-look"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="product-content text-center">
-                        <h3><a href="product-details.html">T- Shirt And Jeans</a></h3>
-                        <div className="product-rating">
-                            <i className="fa fa-star-o yellow"></i>
-                            <i className="fa fa-star-o yellow"></i>
-                            <i className="fa fa-star-o yellow"></i>
-                            <i className="fa fa-star-o"></i>
-                            <i className="fa fa-star-o"></i>
-                        </div>
-                        <div className="product-price">
-                            <span>$ 60.00</span>
-                            <span className="old">$ 60.00</span>
-                        </div>
-                    </div>
-                </div>
-                <div className="product-wrap">
-                    <div className="product-img">
-                        <a href="#">
-                            <img className="default-img" src={Product4} alt="" />
-                            <img className="hover-img" src={Product4} alt="" />
-                        </a>
-                        <span className="purple">New</span>
-                        <div className="product-action">
-                            <div className="pro-same-action pro-wishlist">
-                                <a title="Wishlist" href="#"><i className="pe-7s-like"></i></a>
-                            </div>
-                            <div className="pro-same-action pro-cart">
-                                <a title="Add To Cart" href="#"><i className="pe-7s-cart"></i> Add to cart</a>
-                            </div>
-                            <div className="pro-same-action pro-quickview">
-                                <a title="Quick View" href="#" data-toggle="modal" data-target="#exampleModal"><i className="pe-7s-look"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="product-content text-center">
-                        <h3><a href="product-details.html">T- Shirt And Jeans</a></h3>
-                        <div className="product-rating">
-                            <i className="fa fa-star-o yellow"></i>
-                            <i className="fa fa-star-o yellow"></i>
-                            <i className="fa fa-star-o yellow"></i>
-                            <i className="fa fa-star-o"></i>
-                            <i className="fa fa-star-o"></i>
-                        </div>
-                        <div className="product-price">
-                            <span>$ 60.00</span>
-                        </div>
-                    </div>
-                </div>
-                <div className="product-wrap">
-                    <div className="product-img">
-                        <a href="#">
-                            <img className="default-img" src={Product5} alt="" />
-                            <img className="hover-img" src={Product5} alt="" />
-                        </a>
-                        <span className="pink">-10%</span>
-                        <div className="product-action">
-                            <div className="pro-same-action pro-wishlist">
-                                <a title="Wishlist" href="#"><i className="pe-7s-like"></i></a>
-                            </div>
-                            <div className="pro-same-action pro-cart">
-                                <a title="Add To Cart" href="#"><i className="pe-7s-cart"></i> Add to cart</a>
-                            </div>
-                            <div className="pro-same-action pro-quickview">
-                                <a title="Quick View" href="#" data-toggle="modal" data-target="#exampleModal"><i className="pe-7s-look"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="product-content text-center">
-                        <h3><a href="product-details.html">T- Shirt And Jeans</a></h3>
-                        <div className="product-rating">
-                            <i className="fa fa-star-o yellow"></i>
-                            <i className="fa fa-star-o yellow"></i>
-                            <i className="fa fa-star-o yellow"></i>
-                            <i className="fa fa-star-o"></i>
-                            <i className="fa fa-star-o"></i>
-                        </div>
-                        <div className="product-price">
-                            <span>$ 60.00</span>
-                            <span className="old">$ 60.00</span>
-                        </div>
-                    </div>
-                </div>
-            </div>*/}
-        </div> 
-    </div>
-    
-    )
+        )
+    }
 }
 
 export default RelatedProduct

@@ -2,7 +2,7 @@ import { Link,navigate } from 'gatsby'
 import React,{useContext} from 'react'
 import CartContext from '../../context/CartContext'
 import store from "store";
-function Product({img,price,name,saleprice,AddTocart,id,quantity}) {
+function Product({img,price,name,saleprice,AddTocart,id,quantity,catid}) {
   
     
     // let arr = []
@@ -14,7 +14,7 @@ function Product({img,price,name,saleprice,AddTocart,id,quantity}) {
     // }
 
    const  handleClick = () =>{
-       store.set("product",{id,img,price,name,saleprice})
+       store.set("product",{id,img,price,name,saleprice,catid})
     navigate("/collections/products/productdetail")
    }
     
@@ -36,19 +36,21 @@ function Product({img,price,name,saleprice,AddTocart,id,quantity}) {
                 </div>
             </div>
             <div className="product-content-2">
+
                 <div className="title-price-wrap-2">
                     <h3>
-                        <a href="product-details.html">{name}</a>
-                      
+                        <a href="product-details.html">{name}</a>  
+                       
                     </h3>
                     <div className="price-2">
                         <span>₹{saleprice}</span>
                         {/* <span className="old">₹{price}</span> */}
                     </div>
-                    <div>
-                    <button  className="btn  " onClick={()=>AddTocart({id,img,name,saleprice})}> <i className="fa fa-shopping-cart"></i></button>
-                    </div>
+                    {/* <div>
+                    <button  className="btn" onClick={()=>AddTocart({id,img,name,saleprice})}> <i className="fa fa-shopping-cart"></i></button>
+                    </div> */}
                 </div>
+                <a className="btn ml-auto" onClick={()=>AddTocart({id,img,name,saleprice})}><i className="fa fa-shopping-cart"></i></a> 
                
                 <div className="pro-wishlist-2">
                     <a title="Wishlist" href="/"><i className="fa fa-heart-o"></i></a>

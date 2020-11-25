@@ -36,10 +36,10 @@ export class Bhugga extends Component {
             ...this.state,
            divPush:[]
         })
-        res.data.items.map(({item_id,item_name,item_img,item_price,item_saleprice})=>{
+        res.data.items.map(({item_id,item_name,item_img,item_price,item_saleprice,cat_id})=>{
     
             divPush.push(
-                <Product id={item_id} AddTocart={this.props.AddTocart} key={item_id} name={item_name} img={"https://www.heydemo.ml/nathumalapi/uploads/"+item_img}  price={item_price} saleprice={item_saleprice} />
+                <Product id={item_id} catid={cat_id} AddTocart={this.props.AddTocart} key={item_id} name={item_name} img={"https://www.heydemo.ml/nathumalapi/uploads/"+item_img}  price={item_price} saleprice={item_saleprice} />
             )
             this.setState({
                 ...this.state,
@@ -65,8 +65,8 @@ export class Bhugga extends Component {
             <div className="tab-pane active" id="product-1">
                    <div className="custom-row-4">
                     {
-                        this.state.items.map(({item_id,item_name,item_img,item_price,item_saleprice})=>{
-                            return <Product id={item_id} AddTocart={this.AddTocart} key={item_id} name={item_name} img={"https://www.heydemo.ml/nathumalapi/uploads/"+item_img} price={item_price} saleprice={item_saleprice} />
+                        this.state.items.map(({item_id,item_name,item_img,item_price,item_saleprice,cat_id})=>{
+                            return <Product id={item_id} AddTocart={this.AddTocart} catid={cat_id} key={item_id} name={item_name} img={"https://www.heydemo.ml/nathumalapi/uploads/"+item_img} price={item_price} saleprice={item_saleprice} />
                         })
                     }
                    </div>

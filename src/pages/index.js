@@ -223,8 +223,8 @@ export class Home extends Component {
                    {/* <Bhugga /> */}
                     
                     {
-                        this.state.items.map(({item_id,item_name,item_img,item_price,item_saleprice})=>{
-                            return <Product id={item_id} AddTocart={this.AddTocart} key={item_id} name={item_name} img={"https://www.heydemo.ml/nathumalapi/uploads/"+item_img} price={item_price} saleprice={item_saleprice} />
+                        this.state.items.map(({item_id,item_name,item_img,item_price,item_saleprice,cat_id})=>{
+                            return <Product catid={cat_id} id={item_id} AddTocart={this.AddTocart} key={item_id} name={item_name} img={"https://www.heydemo.ml/nathumalapi/uploads/"+item_img} price={item_price} saleprice={item_saleprice} />
                         })
                     }
                    </div>
@@ -262,9 +262,6 @@ export class Home extends Component {
    
    <div className="product-area pb-60 hm9-section-padding">
        <div className="container-fluid">
-           <div className="product-tab-list nav pb-55 text-center">
-             
-           </div>
            <div className="tab-content jump">
                <div className="tab-pane active" id="product-1">
                   <Sweets AddTocart={this.AddTocart} />
