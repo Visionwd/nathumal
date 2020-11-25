@@ -44,7 +44,7 @@ export class Shop extends Component {
     componentDidMount(){
        
         this.FetchCategories()
-        if(this.props.location.state.id){
+        if(this.props.location.state){
             this.handleLinking()
         }else{
             this.FetchData()
@@ -144,6 +144,7 @@ export class Shop extends Component {
         console.log(checked);
         console.log(event.target.name);
         const category = this.state.catids
+
         
        if(checked){
         category.push(event.target.name)
@@ -155,7 +156,7 @@ export class Shop extends Component {
        this.setState({
         ...this.state,
         all:false,
-        [event.target.name]:checked,
+        [event.target.id]:checked,
         catids:category
     })
 
@@ -342,6 +343,7 @@ export class Shop extends Component {
                                                                 <input
                                                                  type="checkbox" 
                                                                  name={category.cat_id}
+                                                                 id={category.category_title}
                                                                  onClick={this.filterHandler}
                                                                  checked={this.state[category.category_title]}
                                                                  /> <a >{category.category_title}  </a> 

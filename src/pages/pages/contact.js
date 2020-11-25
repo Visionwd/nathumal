@@ -1,11 +1,21 @@
 import React from 'react'
 import Layout from '../../components/Layout'
+import Bg from "../../img/contact/page-header.jpg"
 
 function Contact() {
     return (
         <Layout>
-             <div class="contact-area pt-100 pb-100">
-    <div class="container">
+             <div class="contact-area pt-10 pb-100">
+            <div class="container-fluid">
+                <div className="row" style={{backgroundImage:`url(${Bg})`,backgroundPosition:"center"}}>
+                    <div className="col-12">
+                        <div className="my-5 text-center pt-40 pb-40" >
+                            <h2 className="text-white">Contact us</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="container">
         <div class="custom-row-2">
             <div class="col-lg-4 col-md-5">
                 <div class="contact-info-wrap">
@@ -14,8 +24,8 @@ function Contact() {
                             <i class="fa fa-phone"></i>
                         </div>
                         <div class="contact-info-dec">
-                            <p>+012 345 678 102</p>
-                            <p>+012 345 678 102</p>
+                            <p>+91 7303100009</p>
+                            <p>+91 8054949900</p>
                         </div>
                     </div>
                     <div class="single-contact-info">
@@ -23,8 +33,8 @@ function Contact() {
                             <i class="fa fa-globe"></i>
                         </div>
                         <div class="contact-info-dec">
-                            <p><a href="#">urname@email.com</a></p>
-                            <p><a href="#">urwebsitenaem.com</a></p>
+                            <p><a href="#">contact@nathuandghudoo.com</a></p>
+                           
                         </div>
                     </div>
                     <div class="single-contact-info">
@@ -32,11 +42,11 @@ function Contact() {
                             <i class="fa fa-map-marker"></i>
                         </div>
                         <div class="contact-info-dec">
-                            <p>Address goes here, </p>
-                            <p>street, CollegeRoad 123.Ludhiana</p>
+                            <p>Main Road, Phase 2, Urban Estate,<br/> 
+                            Dugri, Ludhiana, Punjab -141001</p>
                         </div>
                     </div>
-                    <div class="contact-social text-center">
+                    {/* <div class="contact-social text-center">
                         <h3>Follow Us</h3>
                         <ul>
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -45,7 +55,7 @@ function Contact() {
                             <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
                             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                         </ul>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <div class="col-lg-8 col-md-7">
@@ -74,6 +84,7 @@ function Contact() {
                 </div>
             </div>
         </div>
+    
     </div>
 </div>
     

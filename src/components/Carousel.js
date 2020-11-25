@@ -2,7 +2,7 @@ import React from 'react'
 import cart1 from "../img/banner/banner1.jpg";
 import cart2 from "../img/banner/banner2.jpg";
 import logo from "../img/logo/logo.png"
-
+import midbg from "../img/bg/midsection-bg_02.jpg"
 import category1 from "../img/product/cat11.jpg"
 import category2 from "../img/product/cat22.jpg"
 import category3 from "../img/product/cat33.jpg"
@@ -73,19 +73,13 @@ function MyCarousel() {
 
 
 
-<div className="collections-area pb-95">
+<div className="collections-area  pt-40 pb-60 mb-70"  style={{backgroundImage:`url(${midbg})`,backgroundPosition:"center bottom",backgroundRepeat:"repeat-x"}}>
     <div className="container">
-        <div className="collection-wrap-2">
+        <div className="">
             <div className="collection-active-2 ">
-                {/* <Carousel centerMode 
-                infiniteLoop 
-                centerSlidePercentage={34}
-                showStatus={false}
-                showIndicators={false}
-                showArrows={false}
-                > */}
                 
-               <div className="row">
+                
+               <div className="row" >
                <div className="collection-product-2 col-md-4 mb-10 ">
                     <Link 
                     to="/collections/shop"
@@ -116,7 +110,6 @@ function MyCarousel() {
                 </div>
                </div>
 
-            {/* </Carousel> */}
             </div>
         </div>
     </div>

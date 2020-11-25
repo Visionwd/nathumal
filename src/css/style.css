@@ -5815,7 +5815,7 @@ a.default-btn {
   .copyright p a {
     color: #313131; }
     .copyright p a:hover {
-      color: #a749ff; }
+      color: #1860AB; }
 
 .footer-widget .footer-title h3 {
   font-size: 16px;
@@ -5832,7 +5832,7 @@ a.default-btn {
     color: #5d5d5d;
     letter-spacing: .3px; }
     .footer-widget .footer-list ul li a:hover {
-      color: #a749ff; }
+      color: #1860AB; }
 
 .footer-widget .subscribe-style p {
   color: #7a7a7a;
@@ -5860,9 +5860,13 @@ a.default-btn {
   text-transform: uppercase;
   margin: 13px 0 0; }
   .footer-widget .subscribe-style .subscribe-form form .clear input:hover {
-    color: #a749ff;
-    border-bottom: 2px solid #a749ff; }
-
+    color: #1860AB;
+    border-bottom: 2px solid #1860AB; }
+.footer-title h2{
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
 @media only screen and (min-width: 1366px) and (max-width: 1600px) {
   .footer-widget.ml-95 {
     margin-left: 20px; }
@@ -7579,7 +7583,7 @@ a.default-btn {
   font-size: 20px;
   left: 20px; }
   .product-details-slider-active.nav-style-1.owl-carousel .owl-nav div:hover {
-    color: #a749ff; }
+    color: #1860AB; }
   .product-details-slider-active.nav-style-1.owl-carousel .owl-nav div.owl-next {
     left: auto;
     right: 20px; }
@@ -7630,7 +7634,7 @@ h3.cart-page-title {
         font-size: 15px;
         font-weight: 500; }
         .cart-table-content table tbody > tr td.product-name a:hover {
-          color: #a749ff; }
+          color: #1860AB; }
     .cart-table-content table tbody > tr td.product-price-cart {
       width: 435px; }
       .cart-table-content table tbody > tr td.product-price-cart span {
@@ -7691,7 +7695,7 @@ h3.cart-page-title {
         .cart-table-content table tbody > tr td.product-remove a:hover {
           color: #a749ff; }
     .cart-table-content table tbody > tr td.product-wishlist-cart > a {
-      background-color: #a749ff;
+      background-color: #1860AB;
       border-radius: 50px;
       color: #fff;
       font-size: 13px;
@@ -7746,7 +7750,7 @@ h3.cart-page-title {
     .cart-shiping-update-wrapper .cart-shiping-update > a:hover,
     .cart-shiping-update-wrapper .cart-clear > button:hover,
     .cart-shiping-update-wrapper .cart-clear > a:hover {
-      background-color: #a749ff;
+      background-color: #1860AB;
       color: #fff; }
   .cart-shiping-update-wrapper .cart-clear > button {
     border: medium none;
@@ -7843,7 +7847,7 @@ h3.cart-page-title {
           height: 40px; }
       .cart-tax .tax-wrapper .tax-select-wrapper button.cart-btn-2,
       .discount-code-wrapper .tax-wrapper .tax-select-wrapper button.cart-btn-2 {
-        background-color: #a749ff;
+        background-color: #1860AB;
         border: medium none;
         border-radius: 50px;
         color: #fff;
@@ -7962,14 +7966,14 @@ h3.cart-page-title {
         .grand-totall .total-shipping ul li span {
           float: right; }
   .grand-totall h4.grand-totall-title {
-    color: #a749ff;
+    color: #1860AB;
     font-size: 20px;
     font-weight: 500;
     margin: 0 0 25px; }
     .grand-totall h4.grand-totall-title span {
       float: right; }
   .grand-totall a {
-    background-color: #a749ff;
+    background-color: #1860AB;
     border-radius: 50px;
     color: #fff;
     display: block;
@@ -8050,7 +8054,7 @@ h3.cart-page-title {
   margin: 0 0 20px; }
 
 .billing-info-wrap .checkout-account-toggle button.checkout-btn {
-  background-color: #a749ff;
+  background-color: #1860AB;
   border: medium none;
   color: #fff;
   cursor: pointer;
@@ -8168,7 +8172,7 @@ h3.cart-page-title {
         font-size: 18px; }
       .your-order-area .your-order-wrap .your-order-product-info .your-order-total ul li {
         font-weight: 500;
-        color: #a749ff;
+        color: #1860AB;
         font-size: 16px;
         list-style: outside none none; }
 
@@ -8185,7 +8189,7 @@ h3.cart-page-title {
       position: relative;
       display: block; }
       .your-order-area .payment-accordion h4 a:hover {
-        color: #a749ff; }
+        color: #1860AB; }
   .your-order-area .payment-accordion .panel-body {
     padding: 5px 0 0 0px; }
     .your-order-area .payment-accordion .panel-body p {
@@ -8194,7 +8198,7 @@ h3.cart-page-title {
       color: #333; }
 
 .your-order-area .Place-order > a {
-  background-color: #a749ff;
+  background-color: #1860AB;
   color: #fff;
   display: block;
   font-weight: 500;
@@ -8220,8 +8224,8 @@ h3.cart-page-title {
       height: 400px; } }
 
 .contact-info-wrap {
-  background-color: #f3f3f3;
-  padding: 120px 70px 116px 90px; }
+  background-color: #fff;
+  padding: 100px 70px 96px 70px; }
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .contact-info-wrap {
       padding: 120px 20px 116px 40px; } }
@@ -8263,7 +8267,7 @@ h3.cart-page-title {
       .contact-info-wrap .single-contact-info .contact-info-dec p a {
         color: #404040; }
         .contact-info-wrap .single-contact-info .contact-info-dec p a:hover {
-          color: #a749ff; }
+          color: #1860AB; }
       .contact-info-wrap .single-contact-info .contact-info-dec p:last-child {
         margin: 0; }
     .contact-info-wrap .single-contact-info:hover .contact-icon i {
@@ -8285,10 +8289,10 @@ h3.cart-page-title {
       font-size: 16px;
       color: #4d4d4d; }
       .contact-social ul li a:hover {
-        color: #a749ff; }
+        color: #1860AB; }
 
 .contact-form {
-  background-color: #f3f3f3;
+  /* background-color: #fff; */
   padding: 50px 110px 50px 110px; }
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .contact-form {
@@ -8327,7 +8331,7 @@ h3.cart-page-title {
     padding: 15px 52px;
     margin-top: 38px; }
     .contact-form .contact-form-style button:hover {
-      background-color: #a749ff; }
+      background-color: #1860AB; }
   .contact-form p {
     color: #333; }
     .contact-form p.success {
@@ -8335,7 +8339,8 @@ h3.cart-page-title {
 
 .contact-form-style .row div[class^="col-"] {
   padding-left: 15px;
-  padding-right: 15px; }
+  padding-right: 15px; 
+}
 
 @media only screen and (max-width: 767px) {
   .contact-area.pb-100 {
@@ -8621,6 +8626,11 @@ h3.cart-page-title {
   opacity: 1;
   visibility: visible; }
 
+
+  /* .carousel .thumbs-wrapper{
+    margin: 0px !important;
+  } */
+  
 /*------ 24. login register Page  --------*/
 .login-register-wrapper .login-register-tab-list {
   display: -webkit-box;

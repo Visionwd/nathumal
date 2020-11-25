@@ -194,7 +194,7 @@ export class Home extends Component {
 
             <MyCarousel />
    
-   <div className="welcome-area pb-90">
+   <div className="welcome-area pb-40">
        <div className="container">
            <div className="welcome-content text-center">
                {/* <h5>Who Are We</h5> */}
