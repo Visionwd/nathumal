@@ -4374,7 +4374,7 @@ a.default-btn {
     position: relative;
     width: 80px; }
     .product-details-content .pro-details-quality .cart-plus-minus .qtybutton {
-      color: #8f8f8f;
+      color: #e8e8e8;
       cursor: pointer;
       float: inherit;
       font-size: 14px;
@@ -4400,7 +4400,7 @@ a.default-btn {
     .product-details-content .pro-details-quality .cart-plus-minus input.cart-plus-minus-box {
       background: transparent none repeat scroll 0 0;
       border: medium none;
-      color: #8f8f8f;
+      color: #e8e8e8;
       float: left;
       font-size: 14px;
       height: 60px;
@@ -6812,6 +6812,7 @@ a.default-btn {
       width: auto; }
       .sidebar-widget .sidebar-widget-list ul li .sidebar-widget-list-left label{
         /* position: absolute; */
+        display: block;
         left: 20px;
         color: #000;
         text-decoration: none;
@@ -7683,7 +7684,7 @@ h3.cart-page-title {
         position: relative;
         width: 110px; }
         .cart-table-content table tbody > tr td.product-quantity .cart-plus-minus .qtybutton {
-          color: #333;
+          color: #ced4da;
           cursor: pointer;
           float: inherit;
           font-size: 16px;
@@ -7695,26 +7696,26 @@ h3.cart-page-title {
           width: 20px;
           text-align: center; }
         .cart-table-content table tbody > tr td.product-quantity .cart-plus-minus .dec.qtybutton {
-          border-right: 1px solid #e5e5e5;
+          border-right: 1px solid #ced4da;
           height: 40px;
           left: 0;
           padding-top: 8px;
           top: 0; }
         .cart-table-content table tbody > tr td.product-quantity .cart-plus-minus .inc.qtybutton {
-          border-left: 1px solid #e5e5e5;
+          border-left: 1px solid #ced4da;
           height: 40px;
           padding-top: 9px;
           right: 0;
           top: 0; }
         .cart-table-content table tbody > tr td.product-quantity .cart-plus-minus input.cart-plus-minus-box {
-          color: #333;
+          color: #999;
           float: left;
           font-size: 14px;
-          height: 40px;
+          height: 45px;
           margin: 0;
           width: 110px;
           background: transparent none repeat scroll 0 0;
-          border: 1px solid #e1e1e1;
+          border: 1px solid #ced4da;
           padding: 0;
           text-align: center; }
     .cart-table-content table tbody > tr td.product-remove {

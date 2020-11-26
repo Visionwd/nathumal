@@ -2,7 +2,7 @@ import { Link,navigate } from 'gatsby'
 import React,{useContext} from 'react'
 import CartContext from '../../context/CartContext'
 import store from "store";
-function Product({img,price,name,saleprice,AddTocart,id,quantity,catid}) {
+function Product({img,price,name,saleprice,AddTocart,id,quantity,catid,description}) {
   
     
     // let arr = []
@@ -14,7 +14,7 @@ function Product({img,price,name,saleprice,AddTocart,id,quantity,catid}) {
     // }
 
    const  handleClick = () =>{
-       store.set("product",{id,img,price,name,saleprice,catid})
+       store.set("product",{id,img,price,name,saleprice,catid,description})
     navigate("/collections/products/productdetail")
    }
     

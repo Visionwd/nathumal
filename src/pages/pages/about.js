@@ -8,7 +8,7 @@ import SweetImg from "../../img/about/sweet.jpg"
 function About() {
     return (
        <Layout>
-           <Banner title={"Nathu Mal & Ghudoo Mal"} />
+           <Banner title={"About Us"} />
             <div className="container">
                 <div className="row">
                     <div className="col-md-12 " >

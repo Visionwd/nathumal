@@ -51,14 +51,8 @@ function Header({className,navColor,total}) {
         <div className="container-fluid">
             <div className="header-top-area">
                 <div className="row">
-                <div className="col-lg-5 d-lg-block">
-                        <div className="logo-hm9 ">
-                            <a href="/" >
-                                <img alt="" src={logo} className="logoimg mt-2" />
-                            </a>
-                        </div>
-                    </div>
-                    <div className="col-lg-4 col-md-8 col-12">
+                
+                    <div className="col-lg-6 col-md-8 col-12">
                         <div className="main-menu">
                             <nav>
                                 <ul>
@@ -70,7 +64,14 @@ function Header({className,navColor,total}) {
                             </nav>
                         </div>
                     </div>
-                   
+
+                    <div className="col-lg-3 d-lg-block">
+                        <div className="logo-hm9 ">
+                            <a href="/" >
+                                <img alt="" src={logo} className="logoimg mt-2" />
+                            </a>
+                        </div>
+                    </div>
                    
                     <div className="col-lg-3 col-md-4 col-12">
                         <div className="header-right-wrap">

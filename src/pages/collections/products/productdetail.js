@@ -17,7 +17,10 @@ import ProdLarge3 from "../../../img/product-details/large-3.jpg";
 
 import Prodsmall1 from "../../../img/product-details/small-1.jpg";
 import Testimonial from "../../../img/testimonial/1.jpg";
+
 import RelatedProduct from '../../../components/ProductDetail/RelatedProduct';
+import SimpleReactLightbox,{ SRLWrapper } from "simple-react-lightbox";
+import Banner from "../../../components/Reusable/Banner"
 
 class Productdetail extends Component {
    
@@ -30,7 +33,8 @@ class Productdetail extends Component {
             price:0,
             saleprice:0,
             name:"",
-            catid:0
+            catid:0,
+            description:""
         },
         newitemqnty:1,
         newitemsize:1
@@ -38,14 +42,15 @@ class Productdetail extends Component {
    
     componentDidMount(){
         if(store.get("product")){
-            const {id,img,price,name,saleprice,catid} = store.get("product")
+            const {id,img,price,name,saleprice,catid,description} = store.get("product")
             this.setState({
                 ...this.state,
-                product:{id,img,price,name,saleprice,catid}
+                product:{id,img,price,name,saleprice,catid,description}
             })
         }else{
             navigate("/")
         }
+
         // console.log(store.get("product"));
         // this.setState({...store.get("product")})
         // if (!store.get("product")) {
@@ -133,13 +138,14 @@ class Productdetail extends Component {
   
  render(){
      
-    const {id,img,price,name,saleprice,catid} = this.state.product
+    const {id,img,price,name,saleprice,catid,description} = this.state.product
 
     //  const {id,img,price,name,saleprice} = store.get("product")?store.get("product"):{id:0,img:"",price:0,name:"",saleprice:0}
     //  console.log(store.get("product"));
     return (
         <Layout>
         <ToastContainer />
+        <Banner title={"product"} />
         <div className="shop-area pt-100 pb-100">
             <div className="container">
                 <div className="row">
@@ -147,40 +153,50 @@ class Productdetail extends Component {
                         <div className="product-details">
                             <div className="product-details-img">
                                 <div className="tab-content jump"> 
-                                    <div id="shop-details-1" className=" large-img-style mb-20">
-                                        <img src={img} alt="" />
-                                        
-                                        {/* <span className="dec-price">-10%</span>
-                                        <div className="img-popup-wrap">
-                                            <a className="img-popup" href={ProdetailLarge1}><i className="pe-7s-expand1"></i></a>
-                                        </div> */}
-                                    </div>
-                                    {/* <div id="shop-details-2" className="tab-pane active large-img-style">
-                                        <img src={ProdLarge2} alt="" />
-                                        <span className="dec-price">-10%</span>
-                                        <div className="img-popup-wrap">
-                                            <a className="img-popup" href={ProdetailLarge2}><i className="pe-7s-expand1"></i></a>
-                                        </div>
-                                    </div>
-                                    <div id="shop-details-3" className="tab-pane large-img-style">
-                                        <img src={ProdLarge3} alt="" />
-                                        <span className="dec-price">-10%</span>
-                                        <div className="img-popup-wrap">
-                                            <a className="img-popup" href={ProdetailLarge3}><i className="pe-7s-expand1"></i></a>
-                                        </div>
-                                    </div> */}
+
+                                <SimpleReactLightbox>
+                                    <SRLWrapper>
+                                    <div id="shop-details-1" class="tab-pane large-img-style">
+                                <img src={img} />
+                                {/* <span class="dec-price">-10%</span> */}
+                                <div class="img-popup-wrap">
+                                    <a class="img-popup" href={img}><i class="pe-7s-expand1"></i></a>
                                 </div>
-                                <div className="shop-details-tab nav">
-                                    {/* <a className="shop-details-overly" href="#shop-details-1" data-toggle="tab">
+                            </div>
+                            <div id="shop-details-2" class="tab-pane active large-img-style">
+                                <img src={img} alt="" />
+                                {/* <span class="dec-price">-20%</span> */}
+                                <div class="img-popup-wrap">
+                                    <a class="img-popup" href={img}><i class="pe-7s-expand1"></i></a>
+                                </div>
+                            </div>
+                            <div id="shop-details-3" class="tab-pane large-img-style">
+                                <img src={img} alt="" />
+                                {/* <span class="dec-price">-30%</span> */}
+                                <div class="img-popup-wrap">
+                                    <a class="img-popup" href={img}><i class="pe-7s-expand1"></i></a>
+                                </div>
+                            </div>
+
+                                    </SRLWrapper>
+                                </SimpleReactLightbox>
+                           
+
+
+
+                                </div>
+                                {/* <div className="shop-details-tab nav">
+                                    <a class="shop-details-overly" href="#shop-details-1" data-toggle="tab">
                                         <img src={img} alt="" />
-                                    </a> */}
-                                    {/* <a className="shop-details-overly active" href="#shop-details-2" data-toggle="tab">
-                                        <img src={Prodsmall1} alt="" />
                                     </a>
-                                    <a className="shop-details-overly" href="#shop-details-3" data-toggle="tab">
-                                        <img src={Prodsmall1} alt="" />
-                                    </a> */}
-                                </div>
+                                    <a class="shop-details-overly active" href="#shop-details-2" data-toggle="tab">
+                                        <img src={img} alt="" />
+                                    </a>
+                                    <a class="shop-details-overly" href="#shop-details-3" data-toggle="tab">
+                                        <img src={img} alt="" />
+                                    </a>
+                                   
+                                </div> */}
                             </div>
                         </div>
                     </div>
@@ -201,13 +217,14 @@ class Productdetail extends Component {
                                 </div>
                                 <span><a href="#">3 Reviews</a></span>
                             </div> */}
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisic elit eiusm tempor incidid ut labore et dolore magna aliqua. Ut enim ad minim venialo quis nostrud exercitation ullamco</p>
+                            <p>{description}</p>
                             <div className="pro-details-list">
-                                <ul>
+                                {/* <ul>
                                     <li>- 0.5 mm Dail</li>
                                     <li>- Inspired vector icons</li>
                                     <li>- Very modern style  </li>
-                                </ul>
+                                </ul> */}
+
                             </div>
                             <div className="pro-details-size-color">
                                 <div className="pro-details-color-wrap">
@@ -220,6 +237,8 @@ class Productdetail extends Component {
                                             <li className="green"></li>
                                             <li className="yellow"></li>
                                         </ul> */}
+
+
                                         <div className="cart-plus-minus">
                                             <button onClick={this.handleItemQuantityDecr} className="btn mx-1"><i class="fas fa-minus-circle"></i></button>
                                             <input className="cart-plus-minus-box" type="number"
@@ -227,7 +246,7 @@ class Productdetail extends Component {
                                               value={this.state.newitemqnty}
                                               min={1}
                                               onChange={this.handleItemQuantity}
-                                              style={{textAlign:"center"}}
+                                              style={{textAlign:"center",border:"1px solid #ced4da",height:"40px"}}
 
                                                />
                                             <button onClick={this.handleItemQuantityIncr} className="btn mx-1"><i class="fas fa-plus-circle"></i></button>
@@ -245,11 +264,12 @@ class Productdetail extends Component {
                                             <li><a href="#">Full</a></li>
                                             <li><a href="#">Half</a></li>
                                         </ul> */}
+                                        
                                         <select class="form-control" id="itemsize" 
                                         value={this.state.newitemsize}
                                          onChange={this.handleItemSize}>
                                             <option value={1}>1 Kg</option>
-                                            <option value={0.5}>500 g</option>
+                                            <option value={0.5}>1/2 Kg</option>
                                         </select>
                                        
                                     </div>

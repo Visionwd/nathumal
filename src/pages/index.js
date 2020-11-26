@@ -222,8 +222,8 @@ export class Home extends Component {
                    {/* <Bhugga /> */}
                     
                     {
-                        this.state.items.map(({item_id,item_name,item_img,item_price,item_saleprice,cat_id})=>{
-                            return <Product catid={cat_id} id={item_id} AddTocart={this.AddTocart} key={item_id} name={item_name} img={"https://www.heydemo.ml/nathumalapi/uploads/"+item_img} price={item_price} saleprice={item_saleprice} />
+                        this.state.items.map(({item_id,item_name,item_img,item_price,item_saleprice,cat_id,item_desc})=>{
+                            return <Product catid={cat_id} description={item_desc} id={item_id} AddTocart={this.AddTocart} key={item_id} name={item_name} img={"https://www.heydemo.ml/nathumalapi/uploads/"+item_img} price={item_price} saleprice={item_saleprice} />
                         })
                     }
                    </div>

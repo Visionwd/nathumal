@@ -7,7 +7,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import ReactPaginate from 'react-paginate';
 import ProductOfCollection from "../../components/Reusable/ProductOfCollection"
 
-import AllItems from "../../components/Shop/All"
+import Banner from "../../components/Reusable/Banner"
+
 import Bhugga from '../../components/Shop/Bhugga';
 let currentCartItems = [];
 let total = 0;
@@ -37,7 +38,8 @@ export class Shop extends Component {
         Sweets:false,
         pageid:"1",
         catid:"",
-        catids:[]
+        catids:[],
+        filteritem:""
 
     }
    
@@ -218,12 +220,24 @@ export class Shop extends Component {
     console.log("store after adding item  => ",store.get("persist"));
    }
 
+   handleSearchFilterChange=(e)=>{
+       this.setState({
+           ...this.state,
+           filteritem:e.target.value
+       })
+   }
+
+   handleSearchFilter=(e)=>{
+       e.preventDefault()
+       console.log(this.state.filteritem);
+   }
    
    
     render() {
         return (
             <Layout>
             <ToastContainer />
+            <Banner title={"Shop"} />
             <div className="shop-area pt-95 pb-100">
                 {
                     console.log("categories=>",this.state.categories)
@@ -235,9 +249,12 @@ export class Shop extends Component {
                                 <div className="sidebar-widget">
                                     <h4 className="pro-sidebar-title">Search </h4>
                                     <div className="pro-sidebar-search mb-50 mt-25">
-                                        <form className="pro-sidebar-search-form" action="#">
-                                            <input type="text" placeholder="Search here..." />
-                                            <button>
+                                        <form className="pro-sidebar-search-form" onSubmit={this.handleSearchFilter}>
+                                            <input type="text" 
+                                            placeholder="Search here..." 
+                                            onChange={this.handleSearchFilterChange}
+                                             />
+                                            <button  disabled={this.state.filteritem?false:true}>
                                                 <i className="pe-7s-search"></i>
                                             </button>
                                         </form>
@@ -319,8 +336,8 @@ export class Shop extends Component {
 
                                         <div className="row">
                                                 {
-                                                    this.state.items.map(({item_id,item_name,item_img,item_price,item_saleprice,cat_id})=>{
-                                                        return <ProductOfCollection id={item_id} catid={cat_id} AddTocart={this.AddTocart} key={item_id} name={item_name} img={"https://www.heydemo.ml/nathumalapi/uploads/"+item_img} price={item_price} saleprice={item_saleprice} />
+                                                    this.state.items.map(({item_id,item_name,item_img,item_price,item_saleprice,cat_id,item_desc})=>{
+                                                        return <ProductOfCollection id={item_id} description={item_desc} catid={cat_id} AddTocart={this.AddTocart} key={item_id} name={item_name} img={"https://www.heydemo.ml/nathumalapi/uploads/"+item_img} price={item_price} saleprice={item_saleprice} />
                                                     })
                                                 }
                                         </div>

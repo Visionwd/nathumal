@@ -1,12 +1,12 @@
 import React from 'react'
 import store from "store";
 import { navigate } from "gatsby";
-function ProductOfCollection({img,price,name,saleprice,AddTocart,id,style,catid}) {
+function ProductOfCollection({img,price,name,saleprice,AddTocart,id,style,catid,description}) {
 
 
     
    const  handleClick = () =>{
-    store.set("product",{id,img,price,name,saleprice,catid})
+    store.set("product",{id,img,price,name,saleprice,catid,description})
  navigate("/collections/products/productdetail")
 }
     return (
