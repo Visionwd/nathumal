@@ -46,6 +46,7 @@ function Header({className,navColor,total}) {
 
     return (
     
+        
     <header className="header-area clearfix header-hm9 mb-5" className={className}>
         <div className="container-fluid">
             <div className="header-top-area">
