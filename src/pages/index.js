@@ -208,16 +208,16 @@ export class Home extends Component {
    <div className="product-area pb-60 hm9-section-padding">
        <div className="container-fluid">
            <div className="product-tab-list nav pb-55 text-center">
-               <a  className="active" href="#product-1" data-toggle="tab" ><h4>Bhugga </h4> </a>
+               <a  className="active" href="#product-3" data-toggle="tab" ><h4>Reodi </h4> </a>
                <a 
                href="#product-2" 
                data-toggle="tab"><h4>Gachak </h4></a>
                <a
-                href="#product-3"
-                 data-toggle="tab"><h4 >Reodi </h4></a>
+                href="#product-1"
+                 data-toggle="tab"><h4 >Bhugga </h4></a>
            </div>
            <div className="tab-content jump">
-               <div className="tab-pane active" id="product-1">
+               <div className="tab-pane " id="product-1">
                    <div className="custom-row-4">
  
                    {/* <Bhugga /> */}
@@ -234,7 +234,7 @@ export class Home extends Component {
                        <Gachak AddTocart={this.AddTocart} />
                </div>
 
-               <div className="tab-pane" id="product-3">
+               <div className="tab-pane active" id="product-3">
                    <div className="custom-row-4">
                        <Reodi AddTocart={this.AddTocart}/>
                        

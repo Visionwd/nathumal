@@ -225,6 +225,7 @@ class Productdetail extends Component {
                                             <input className="cart-plus-minus-box" type="number"
                                              name="qtybutton"
                                               value={this.state.newitemqnty}
+                                              min={1}
                                               onChange={this.handleItemQuantity}
                                               style={{textAlign:"center"}}
 

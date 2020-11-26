@@ -1137,9 +1137,19 @@ textarea:-ms-input-placeholder {
   padding-left: 10px;
   font-size: 14px;
   color: #333;
-  /* width: 100%;  */
+  width: 100%; 
 }
-
+input[type="email"] {
+  background: #eceff8;
+  border: 2px solid #eceff8;
+  height: 45px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  padding-left: 10px;
+  font-size: 14px;
+  color: #333;
+  width: 100%; 
+}
 select {
   width: 100%;
   background: transparent;
@@ -8231,16 +8241,16 @@ h3.cart-page-title {
 
 .contact-info-wrap {
   background-color: #fff;
-  padding: 100px 70px 96px 70px; }
+  padding: 100px 70px 96px 2px; }
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .contact-info-wrap {
-      padding: 120px 20px 116px 40px; } }
+      padding: 120px 20px 116px 10px; } }
   @media only screen and (min-width: 768px) and (max-width: 991px) {
     .contact-info-wrap {
-      padding: 120px 20px 116px 30px; } }
+      padding: 120px 20px 116px 10px; } }
   @media only screen and (max-width: 767px) {
     .contact-info-wrap {
-      padding: 50px 20px 45px 30px;
+      padding: 50px 20px 45px 10px;
       margin-bottom: 30px;
       margin-top: 20px; } }
   .contact-info-wrap .single-contact-info {
@@ -8299,13 +8309,13 @@ h3.cart-page-title {
 
 .contact-form {
   /* background-color: #fff; */
-  padding: 50px 110px 50px 110px; }
+  padding: 50px 20px 50px 20px; }
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .contact-form {
-      padding: 50px 50px 50px 50px; } }
+      padding: 50px 20px 50px 20px; } }
   @media only screen and (min-width: 768px) and (max-width: 991px) {
     .contact-form {
-      padding: 50px 30px 50px 30px; } }
+      padding: 50px 20px 50px 20px; } }
   @media only screen and (max-width: 767px) {
     .contact-form {
       padding: 50px 30px 50px 30px; } }
