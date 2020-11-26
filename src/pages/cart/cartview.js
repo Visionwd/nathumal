@@ -92,7 +92,7 @@ function Cartview() {
                                     <tr>
                                         <th>Image</th>
                                         <th>Product Name</th>
-                                        <th>Until Price</th>
+                                        <th>Unit Price</th>
                                         <th>Qty</th>
                                         <th>Subtotal</th>
                                         <th>action</th>
@@ -117,6 +117,7 @@ function Cartview() {
                                         </td>
                                     </tr> */}
                                     
+                                    
                                     {
                                         store.get("persist")?store.get("persist").map((product,index)=>{
                                         return(
@@ -131,7 +132,7 @@ function Cartview() {
                                                    
                                                     <p> 
                                                         {/* <button onClick={()=>handleDecrement(product.id)} className="btn btn-danger" style={{borderRadius:"50%"}}>-</button> */}
-                                                        <span style={{margin:"1rem 0.5rem"}}>{product.quantity}</span>
+                                                        <span style={{margin:"1rem 0.5rem"}}>{product.quantity} kg</span>
                                                         {/* <button onClick={()=>handleIncrement(product.id)} className="btn btn-success" style={{borderRadius:"50%"}}>+</button> */}
                                                     </p>
                                                    

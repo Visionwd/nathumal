@@ -110,7 +110,6 @@ function MyCarousel() {
                 </div>
                </div>
 
-           
             </div>
         </div>
     </div>

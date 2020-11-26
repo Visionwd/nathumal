@@ -124,9 +124,10 @@ h5,
 h6 {
   color: #000000;
   font-family: "Poppins", sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   margin-top: 0; }
 
+  
 p {
   font-size: 14px;
   font-weight: 400;
@@ -1136,7 +1137,8 @@ textarea:-ms-input-placeholder {
   padding-left: 10px;
   font-size: 14px;
   color: #333;
-  width: 100%; }
+  /* width: 100%;  */
+}
 
 select {
   width: 100%;
@@ -5830,6 +5832,7 @@ a.default-btn {
     margin: 0 0 0px; }
   .footer-widget .footer-list ul li a {
     color: #5d5d5d;
+    text-decoration: none;
     letter-spacing: .3px; }
     .footer-widget .footer-list ul li a:hover {
       color: #1860AB; }
@@ -6782,9 +6785,12 @@ a.default-btn {
       cursor: pointer;
       z-index: 999;
       width: auto; }
-      .sidebar-widget .sidebar-widget-list ul li .sidebar-widget-list-left a{
+      .sidebar-widget .sidebar-widget-list ul li .sidebar-widget-list-left label{
+        /* position: absolute; */
+        left: 20px;
         color: #000;
         text-decoration: none;
+        
       }
       .sidebar-widget .sidebar-widget-list ul li .sidebar-widget-list-left input:checked ~ .checkmark {
         background-color: #1860AB;
@@ -6794,7 +6800,7 @@ a.default-btn {
     .sidebar-widget .sidebar-widget-list ul li .sidebar-widget-list-left .checkmark {
       position: absolute;
       top: 5px;
-      left: 0;
+      left: 0px;
       height: 15px;
       width: 15px;
       background-color: #fff;

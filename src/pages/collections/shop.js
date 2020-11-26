@@ -229,7 +229,66 @@ export class Shop extends Component {
                     console.log("categories=>",this.state.categories)
                 }
                 <div className="container">
-                    <div className="row flex-row-reverse">
+                    <div className="row ">
+                    <div className="col-lg-3">
+                            <div className="sidebar-style mr-30">
+                                <div className="sidebar-widget">
+                                    <h4 className="pro-sidebar-title">Search </h4>
+                                    <div className="pro-sidebar-search mb-50 mt-25">
+                                        <form className="pro-sidebar-search-form" action="#">
+                                            <input type="text" placeholder="Search here..." />
+                                            <button>
+                                                <i className="pe-7s-search"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div className="sidebar-widget">
+                                    <h4 className="pro-sidebar-title">Categories </h4>
+                                    <div className="sidebar-widget-list mt-30">
+                                        <ul>
+
+                                            {
+                                                this.state.categories.map(category=>{
+                                                    return(
+                                                        <li key={category.cat_id}>
+                                                            <div className="sidebar-widget-list-left">
+                                                                 <input
+                                                                 type="checkbox" 
+                                                                 name={category.cat_id}
+                                                                 id={category.category_title}
+                                                                 onClick={this.filterHandler}
+                                                                 checked={this.state[category.category_title]}
+                                                                 />
+                                                                 <label htmlFor={category.category_title} className="ml-4">{category.category_title}</label>
+                                                                <span className="checkmark"></span>
+                                                            </div>
+                                                        </li>
+                                                    )
+                                                })
+                                            }
+                                            {
+                                                console.log("catid",this.state.catid)
+                                            }
+
+
+                                            </ul>
+                                    </div>
+                                </div>
+
+                                {/* <div className="sidebar-widget mt-45">
+                                    <h4 className="pro-sidebar-title">Filter By Price </h4>
+                                    <div className="price-filter mt-10">
+                                        <div className="price-slider-amount">
+                                            <input type="text" id="amount" name="price"  placeholder="Add Your Price" />
+                                        </div>
+                                        <div id="slider-range"></div>
+                                    </div>
+                                </div> */}
+
+                             </div>
+                        </div>
+                    
                         <div className="col-lg-9">
                             {/* <div className="shop-top-bar">
                                 <div className="select-shoing-wrap">
@@ -317,64 +376,7 @@ export class Shop extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-3">
-                            <div className="sidebar-style mr-30">
-                                <div className="sidebar-widget">
-                                    <h4 className="pro-sidebar-title">Search </h4>
-                                    <div className="pro-sidebar-search mb-50 mt-25">
-                                        <form className="pro-sidebar-search-form" action="#">
-                                            <input type="text" placeholder="Search here..." />
-                                            <button>
-                                                <i className="pe-7s-search"></i>
-                                            </button>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div className="sidebar-widget">
-                                    <h4 className="pro-sidebar-title">Categories </h4>
-                                    <div className="sidebar-widget-list mt-30">
-                                        <ul>
-
-                                            {
-                                                this.state.categories.map(category=>{
-                                                    return(
-                                                        <li key={category.cat_id}>
-                                                            <div className="sidebar-widget-list-left">
-                                                                <input
-                                                                 type="checkbox" 
-                                                                 name={category.cat_id}
-                                                                 id={category.category_title}
-                                                                 onClick={this.filterHandler}
-                                                                 checked={this.state[category.category_title]}
-                                                                 /> <a >{category.category_title}  </a> 
-                                                                <span className="checkmark"></span>
-                                                            </div>
-                                                        </li>
-                                                    )
-                                                })
-                                               
-                                            }
-                                            {
-                                                console.log("catid",this.state.catid)
-                                            }
-
-
-                                            </ul>
-                                    </div>
-                                </div>
-
-                                {/* <div className="sidebar-widget mt-45">
-                                    <h4 className="pro-sidebar-title">Filter By Price </h4>
-                                    <div className="price-filter mt-10">
-                                        <div className="price-slider-amount">
-                                            <input type="text" id="amount" name="price"  placeholder="Add Your Price" />
-                                        </div>
-                                        <div id="slider-range"></div>
-                                    </div>
-                                </div> */}
-
-                             </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

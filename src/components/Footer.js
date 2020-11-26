@@ -20,19 +20,19 @@ function Footer() {
                             <div className="footer-list">
                                 <ul>
                                     <li><Link to="/pages/about">About us</Link></li> 
-                                    <li><Link to="/pages/store">Store location</Link></li>
+                                    <li><Link to="/pages/store">Order Online</Link></li>
                                     <li><Link to="/pages/contact">Contact</Link></li>
-                                    <li><Link to="/pages/ordertrack">Orders tracking</Link></li>
+                                    
                                 </ul>
                             </div>
                         </div>
                         <div className="col-md-6">
                             <div className="footer-list">
                                 <ul>
-                                    <li><Link to="/pages/about">About us</Link></li> 
-                                    <li><Link to="/pages/store">Store location</Link></li>
-                                    <li><Link to="/pages/contact">Contact</Link></li>
-                                    <li><Link to="/pages/ordertrack">Orders tracking</Link></li>
+                                    <li><Link to="/pages/delivery">Delivery Policy</Link></li> 
+                                    <li><Link to="/pages/return">Return and Refund Policy</Link></li>
+                                    <li><Link to="/pages/privacy">Privacy Policy</Link></li>
+                                   
                                 </ul>
                             </div>
                         </div>

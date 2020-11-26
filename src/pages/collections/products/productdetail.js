@@ -31,8 +31,9 @@ class Productdetail extends Component {
             saleprice:0,
             name:"",
             catid:0
-
-        }
+        },
+        newitemqnty:1,
+        newitemsize:1
     }
    
     componentDidMount(){
@@ -50,6 +51,35 @@ class Productdetail extends Component {
         // if (!store.get("product")) {
         //     navigate("/")
         // }
+    }
+
+    handleItemQuantity=(e)=>{
+        this.setState({
+            ...this.state,
+            newitemqnty:Number(e.target.value)
+        })
+    }
+
+    handleItemQuantityIncr=()=>{
+        this.setState({
+            ...this.state,
+            newitemqnty:Number(this.state.newitemqnty)+1
+        })
+    }
+    handleItemQuantityDecr=()=>{
+        if(Number(this.state.newitemqnty) > 1){
+            this.setState({
+                ...this.state,
+                newitemqnty:Number(this.state.newitemqnty)-1
+            })
+        }
+    }
+
+    handleItemSize=(e)=>{
+        this.setState({
+            ...this.state,
+            newitemsize:e.target.value
+        })
     }
 
     AddTocart = (item)=>{
@@ -73,17 +103,18 @@ class Productdetail extends Component {
         }
        
           if (!containsObject(item,currentData)) {
-            currentData.push({...item,quantity:1})
+            currentData.push({...item,quantity:this.state.newitemqnty*this.state.newitemsize})
           }else{
             currentData.map(cartitem => {
                 if (cartitem.id===item.id) {
                     console.log("identical");
-                    cartitem.quantity=cartitem.quantity+1
+                    cartitem.quantity=cartitem.quantity+(this.state.newitemqnty*this.state.newitemsize)
                 }
             })
           }
        
         console.log("currently item pushed to current data ",currentData);
+        
         // let sum = 0 ;
         // currentData.map(item=>sum+=item.saleprice)
         // this.setState({
@@ -158,7 +189,7 @@ class Productdetail extends Component {
                             <h2>{name}</h2>
                             <div className="product-details-price">
                                 <span>₹{saleprice} </span>
-                                <span className="old">₹{price}</span>
+                                {/* <span className="old">₹{price}</span> */}
                             </div>
                             {/* <div className="pro-details-rating-wrap">
                                 <div className="pro-details-rating">
@@ -179,36 +210,52 @@ class Productdetail extends Component {
                                 </ul>
                             </div>
                             <div className="pro-details-size-color">
-                                {/* <div className="pro-details-color-wrap">
-                                    <span>Color</span>
+                                <div className="pro-details-color-wrap">
+                                    <span>Quantity</span>
                                     <div className="pro-details-color-content">
-                                        <ul>
+                                        {/* <ul>
                                             <li className="blue"></li>
                                             <li className="maroon active"></li>
                                             <li className="gray"></li>
                                             <li className="green"></li>
                                             <li className="yellow"></li>
-                                        </ul>
+                                        </ul> */}
+                                        <div className="cart-plus-minus">
+                                            <button onClick={this.handleItemQuantityDecr} className="btn mx-1"><i class="fas fa-minus-circle"></i></button>
+                                            <input className="cart-plus-minus-box" type="number"
+                                             name="qtybutton"
+                                              value={this.state.newitemqnty}
+                                              onChange={this.handleItemQuantity}
+                                              style={{textAlign:"center"}}
+
+                                               />
+                                            <button onClick={this.handleItemQuantityIncr} className="btn mx-1"><i class="fas fa-plus-circle"></i></button>
+                                        </div>
                                     </div>
-                                </div> */}
-                                <div className="pro-details-size">
-                                    <span>Size</span>
-                                    <div className="pro-details-size-content">
-                                        <ul>
+                                </div>
+                                <div className="pro-details-size form-group">
+                                    {/* <div class="form-group">
+                                        
+                                    </div>
+                                 */}
+                                    <span><label htmlFor="itemsize">Size</label></span>
+                                    <div className="pro-details-size-content ">
+                                        {/* <ul>
                                             <li><a href="#">Full</a></li>
                                             <li><a href="#">Half</a></li>
-
-                                            {/* <li><a href="#">l</a></li>
-                                            <li><a href="#">xl</a></li>
-                                            <li><a href="#">xxl</a></li> */}
-                                        </ul>
+                                        </ul> */}
+                                        <select class="form-control" id="itemsize" 
+                                        value={this.state.newitemsize}
+                                         onChange={this.handleItemSize}>
+                                            <option value={1}>1 Kg</option>
+                                            <option value={0.5}>500 g</option>
+                                        </select>
+                                       
                                     </div>
                                 </div>
                             </div>
                             <div className="pro-details-quality">
-                                {/* <div className="cart-plus-minus">
-                                    <input className="cart-plus-minus-box" type="text" name="qtybutton" />
-                                </div> */}
+                               
                                 <div className="pro-details-cart btn-hover">
                                     <a onClick={()=>this.AddTocart({id,img,name,saleprice})}>{this.state.msg}</a>
                                 </div>
