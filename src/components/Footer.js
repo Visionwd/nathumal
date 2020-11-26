@@ -29,9 +29,9 @@ function Footer() {
                         <div className="col-md-6">
                             <div className="footer-list">
                                 <ul>
-                                    <li><Link to="/pages/delivery">Delivery Policy</Link></li> 
-                                    <li><Link to="/pages/return">Return and Refund Policy</Link></li>
-                                    <li><Link to="/pages/privacy">Privacy Policy</Link></li>
+                                    <li><Link to="/pages/delivery-policy">Delivery Policy</Link></li> 
+                                    <li><Link to="/pages/return-policy">Return and Refund Policy</Link></li>
+                                    <li><Link to="/pages/privacy-policy">Privacy Policy</Link></li>
                                    
                                 </ul>
                             </div>

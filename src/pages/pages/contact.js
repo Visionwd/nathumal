@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import Layout from '../../components/Layout'
+import Banner from '../../components/Reusable/Banner'
 import Bg from "../../img/contact/page-header.jpg"
 
 function Contact() {
@@ -24,15 +25,7 @@ function Contact() {
     return (
         <Layout>
              <div className="contact-area pt-10 pb-100">
-            <div className="container-fluid">
-                <div classNameName="row" style={{backgroundImage:`url(${Bg})`,backgroundPosition:"center"}}>
-                    <div classNameName="col-12">
-                        <div classNameName="my-5 text-center pt-40 pb-40" >
-                            <h2 classNameName="text-white">Contact us</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <Banner title={"Contact Us"}/>
         <div className="container">
         <div className="custom-row-2">
             <div className="col-lg-4 col-md-5">

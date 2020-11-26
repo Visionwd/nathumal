@@ -70,6 +70,7 @@ function Header({className,navColor,total}) {
                         </div>
                     </div>
                    
+                   
                     <div className="col-lg-3 col-md-4 col-12">
                         <div className="header-right-wrap">
                             <div className="same-style header-search">
@@ -158,6 +159,7 @@ function Header({className,navColor,total}) {
        
     </header>
     
+
 
 // <nav className="navbar navbar-expand-lg navbar-light bg-transparent "  >
 //   <a className="navbar-brand" href="#"> <img alt="" src={logo} classNameName="logoimg mt-2" style={{width:"100px"}} /></a>

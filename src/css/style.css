@@ -1736,6 +1736,7 @@ a.default-btn {
       font-size: 15px;
       color: #555252;
       font-weight: 500;
+      text-decoration: none;
       letter-spacing: .8px;
       display: inline-block;
       line-height: 94px; }
@@ -1744,8 +1745,11 @@ a.default-btn {
         margin-left: 1px;
         position: relative;
         top: 0px; }
+        .main-menu nav ul .text-white:hover{
+          color: #FECD01 !important;
+        }
     .main-menu nav ul li:hover a {
-      color: #1860AB; }
+      color: #FECD01; }
 
 .main-menu.menu-white nav ul {
   text-align: left; }
@@ -8643,10 +8647,12 @@ h3.cart-page-title {
   visibility: visible; }
 
 
-  /* .carousel .thumbs-wrapper{
+  .carousel .thumbs-wrapper{
     margin: 0px !important;
-  } */
-  
+  }
+  .carousel .thumbs-wrapper .thumbs{
+    margin-bottom: 0px !important;
+  }
 /*------ 24. login register Page  --------*/
 .login-register-wrapper .login-register-tab-list {
   display: -webkit-box;
