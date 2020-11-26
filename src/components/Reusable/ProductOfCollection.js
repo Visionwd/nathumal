@@ -42,7 +42,7 @@ function ProductOfCollection({img,price,name,saleprice,AddTocart,id,style,catid,
                 </div> */}
                 <div className="product-price">
                     <span>₹{saleprice}</span>
-                    <span className="old">{price}</span>
+                    {/* <span className="old">{price}</span> */}
                 </div>
             </div>
         </div>
