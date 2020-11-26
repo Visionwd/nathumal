@@ -49,10 +49,21 @@
   opacity: 1;
 }
 
+.PageContent{
+  margin: 100px 120px 100px 120px
+}
 
+@media only screen and (min-width: 576px) and (max-width: 1000px) {
+  .PageContent{
+    margin: 50px 60px 50px 60px
+  }
+}
 
-
-
+@media only screen and (max-width: 576px) {
+  .PageContent{
+    margin: 30px 40px 30px 40px
+  }
+}
 
 
 

@@ -8,7 +8,7 @@ function Privacypolicy() {
             <div className="container">
                 <div className="row">
                     <div className="col-md-12 " >
-                    <div class="PageContent mt-100 mr-120 ml-120 mb-100">
+                    <div class="PageContent ">
                 <p class="p1">This Privacy Policy (the “Policy”), together with our Terms of Use, Cookies Policy and any other document(s) referred to in them, sets out how we will treat your personal information, and is intended to help you understand how we deal with any personal information we may obtain from you and how you may access, alter, rectify and/or remove it. It is important that you read this Policy so that you are aware of how and why we are using such information.</p>
                 <p class="p2"><span class="s1">This Policy only relates to the collection, protection, disclosure and use of personal data belonging to individuals who visit www.nathuandghudoo.com (“our Site”) or who otherwise provide us with their personal information. It does not relate to data which emanates from companies or other entities, although the general principles regarding our collection and use of data is broadly the same irrespective of whoever is the user of our website, or our customer. We will use your information only for the purposes for which it was collected.</span></p>
                 <p class="p2"><span class="s1">By providing your personal information to us, you agree that we may collect and use all personal information you provide to us in the ways described in this Policy. If you do not agree with the terms of this Policy, please do not provide personal details to us.</span></p>

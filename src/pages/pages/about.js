@@ -12,7 +12,7 @@ function About() {
             <div className="container">
                 <div className="row">
                     <div className="col-md-12 " >
-                    <div class="PageContent mt-100 mr-120 ml-120 mb-100">
+                    <div class="PageContent ">
                         <p className="">Handcrafted with organic ingredients with the extracts of natural flavours, we at
                          Nathu Mal & Ghudoo Mal are passionate about Indian traditions and the authentic centuries old 
                          art of Indian mithai. We are the fourth generation, known for winter delicacies carried by a 

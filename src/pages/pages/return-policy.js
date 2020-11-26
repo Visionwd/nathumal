@@ -8,7 +8,7 @@ function ReturnPolicy() {
             <div className="container">
                 <div className="row">
                     <div className="col-md-12 " >
-                    <div class="PageContent mt-100 mr-120 ml-120 mb-100">
+                    <div class="PageContent ">
                         <p className="">If you feel that the taste and other attributes of the products are not as per your expectations, we request you to 
                             write to us at <a href="mailto:contact@nathuandghudoo.com">contact@nathuandghudoo.com </a>
                             This helps us in improving our quality to give you a better experience next time. However, we retains the right to accept 

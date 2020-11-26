@@ -8,7 +8,7 @@ function DeliveryPolicy() {
             <div className="container">
                 <div className="row">
                     <div className="col-md-12 " >
-                    <div class="PageContent mt-100 mr-120 ml-120 mb-100">
+                    <div class="PageContent">
                         <p className="">We attempt delivery of the items at the address entered by the customer. In the event of execution 
                             failure of such delivery, the customer shall continue to be charged for the order and no redelivery or 
                             refund will be possible. We prepare fresh products, sent out for delivery, upon the receipt of an order
