@@ -63,7 +63,7 @@ function Header({className,navColor,total}) {
                                 <ul>
                                     <li ><Link to="/" className={navColor}>Home</Link></li>
                                     <li><Link to="/collections/shop" className={navColor}> Shop </Link></li>
-                                    {/* <li><Link to="/pages/about" className={navColor}> About </Link></li> */}
+                                    <li><Link to="/pages/about" className={navColor}> About </Link></li>
                                     <li><Link to="/pages/contact" className={navColor}> Contact</Link></li>
                                 </ul>
                             </nav>
