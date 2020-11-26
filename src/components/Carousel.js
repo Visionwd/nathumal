@@ -1,6 +1,7 @@
 import React from 'react'
 import cart1 from "../img/banner/banner1.jpg";
 import cart2 from "../img/banner/banner2.jpg";
+import Banner1 from "../img/Carousel/lohri-banner.jpg"
 import logo from "../img/logo/logo.png"
 import midbg from "../img/bg/midsection-bg_02.jpg"
 import category1 from "../img/product/cat11.jpg"
@@ -33,15 +34,18 @@ function MyCarousel() {
    emulateTouch
    showStatus={false}>
 
-        <div className="slider-height-7 bg-glaucous d-flex align-items-center"  style={{background:`url(${cart1})`, backgroundSize: "cover", backgroundPosition: "center"}}>
+        <div className="slider-height-7 bg-glaucous d-flex align-items-center"  style={{background:`url(${Banner1})`, backgroundSize: "cover", backgroundPosition: "center"}}>
             <div className="container">
                 <div className="row align-items-center slider-h9-mrg">
                     <div className="col-lg-12 col-md-12 col-12 col-sm-12 text-white">
                         <div className="slider-content-7 slider-animated-1" >
                             <h3 className="animated">New Arrival</h3>
-                            <h1 className="animated">Diwali Festival <br />Barfi</h1>
+                            <h1 className="animated">Special Lohri <br />Sweets</h1>
                             <div className="slider-btn-9 btn-hover">
-                                <Link className="animated" to="/collections/shop">SHOP NOW</Link>
+                                <Link
+                                 to="/collections/shop"
+                                 state={{id:1}}
+                                 className="animated" >SHOP NOW</Link>
                             </div>
                         </div>
                     </div>
@@ -55,9 +59,11 @@ function MyCarousel() {
                     <div className="col-lg-12 col-md-12 col-12 col-sm-12">
                         <div className="slider-content-7 slider-animated-1">
                             <h3 className="animated">New Arrival</h3>
-                            <h1 className="animated">New Festival <br />Sweets</h1>
+                            <h1 className="animated">Festival <br />Sweets</h1>
                             <div className="slider-btn-9 btn-hover">
-                                <Link className="animated" to="/collections/shop">SHOP NOW</Link>
+                                <Link 
+                                 to="/collections/shop"
+                                 state={{id:2}}className="animated" >SHOP NOW</Link>
                             </div>
                         </div>
                     </div>

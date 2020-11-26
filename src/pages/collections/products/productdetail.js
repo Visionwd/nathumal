@@ -12,8 +12,7 @@ import ProdetailLarge3 from "../../../img/product-details/b-large-3.jpg";
 
 
 import ProdLarge1 from "../../../img/product-details/large-1.jpg";
-import ProdLarge2 from "../../../img/product-details/large-2.jpg";
-import ProdLarge3 from "../../../img/product-details/large-3.jpg";
+
 
 import Prodsmall1 from "../../../img/product-details/small-1.jpg";
 import Testimonial from "../../../img/testimonial/1.jpg";
