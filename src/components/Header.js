@@ -45,14 +45,13 @@ function Header({className,navColor,total}) {
 
 
     return (
-    
-        
+     
     <header className="header-area clearfix header-hm9 mb-5" className={className}>
         <div className="container-fluid">
             <div className="header-top-area">
                 <div className="row">
                 
-                    <div className="col-lg-6 col-md-8 col-12">
+                    <div className="col-lg-3 col-md-6 col-12">
                         <div className="main-menu">
                             <nav>
                                 <ul>
@@ -65,15 +64,15 @@ function Header({className,navColor,total}) {
                         </div>
                     </div>
 
-                    <div className="col-lg-3 d-lg-block">
-                        <div className="logo-hm9 ">
+                    <div className="col-md-6 ">
+                        <div className="logo-hm9 text-center">
                             <a href="/" >
                                 <img alt="" src={logo} className="logoimg mt-2" />
                             </a>
                         </div>
                     </div>
                    
-                    <div className="col-lg-3 col-md-4 col-12">
+                    <div className="col-lg-3 col-md-3 col-12">
                         <div className="header-right-wrap">
                             <div className="same-style header-search">
                                 <a className="search-active" className={navColor} href="#" ><i className="pe-7s-search"></i></a>
