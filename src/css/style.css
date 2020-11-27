@@ -4093,7 +4093,7 @@ a.default-btn {
         border-right: 1px solid rgba(255, 255, 255, 0.2); }
       .product-wrap .product-img .product-action .pro-cart {
         font-size: 14px;
-        width: calc(100% - 48px - 48px);
+        width: calc(100%);
         -webkit-transition-delay: .1s;
         -o-transition-delay: .1s;
         transition-delay: .1s; }

@@ -10,6 +10,7 @@ import ProductOfCollection from "../../components/Reusable/ProductOfCollection"
 import Banner from "../../components/Reusable/Banner"
 
 import Bhugga from '../../components/Shop/Bhugga';
+import SearchItem from '../../components/Reusable/SearchItem';
 let currentCartItems = [];
 let total = 0;
 if (store.get("persist")) {
@@ -220,16 +221,16 @@ export class Shop extends Component {
     console.log("store after adding item  => ",store.get("persist"));
    }
 
-   handleSearchFilterChange=(e)=>{
-       this.setState({
-           ...this.state,
-           filteritem:e.target.value
-       })
-   }
+//    handleSearchFilterChange=(e)=>{
+//        this.setState({
+//            ...this.state,
+//            filteritem:e.target.value
+//        })
+//    }
 
-   handleSearchFilter=(e)=>{
-       e.preventDefault()
-       console.log(this.state.filteritem);
+   handleSearchFilter=(searchingdata)=>{
+    //    e.preventDefault()
+       console.log("searching data=>",searchingdata);
    }
    
    
@@ -248,7 +249,8 @@ export class Shop extends Component {
                             <div className="sidebar-style mr-30">
                                 <div className="sidebar-widget">
                                     <h4 className="pro-sidebar-title">Search </h4>
-                                    <div className="pro-sidebar-search mb-50 mt-25">
+                                    <SearchItem handleSearchFilter={this.handleSearchFilter}/>
+                                    {/* <div className="pro-sidebar-search mb-50 mt-25">
                                         <form className="pro-sidebar-search-form" onSubmit={this.handleSearchFilter}>
                                             <input type="text" 
                                             placeholder="Search here..." 
@@ -258,7 +260,7 @@ export class Shop extends Component {
                                                 <i className="pe-7s-search"></i>
                                             </button>
                                         </form>
-                                    </div>
+                                    </div> */}
                                 </div>
                                 <div className="sidebar-widget">
                                     <h4 className="pro-sidebar-title">Categories </h4>
@@ -274,7 +276,7 @@ export class Shop extends Component {
                                                                  type="checkbox" 
                                                                  name={category.cat_id}
                                                                  id={category.category_title}
-                                                                 onClick={this.filterHandler}
+                                                                 onChange={this.filterHandler}
                                                                  checked={this.state[category.category_title]}
                                                                  />
                                                                  <label htmlFor={category.category_title} className="ml-4">{category.category_title}</label>
