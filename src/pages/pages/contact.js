@@ -35,8 +35,8 @@ function Contact() {
                             <i className="fa fa-phone"></i>
                         </div>
                         <div className="contact-info-dec">
-                            <p>+91 7303100009</p>
-                            <p>+91 8054949900</p>
+                            <p style={{lineHeight:"22px"}}>+91 7303100009 <br/>
+                          +91 8054949900</p>
                         </div>
                     </div>
                     <div className="single-contact-info">
@@ -44,7 +44,7 @@ function Contact() {
                             <i className="fa fa-globe"></i>
                         </div>
                         <div className="contact-info-dec">
-                            <p><a href="#">contact@nathuandghudoo.com</a></p>
+                            <p style={{lineHeight:"22px"}}><a href="#">contact@nathuandghudoo.com</a></p>
                            
                         </div>
                     </div>
@@ -53,7 +53,7 @@ function Contact() {
                             <i className="fa fa-map-marker"></i>
                         </div>
                         <div className="contact-info-dec">
-                            <p>Main Road, Phase 2,Urban Estate,
+                            <p style={{lineHeight:"22px"}}>Main Road, Phase 2,Urban Estate,
                             Dugri, Ludhiana, Punjab -141001</p>
                         </div>
                     </div>

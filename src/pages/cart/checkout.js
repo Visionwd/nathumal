@@ -205,15 +205,13 @@ export class CartCheckout extends Component {
             this.displayRazorpay(res.data.payorderid)
             /////////////////////////////////////////////////////
 
-
-
             store.set("persist",[])
             store.set("order",[res.data])
-            navigate("/success/thanks",{
-                state:{
-                    data:res.data
-                }
-            })
+            // navigate("/success/thanks",{
+            //     state:{
+            //         data:res.data
+            //     }
+            // })
         })
         .catch(err=>{
             console.log(err);
@@ -224,7 +222,7 @@ export class CartCheckout extends Component {
         return (
             <Layout>
                 
-                 <Banner  title={"Checkout"}/>
+<Banner  title={"Checkout"}/>
 <div className="checkout-area pt-95 pb-100">
     <div className="container">
         <div className="row">
@@ -235,36 +233,47 @@ export class CartCheckout extends Component {
                         <div className="col-lg-6 col-md-6">
                             <div className="billing-info mb-20">
                                 <label>First Name</label>
-                                <input onChange={this.handleChange} type="text" id="firstname" name="firstname" />
+                                <input onChange={this.handleChange} value={this.state.firstname} type="text" id="firstname" name="firstname" />
                             </div>
                         </div>
                         <div className="col-lg-6 col-md-6">
                             <div className="billing-info mb-20">
                                 <label>Last Name</label>
-                                <input onChange={this.handleChange} type="text" id="lastname" name="lastname"  />
+                                <input onChange={this.handleChange} value={this.state.lastname} type="text" id="lastname" name="lastname"  />
                             </div>
                         </div>
-                       
-                       
+                        <div className="col-lg-6 col-md-6">
+                            <div className="billing-info mb-20">
+                                <label>Phone</label>
+                                <input onChange={this.handleChange} value={this.state.phone} type="number" id="phone" name="phone" />
+                            </div>
+                        </div>
+                        <div className="col-lg-6 col-md-6">
+                            <div className="billing-info mb-20">
+                                <label>Email Address</label>
+                                <input onChange={this.handleChange} value={this.state.email} type="email" id="email" name="email"  />
+                            </div>
+                        </div>
                         <div className="col-lg-12">
                             <div className="billing-info mb-20">
                                 <label>Street Address</label>
-                                <input onChange={this.handleChange} className="billing-address" placeholder="House number and street name" type="text" id="address" name="address"  />
-                                {/* <input onChange={this.handleChange} placeholder="Apartment, suite, unit etc." type="text"  id="addressLine2" name="addressLine2"  /> */}
-                            </div>
-                        </div>
-                        <div className="col-lg-12">
-                            <div className="billing-info mb-20">
-                                <label>Town / City</label>
-                                <input onChange={this.handleChange} type="text" id="city" name="city"  />
+                                <input onChange={this.handleChange} value={this.state.address} className="billing-address" placeholder="House number and street name" type="text" id="address" name="address"  />
+                                {/* <input onChange={this.handleChange} value={this.state.} placeholder="Apartment, suite, unit etc." type="text"  id="addressLine2" name="addressLine2"  /> */}
                             </div>
                         </div>
 
+                        <div className="col-lg-6 col-md-6">
+                            <div className="billing-info mb-20">
+                                <label>Country</label>
+                                <input onChange={this.handleChange} value={this.state.country} className="form-control" type="text" placeholder="India" readOnly disabled />
+                            </div>
+                        </div>
 
                         <div className="col-lg-6 col-md-6">
                             <div className="form-group">
                                 <label htmlFor="states">State</label>
-                                <select className="form-control" name="state" id="state" onChange={this.handleState}>
+                                <select className="form-control" name="state" id="state" onChange={this.handleState} value={this.state.state} placeholder="state">
+                                    <option>select state</option>
                                 {
                                     this.state.stateslist.length?this.state.stateslist.map(state=>{
                                         return(
@@ -278,33 +287,27 @@ export class CartCheckout extends Component {
                             </div>
                             {/* <div className="billing-info mb-20">
                                 <label>State / County</label>
-                                <input onChange={this.handleChange} type="text" id="state" name="state"  />
+                                <input onChange={this.handleChange} value={this.state.} type="text" id="state" name="state"  />
                             </div> */}
+
                         </div>
+
+                        <div className="col-lg-6 col-md-6">
+                            <div className="billing-info mb-20">
+                                <label>Town / City</label>
+                                <input onChange={this.handleChange} value={this.state.city} type="text" id="city" name="city"  />
+                            </div>
+                        </div>
+
+                
                         <div className="col-lg-6 col-md-6">
                             <div className="billing-info mb-20">
                                 <label>Postcode / ZIP</label>
-                                <input onChange={this.handleChange} type="text" id="postal_code" name="postal_code" />
+                                <input onChange={this.handleChange} value={this.state.postal_code} type="number" id="postal_code" name="postal_code" />
                             </div>
                         </div>
-                        <div className="col-lg-6 col-md-6">
-                            <div className="billing-info mb-20">
-                                <label>Phone</label>
-                                <input onChange={this.handleChange} type="text" id="phone" name="phone" />
-                            </div>
-                        </div>
-                        <div className="col-lg-6 col-md-6">
-                            <div className="billing-info mb-20">
-                                <label>Email Address</label>
-                                <input onChange={this.handleChange} type="text" id="email" name="email"  />
-                            </div>
-                        </div>
-                        <div className="col-lg-6 col-md-6">
-                            <div className="billing-info mb-20">
-                                <label>country</label>
-                                <input onChange={this.handleChange} className="form-control" type="text" placeholder="India" readOnly disabled />
-                            </div>
-                        </div>
+                        
+                       
                     </div>
                     {/* <div className="col-lg-12">
                             <div className="billing-select mb-20">
@@ -377,9 +380,17 @@ export class CartCheckout extends Component {
                                 </ul>
                             </div>
                            
-                           <div className="">
-                                <h4 className="grand-totall-title">Grand Total  <span className="text-right">₹ {this.state.grandtotal?this.state.grandtotal:this.state.total}</span></h4>
-                           </div>
+                            <div className="your-order-total">
+                                <ul>
+                                    <li className="order-total">Grand Total</li>
+                                    <li className="order-total">  
+                                        <span className="text-right">
+                                            ₹ {this.state.grandtotal?this.state.grandtotal:this.state.total}
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                           
                         </div>
                         <div className="payment-method">
                         <div className="radio">
