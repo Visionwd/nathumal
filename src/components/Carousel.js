@@ -79,14 +79,14 @@ function MyCarousel() {
 
 
 
-<div className="collections-area  pt-40 pb-70 mb-80"  style={{backgroundImage:`url(${midbg})`,backgroundPosition:"center bottom",backgroundRepeat:"repeat-x",backgroundSize:"cover"}}>
+<div className="collections-area  pt-50 pb-70 mb-80"  style={{backgroundImage:`url(${midbg})`,backgroundPosition:"center bottom",backgroundRepeat:"repeat-x",backgroundSize:"cover"}}>
     <div className="container">
         <div className="collection-wrap-2">
             <div className="collection-active-2 ">
                
                 
                <div className="row" >
-               <div className="collection-product-2 col-md-4 mt-10 mb-10 ">
+               <div className="collection-product-2 col-md-4  mb-10 ">
                     <Link 
                     to="/collections/shop"
                     state={{id:1}}

@@ -53,9 +53,9 @@ function Product({img,price,name,saleprice,AddTocart,id,quantity,catid,descripti
                 </div>
                 <a className="btn ml-auto" onClick={()=>AddTocart({id,img,name,saleprice})}><i className="fa fa-shopping-cart"></i></a> 
                
-                <div className="pro-wishlist-2">
+                {/* <div className="pro-wishlist-2">
                     <a title="Wishlist" href="/"><i className="fa fa-heart-o"></i></a>
-                </div>
+                </div> */}
             </div>
         </div>
     </div>
