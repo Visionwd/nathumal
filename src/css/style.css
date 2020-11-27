@@ -8237,6 +8237,7 @@ h3.cart-page-title {
 .your-order-area .Place-order > a {
   background-color: #1860AB;
   color: #fff;
+  text-decoration: none;
   display: block;
   font-weight: 500;
   letter-spacing: 1px;

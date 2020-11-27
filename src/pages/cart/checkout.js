@@ -236,7 +236,7 @@ export class CartCheckout extends Component {
                                     <option>Select a country</option>
                                     <option>India</option>
                                     <option>USA</option>
-                                    
+
                                     <option>UK</option>
                                     <option>Germany</option>
                                     <option>Canada</option>
@@ -345,6 +345,7 @@ export class CartCheckout extends Component {
                                     </div>
                                 </div>
                             </div> */}
+                            
                         </div>
                     </div>
                     <div className="Place-order mt-25">
