@@ -77,6 +77,9 @@ function Cartview() {
          setTotalState(0)
       }
   
+      const myNavigate =()=>{
+          navigate("/collections/shop")
+      }
     return (
        
  <Layout>
@@ -204,7 +207,7 @@ function Cartview() {
                                 </div>
                                 <h4 className="grand-totall-title">Grand Total  <span>₹{totalState}</span></h4>
                                {
-                                   store.get("persist")?store.get("persist").length? <a href="/cart/checkout">Proceed to Checkout</a>:null:null
+                                   store.get("persist")?store.get("persist").length? <a href="/cart/checkout">Proceed to Checkout</a>:null:myNavigate()
                                }
                             </div>
                         </div>
