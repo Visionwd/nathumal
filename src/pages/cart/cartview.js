@@ -77,9 +77,7 @@ function Cartview() {
          setTotalState(0)
       }
   
-      const myNavigate =()=>{
-          navigate("/collections/shop")
-      }
+      
     return (
        
  <Layout>
