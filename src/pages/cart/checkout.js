@@ -4,6 +4,7 @@ import axios from "axios"
 import { navigate } from "gatsby";
 import Layout from "../../components/Layout"
 import logo from "../../img/logo/logo.png"
+import Banner from "../../components/Reusable/Banner"
 
 function loadScript(src) {
 	return new Promise((resolve) => {
@@ -37,6 +38,8 @@ export class CartCheckout extends Component {
          
     componentDidMount(){
         let currentTotal = 0;
+       
+        
         if(store.get("persist"))
         {
             store.get("persist").map(item=>currentTotal+=(Number(item.saleprice)*item.quantity))
@@ -158,6 +161,10 @@ export class CartCheckout extends Component {
     render() {
         return (
             <Layout>
+                {
+                    this.state.total?navigate("/collections/shop"):null
+                }
+                 <Banner  title={"Checkout"}/>
 <div className="checkout-area pt-95 pb-100">
     <div className="container">
         <div className="row">
@@ -265,11 +272,11 @@ export class CartCheckout extends Component {
                             <div className="your-order-middle">
                                 <ul>
                                     {
-                                        this.state.items.map(item=>{
+                                        this.state.items?this.state.items.map(item=>{
                                             return(
                                             <li key={item.id}><span className="order-middle-left">{item.quantity}   x   {item.name}</span> <span className="order-price">₹{item.saleprice*item.quantity} </span></li>
                                             )
-                                        })
+                                        }):navigate("/collections/shop")
                                     }
                                     
                                 </ul>

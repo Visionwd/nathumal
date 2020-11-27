@@ -1,7 +1,8 @@
 import React,{useContext,useState} from 'react'
 import Layout from '../../components/Layout'
-
+import Banner from "../../components/Reusable/Banner"
 import store from "store";
+import { navigate } from 'gatsby';
 
 let currentCartItems = [];
 let total = 0;
@@ -79,7 +80,7 @@ function Cartview() {
     return (
        
  <Layout>
-
+     <Banner  title={"Cart"}/>
     <div className="cart-main-area pt-90 pb-100">
         <div className="container">
             <h3 className="cart-page-title">Your cart items</h3>
@@ -197,10 +198,11 @@ function Cartview() {
                                         <li><input type="checkbox" /> Standard <span>200.00</span></li>
                                         <li><input type="checkbox" /> Express <span>300.00</span></li>
                                     </ul> */}
+
                                 </div>
                                 <h4 className="grand-totall-title">Grand Total  <span>₹{totalState}</span></h4>
                                {
-                                   store.get("persist")? <a href="/cart/checkout">Proceed to Checkout</a>:null
+                                   store.get("persist")?store.get("persist").length? <a href="/cart/checkout">Proceed to Checkout</a>:null:navigate("/collections/shop")
                                }
                             </div>
                         </div>
