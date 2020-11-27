@@ -86,7 +86,7 @@ function MyCarousel() {
                
                 
                <div className="row" >
-               <div className="collection-product-2 col-md-4 mb-10 ">
+               <div className="collection-product-2 col-md-4 mt-10 mb-10 ">
                     <Link 
                     to="/collections/shop"
                     state={{id:1}}

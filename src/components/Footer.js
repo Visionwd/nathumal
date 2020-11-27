@@ -98,7 +98,7 @@ function Footer() {
                             <img alt="logo" src={logo} style={{width:"15%"}}  className="logoimg " />
                         </a>
                     </div>
-                    <p className="text-center">© Copyright 2020 All Rights Reserved. Nathu Mal & Ghuddu Mal</p>
+                    <p className="text-center">© Copyright 2020 All Rights Reserved. Nathu Mal & Ghudoo Mal</p>
                 </div>
             </div>
 
