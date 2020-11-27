@@ -22,8 +22,12 @@ function loadScript(src) {
 
 export class CartCheckout extends Component {
             state={
+                shippingCharge:0,
+                shipping:0,
+                packaging:50,
                 items:[],
                 total:0,
+                grandtotal:0,
                 firstname:"",
                 lastname:"",
                 email:"",
@@ -31,7 +35,8 @@ export class CartCheckout extends Component {
                 city:"",
                 address:"",
                 postal_code:"",
-                states:[],
+                state:"",
+                stateslist:[],
                 country:"India"
             }
 
@@ -39,10 +44,9 @@ export class CartCheckout extends Component {
     componentDidMount(){
         let currentTotal = 0;
        
-        
         if(store.get("persist"))
         {
-            store.get("persist").map(item=>currentTotal+=(Number(item.saleprice)*item.quantity))
+            store.get("persist").map(item=>{currentTotal+=(Number(item.saleprice)*item.quantity)})
         }
         this.setState({
             ...this.state,
@@ -59,6 +63,32 @@ export class CartCheckout extends Component {
             
         })
     }
+
+    handleState =(e)=>{
+        
+        let myshipping = this.state.stateslist.filter(state=>state.name===e.target.value)
+       
+        let currentShipping =  this.state.packaging;
+        this.state.items.map(item=>currentShipping+=(Math.ceil(Number(item.quantity))*Number(myshipping[0].shipping_charges)))
+        console.log("Charges=>",myshipping[0].shipping_charges,currentShipping,this.state.total);
+        
+        
+        this.setState({
+            ...this.state,
+            [e.target.id]:e.target.value,
+            shippingCharge:Number(myshipping[0].shipping_charges),
+            
+           
+        })
+        let currentTotal = this.state.total + currentShipping
+
+        this.setState({
+            ...this.state,
+            shipping:currentShipping,
+            grandtotal:currentTotal
+        })
+    }
+
 
     ////////////////////////////////////////////////////
     getStates = ()=>{
@@ -80,7 +110,10 @@ export class CartCheckout extends Component {
     })
     .then(res=>{
         console.log(res);
-        
+        this.setState({
+            ...this.state,
+            stateslist:res.data.states
+        })
      })
     }
    
@@ -126,6 +159,11 @@ export class CartCheckout extends Component {
                         'Content-Type': 'application/json'
                       }
                    }).then(res=>{
+                    navigate("/success/thanks",{
+                        state:{
+                            data:res.data
+                        }
+                    })
                     alert(response.razorpay_payment_id)
                     alert(response.razorpay_order_id)
                     alert(response.razorpay_signature)
@@ -221,11 +259,27 @@ export class CartCheckout extends Component {
                                 <input onChange={this.handleChange} type="text" id="city" name="city"  />
                             </div>
                         </div>
+
+
                         <div className="col-lg-6 col-md-6">
-                            <div className="billing-info mb-20">
+                            <div className="form-group">
+                                <label htmlFor="states">State</label>
+                                <select className="form-control" name="state" id="state" onChange={this.handleState}>
+                                {
+                                    this.state.stateslist.length?this.state.stateslist.map(state=>{
+                                        return(
+                                            <option key={state.id}>{state.name}</option>
+                                        )
+                                    }):null
+                                }
+                                
+                                </select>
+                                
+                            </div>
+                            {/* <div className="billing-info mb-20">
                                 <label>State / County</label>
                                 <input onChange={this.handleChange} type="text" id="state" name="state"  />
-                            </div>
+                            </div> */}
                         </div>
                         <div className="col-lg-6 col-md-6">
                             <div className="billing-info mb-20">
@@ -304,18 +358,28 @@ export class CartCheckout extends Component {
                                     
                                 </ul>
                             </div>
-                            <div className="your-order-bottom">
-                                <ul>
-                                    <li className="your-order-shipping">Shipping</li>
-                                    <li>Free shipping</li>
-                                </ul>
-                            </div>
+
                             <div className="your-order-total">
                                 <ul>
                                     <li className="order-total">Total</li>
                                     <li>₹{this.state.total}</li>
                                 </ul>
                             </div>
+
+                            <div className="your-order-bottom">
+                                <ul>
+                                    <li className="your-order-shippingCharge">Shipping</li>
+                                    {
+                                        console.log("shipping charge and shipping:=>",this.state.shippingCharge,this.state.shipping)
+                                    }
+                                    {/* <li>testing:{this.state.shippingCharge?this.state.shippingCharge:null}</li> */}
+                                    <li>{this.state.shipping?this.state.shipping:null}</li>
+                                </ul>
+                            </div>
+                           
+                           <div className="">
+                                <h4 className="grand-totall-title">Grand Total  <span className="text-right">₹ {this.state.grandtotal?this.state.grandtotal:this.state.total}</span></h4>
+                           </div>
                         </div>
                         <div className="payment-method">
                         <div className="radio">
@@ -333,6 +397,7 @@ export class CartCheckout extends Component {
                                                 </a>
                                             </h4>
                                         </div>
+
                                         <div id="method1" className="panel-collapse collapse show">
                                             <div className="panel-body">
                                                 <p>Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>

@@ -172,6 +172,7 @@ export class Shop extends Component {
     //     ...this.state,
     //     catid:this.state.catids.join()
     // })
+    
    console.log("category=>",category);
     this.FetchData(this.state.catids.length?category.join():"",this.state.pageid)
        

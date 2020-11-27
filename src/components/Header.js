@@ -19,7 +19,7 @@ if (store.get("persist")) {
 }
 
 function Header({className,navColor,total}) {
-    console.log(total);
+    // console.log(total);
 
     const {products,removeItem} = useContext(CartContext)
 
