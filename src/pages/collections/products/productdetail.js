@@ -245,7 +245,7 @@ class Productdetail extends Component {
                                               value={this.state.newitemqnty}
                                               min={1}
                                               onChange={this.handleItemQuantity}
-                                              style={{textAlign:"center",border:"1px solid #ced4da",height:"40px"}}
+                                              style={{textAlign:"center",border:"1px solid #ced4da",height:"40px",width:"auto"}}
 
                                                />
                                             <button onClick={this.handleItemQuantityIncr} className="btn mx-1"><i class="fas fa-plus-circle"></i></button>
@@ -302,7 +302,7 @@ class Productdetail extends Component {
                                     <li><a href="#">Electronic</a></li>
                                 </ul>
                             </div> */}
-                            <div className="pro-details-social">
+                            {/* <div className="pro-details-social">
                                 <ul>
                                     <li><a href="#"><i className="fa fa-facebook"></i></a></li>
                                     <li><a href="#"><i className="fa fa-dribbble"></i></a></li>
@@ -310,7 +310,7 @@ class Productdetail extends Component {
                                     <li><a href="#"><i className="fa fa-twitter"></i></a></li>
                                     <li><a href="#"><i className="fa fa-linkedin"></i></a></li>
                                 </ul>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
