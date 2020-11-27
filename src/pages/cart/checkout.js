@@ -68,7 +68,7 @@ export class CartCheckout extends Component {
         
         let myshipping = this.state.stateslist.filter(state=>state.name===e.target.value)
        
-        let currentShipping =  this.state.packaging;
+        let currentShipping =  myshipping[0].shipping_charges;
         this.state.items.map(item=>currentShipping+=(Math.ceil(Number(item.quantity))*Number(myshipping[0].shipping_charges)))
         console.log("Charges=>",myshipping[0].shipping_charges,currentShipping,this.state.total);
         
@@ -77,8 +77,7 @@ export class CartCheckout extends Component {
             ...this.state,
             [e.target.id]:e.target.value,
             shippingCharge:Number(myshipping[0].shipping_charges),
-            
-           
+            packaging:myshipping[0].shipping_charges
         })
         let currentTotal = this.state.total + currentShipping
 
