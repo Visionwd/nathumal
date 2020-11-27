@@ -90,13 +90,15 @@ export class Shop extends Component {
         }
     }
 
-    FetchData=(catid="",pageid="1")=>{
+    FetchData=(catid="",pageid="1",text="")=>{
         axios.post("https://heydemo.ml/nathumalapi/appapi/items",
         JSON.stringify({
              "service_request": {
                  "params": {
                     "cat_id":catid,
-                    "page":pageid
+                    "page":pageid,
+                    "s_text":text
+
                  },
                  "request_info": {
                      "source_type": "android"
@@ -234,6 +236,7 @@ export class Shop extends Component {
    handleSearchFilter=(searchingdata)=>{
     //    e.preventDefault()
        console.log("searching data=>",searchingdata);
+       this.FetchData(this.state.catids.length?this.state.catids.join():"",this.state.pageid,searchingdata)
    }
    
    

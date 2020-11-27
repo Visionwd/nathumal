@@ -31,7 +31,7 @@ export class CartCheckout extends Component {
                 city:"",
                 address:"",
                 postal_code:"",
-                state:"",
+                states:[],
                 country:"India"
             }
 
@@ -49,6 +49,7 @@ export class CartCheckout extends Component {
             items:store.get("persist"),
             total:currentTotal
         })
+        this.getStates()
     }
 
     handleChange = (e)=>{
@@ -59,6 +60,29 @@ export class CartCheckout extends Component {
         })
     }
 
+    ////////////////////////////////////////////////////
+    getStates = ()=>{
+        axios.post("https://heydemo.ml/nathumalapi/appapi/get_states",
+        JSON.stringify({
+             "service_request": {
+                 "params": {
+                    "country_id":"101"
+                 },
+                 "request_info": {
+                     "source_type": "android"
+                 }
+             },
+             "version": "1.0"
+         }),{
+     headers: {
+         'Content-Type': 'application/json'
+       }
+    })
+    .then(res=>{
+        console.log(res);
+        
+     })
+    }
    
     ///////////////////////////////////////////////////////////////////////////////////
       displayRazorpay = async (id) => {

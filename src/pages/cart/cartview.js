@@ -193,16 +193,16 @@ function Cartview() {
                                 <div className="title-wrap">
                                     <h4 className="cart-bottom-title section-bg-gary-cart">Cart Total</h4>
                                 </div>
-                                <h5>Total <span>₹{totalState}</span></h5>
-                                <div className="total-shipping">
+                                {/* <h5>Total <span>₹{totalState}</span></h5> */}
+                                {/* <div className="total-shipping">
                                     <h5>Total shipping</h5>
                                     <p>there is no shipping charges</p>
-                                    {/* <ul>
+                                    <ul>
                                         <li><input type="checkbox" /> Standard <span>200.00</span></li>
                                         <li><input type="checkbox" /> Express <span>300.00</span></li>
-                                    </ul> */}
+                                    </ul>
 
-                                </div>
+                                </div> */}
                                 <h4 className="grand-totall-title">Grand Total  <span>₹{totalState}</span></h4>
                                {
                                    store.get("persist")?store.get("persist").length? <a href="/cart/checkout">Proceed to Checkout</a>:null:null
