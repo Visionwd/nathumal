@@ -275,7 +275,7 @@ export class CartCheckout extends Component {
                                             return(
                                             <li key={item.id}><span className="order-middle-left">{item.quantity}   x   {item.name}</span> <span className="order-price">₹{item.saleprice*item.quantity} </span></li>
                                             )
-                                        }):navigate("/collections/shop")
+                                        }):null
                                     }
                                     
                                 </ul>
