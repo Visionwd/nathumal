@@ -65,7 +65,7 @@ export class Shop extends Component {
                     Gachak:true,
                     Reodi:true,
                     Bhugga:true,
-                    catids:[1,4,5]
+                    catids:["1","4","5"]
                 })
                 this.FetchData("1,4,5")
             }
@@ -74,7 +74,7 @@ export class Shop extends Component {
                 this.setState({
                     ...this.state,
                     Sweets:true,
-                    catids:[2]
+                    catids:["2"]
                 })
             }
             if (this.props.location.state.id===3) {
@@ -82,7 +82,7 @@ export class Shop extends Component {
                 this.setState({
                     ...this.state,
                     "Sukhi Bhaaji":true,
-                    catids:[3]
+                    catids:["3"]
                 })
             }
         }else{
@@ -135,7 +135,7 @@ export class Shop extends Component {
        }
     })
     .then(res=>{
-        console.log(res);
+        // console.log(res);
         this.setState({
             ...this.state,
             categories:res.data.categories
@@ -170,8 +170,8 @@ export class Shop extends Component {
     //     ...this.state,
     //     catid:this.state.catids.join()
     // })
-   
-    this.FetchData(this.state.catids.length?this.state.catids.join():"",this.state.pageid)
+   console.log("category=>",category);
+    this.FetchData(this.state.catids.length?category.join():"",this.state.pageid)
        
     }
 
@@ -243,9 +243,6 @@ export class Shop extends Component {
             <ToastContainer />
             <Banner title={"Shop"} />
             <div className="shop-area pt-95 pb-100">
-                {
-                    console.log("categories=>",this.state.categories)
-                }
                 <div className="container">
                     <div className="row ">
                     <div className="col-lg-3">
@@ -307,7 +304,7 @@ export class Shop extends Component {
                                         <div id="slider-range"></div>
                                     </div>
                                 </div> */}
-                                
+
 
                              </div>
                         </div>
