@@ -31,6 +31,7 @@ function Product({img,price,name,saleprice,AddTocart,id,quantity,catid,descripti
                 
                 <div className="product-action-2">
                     <a title="Add To Cart" onClick={()=>AddTocart({id,img,name,saleprice})}><i className="fa fa-shopping-cart"></i></a>
+                    
                     {/* <a title="Quick View" href="/" data-toggle="modal" data-target="#exampleModal"><i className="fa fa-eye"></i></a>
                     <a title="Compare" href="/"><i className="fa fa-retweet"></i></a> */}
                 </div>

@@ -10,7 +10,7 @@ function ProductOfCollection({img,price,name,saleprice,AddTocart,id,style,catid,
  navigate("/collections/products/productdetail")
 }
     return (
-    <div className={style?style:"col-xl-4 col-md-4 col-lg-4 col-sm-6"}>
+    <div className={style?style:"col-xl-4 col-md-6 col-lg-4 col-sm-6 col-6"}>
         <div className="product-wrap mb-25 scroll-zoom">
             <div className="product-img">
                 <a onClick={handleClick}>

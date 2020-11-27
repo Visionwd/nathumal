@@ -269,7 +269,7 @@ export class Shop extends Component {
                                                 this.state.categories.map(category=>{
                                                     return(
                                                         <li key={category.cat_id}>
-                                                            <div className="sidebar-widget-list-left">
+                                                            <div className="sidebar-widget-list-left ml-1">
                                                                  <input
                                                                  type="checkbox" 
                                                                  name={category.cat_id}

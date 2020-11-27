@@ -4,9 +4,10 @@ import { Link } from "gatsby";
 import footerBg from "../img/bg/footer_bg_02.jpg"
 function Footer() {
     return (
+        
         <div>
             
-<footer className="footer-area bg-gray pt-100 pb-40" style={{backgroundImage:`url(${footerBg})`,backgroundPosition:"center bottom",backgroundRepeat:"repeat-x"}}>
+<footer className="footer-area bg-gray pt-100 pb-40" style={{backgroundImage:`url(${footerBg})`,backgroundPosition:"center bottom",backgroundRepeat:"repeat-x",backgroundSize:"cover"}}>
     <div className="container">
         <div className="row">
             

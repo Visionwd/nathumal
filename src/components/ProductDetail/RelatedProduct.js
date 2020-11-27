@@ -62,7 +62,7 @@ class RelatedProduct extends Component {
                         <div className="row">
                                 {
                                     this.state.items.map(({item_id,item_name,item_img,item_price,item_saleprice})=>{
-                                        return <ProductOfCollection style={"col-xl-3 col-md-3 col-lg-3 col-sm-3"} id={item_id} AddTocart={this.props.AddTocart} key={item_id} name={item_name} img={"https://www.heydemo.ml/nathumalapi/uploads/"+item_img} price={item_price} saleprice={item_saleprice} />
+                                        return <ProductOfCollection style={"col-xl-3 col-md-3 col-lg-3 col-sm-3 col-6"} id={item_id} AddTocart={this.props.AddTocart} key={item_id} name={item_name} img={"https://www.heydemo.ml/nathumalapi/uploads/"+item_img} price={item_price} saleprice={item_saleprice} />
                                     })
                                 }
                         </div>
