@@ -64,7 +64,8 @@ export class Shop extends Component {
                     ...this.state,
                     Gachak:true,
                     Reodi:true,
-                    Bhugga:true
+                    Bhugga:true,
+                    catids:[1,4,5]
                 })
                 this.FetchData("1,4,5")
             }
@@ -72,14 +73,16 @@ export class Shop extends Component {
                 this.FetchData("2")
                 this.setState({
                     ...this.state,
-                    Sweets:true
+                    Sweets:true,
+                    catids:[2]
                 })
             }
             if (this.props.location.state.id===3) {
                 this.FetchData("3")
                 this.setState({
                     ...this.state,
-                    "Sukhi Bhaaji":true
+                    "Sukhi Bhaaji":true,
+                    catids:[3]
                 })
             }
         }else{
@@ -304,6 +307,7 @@ export class Shop extends Component {
                                         <div id="slider-range"></div>
                                     </div>
                                 </div> */}
+                                
 
                              </div>
                         </div>
