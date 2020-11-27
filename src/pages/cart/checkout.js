@@ -161,9 +161,7 @@ export class CartCheckout extends Component {
     render() {
         return (
             <Layout>
-                {
-                    this.state.total?navigate("/collections/shop"):null
-                }
+                
                  <Banner  title={"Checkout"}/>
 <div className="checkout-area pt-95 pb-100">
     <div className="container">
@@ -238,6 +236,7 @@ export class CartCheckout extends Component {
                                     <option>Select a country</option>
                                     <option>India</option>
                                     <option>USA</option>
+                                    
                                     <option>UK</option>
                                     <option>Germany</option>
                                     <option>Canada</option>
