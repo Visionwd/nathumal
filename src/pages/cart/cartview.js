@@ -207,7 +207,7 @@ function Cartview() {
                                 </div>
                                 <h4 className="grand-totall-title">Grand Total  <span>₹{totalState}</span></h4>
                                {
-                                   store.get("persist")?store.get("persist").length? <a href="/cart/checkout">Proceed to Checkout</a>:null:myNavigate()
+                                   store.get("persist")?store.get("persist").length? <a href="/cart/checkout">Proceed to Checkout</a>:null:null
                                }
                             </div>
                         </div>
