@@ -72,7 +72,7 @@ function Header({className,navColor,total}) {
                         </div>
                     </div>
                    
-                    <div className="col-lg-3 col-md-3 col-6">
+                    <div className="col-lg-3 col-md-3 col-6 ">
                         <div className="header-right-wrap">
                             
                             {/* <div className="same-style header-search">
@@ -84,7 +84,7 @@ function Header({className,navColor,total}) {
                                     </form>
                                 </div> 
                             </div> */}
-                            
+
 
                             {/* <div className="same-style account-satting">
                                 <a className="account-satting-active" className={navColor} href="/" ><i className="pe-7s-user-female"></i></a>
@@ -101,8 +101,8 @@ function Header({className,navColor,total}) {
                             </div> */}
                             <div className="same-style cart-wrap">
                           
-                                <button className="icon-cart" >
-                                        <a href="/cart/cartview" className="account-satting-active" className={navColor}> <i className="pe-7s-shopbag"></i></a>
+                                <button className="icon-cart pr-2" >
+                                        <a href="/cart/cartview" className="account-satting-active my-1" className={navColor}> <i className="pe-7s-shopbag"></i></a>
                                         <span className="count-style">{store.get("persist")?store.get("persist").length:0}</span>
                                 </button>
                                 <div className="shopping-cart-content">

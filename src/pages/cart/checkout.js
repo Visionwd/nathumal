@@ -118,7 +118,7 @@ export class CartCheckout extends Component {
     }
    
     ///////////////////////////////////////////////////////////////////////////////////
-      displayRazorpay = async (id) => {
+      displayRazorpay = async (id,serverid) => {
         const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js')
 
         if (!res) {
@@ -129,7 +129,6 @@ export class CartCheckout extends Component {
         // const data = await fetch('http://localhost:1337/razorpay', { method: 'POST' }).then((t) =>
         //     t.json()
         // )
-
         // console.log(data)
 
         const options = {
@@ -137,8 +136,8 @@ export class CartCheckout extends Component {
             currency: "INR",
             amount: String(Number(this.state.subtotal)*100),
             order_id: id,
-            name: 'sweet payment',
-            description: 'Thank you for shopping. Pay money',
+            name: `Order #${serverid}`,
+            description: 'Pay Online',
             image: logo,
             handler: function (response) {
 
@@ -217,7 +216,7 @@ export class CartCheckout extends Component {
             console.log("success: ",res);
 
             //////////////////////////////////////////////////////
-            this.displayRazorpay(res.data.payorderid)
+            this.displayRazorpay(res.data.payorderid,res.data.orderid)
             /////////////////////////////////////////////////////
 
           
