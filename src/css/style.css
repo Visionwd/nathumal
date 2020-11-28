@@ -8224,7 +8224,8 @@ h3.cart-page-title {
       font-size: 14px;
       color: #333; }
 
-.your-order-area .Place-order > a {
+.your-order-area .Place-order > button {
+  width: 100%;
   background-color: #1860AB;
   color: #fff;
   text-decoration: none;
@@ -8237,7 +8238,7 @@ h3.cart-page-title {
   text-transform: uppercase;
   border-radius: 50px;
   z-index: 9; }
-  .your-order-area .Place-order > a:hover {
+  .your-order-area .Place-order > button:hover {
     background-color: #333; }
 
 @media only screen and (max-width: 767px) {

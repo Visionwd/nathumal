@@ -96,7 +96,7 @@ function Footer() {
         <div className="col-lg-12 col-md-12 col-sm-12">
                 <div className="copyright ">
                     <div className="footer-logo text-center">
-                        <a href="index.html" className=" ">
+                        <a href="/" className=" ">
                             <img alt="logo" src={logo} style={{width:"15%"}}  className="logoimg " />
                         </a>
                     </div>

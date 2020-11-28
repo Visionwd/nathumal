@@ -161,12 +161,13 @@ function Cartview() {
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="cart-shiping-update-wrapper">
-                                    <div className="cart-shiping-update">
-                                        <a href="/collections/shop">Continue Shopping</a>
-                                    </div>
                                     <div className="cart-clear">
                                         <a onClick={ClearAll}>Clear Shopping Cart</a>
                                     </div>
+                                    <div className="cart-shiping-update">
+                                        <a href="/collections/shop">Continue Shopping</a>
+                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -188,7 +189,8 @@ function Cartview() {
                                 </div>
                             </div>
                         </div> */}
-                        <div className="col-lg-4 col-md-12">
+                        
+                        <div className="col-lg-4 col-md-12 offset-lg-8">
                             <div className="grand-totall">
                                 <div className="title-wrap">
                                     <h4 className="cart-bottom-title section-bg-gary-cart">Cart Total</h4>
