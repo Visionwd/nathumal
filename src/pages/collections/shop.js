@@ -343,12 +343,13 @@ export class Shop extends Component {
 
                                         <div className="row">
                                                 {
-                                                    this.state.items.map(({item_id,item_name,item_img,item_price,item_saleprice,cat_id,item_desc})=>{
+                                                    this.state.items.length?this.state.items.map(({item_id,item_name,item_img,item_price,item_saleprice,cat_id,item_desc})=>{
                                                         return <ProductOfCollection id={item_id} description={item_desc} catid={cat_id} AddTocart={this.AddTocart} key={item_id} name={item_name} img={"https://www.heydemo.ml/nathumalapi/uploads/"+item_img} price={item_price} saleprice={item_saleprice} />
-                                                    })
+                                                    }):<div className="col-md-12"><h2 className="text-center">No items found</h2></div>
                                                 }
                                         </div>
                                        
+
 
                                         {/* {
                                             this.state.all||!(this.state.Bhugga||this.state.Reodi||this.state.Gachak||this.state["Sukhi Bhaaji"])?<AllItems  AddTocart={this.AddTocart} />:null
@@ -385,18 +386,22 @@ export class Shop extends Component {
                                         <li><a className="next" href="#"><i className="fa fa-angle-double-right"></i></a></li>
                                     </ul> */}
 
-                                    <ReactPaginate
-                                        previousLabel={"<<"}
-                                        nextLabel={">>"}
-                                        breakLabel={"..."}
-                                        breakClassName={"break-me"}
-                                        pageCount={Math.ceil(this.state.totalitems/12)}
-                                        marginPagesDisplayed={2}
-                                        pageRangeDisplayed={5}
-                                        onPageChange={this.handlePagination}
-                                        containerClassName={""}
-                                        subContainerClassName={"active"}
-                                        activeClassName={"active"}/>
+
+                                       {
+                                           this.state.items.length?<ReactPaginate
+                                           previousLabel={"<<"}
+                                           nextLabel={">>"}
+                                           breakLabel={"..."}
+                                           breakClassName={"break-me"}
+                                           pageCount={Math.ceil(this.state.totalitems/12)}
+                                           marginPagesDisplayed={2}
+                                           pageRangeDisplayed={5}
+                                           onPageChange={this.handlePagination}
+                                           containerClassName={""}
+                                           subContainerClassName={"active"}
+                                           activeClassName={"active"}/>:null
+                                       } 
+                                    
                                 </div>
                             </div>
                         </div>

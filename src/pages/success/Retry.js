@@ -5,7 +5,7 @@ import Layout from "../../components/Layout"
 import Banner from "../../components/Reusable/Banner"
 import { Link, navigate } from "gatsby";
 
-class  Thanks extends Component {
+class  Retry extends Component {
     
     componentDidMount(){
         // store.remove("persist")
@@ -15,7 +15,7 @@ class  Thanks extends Component {
    render(){
     return (
 
-        
+
         <Layout>
              <Banner  title={"Sorry !"}/>
             <div className="my-5 py-5">
@@ -43,4 +43,4 @@ class  Thanks extends Component {
    }
 }
 
-export default Thanks
+export default Retry
