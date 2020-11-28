@@ -132,7 +132,7 @@ export class CartCheckout extends Component {
         // console.log(data)
 
         const options = {
-            key: "rzp_test_b890oMoFJWdfB3",
+            key: "rzp_live_g24tkxIzwDaRTi",
             currency: "INR",
             amount: String(Number(this.state.subtotal)*100),
             order_id: id,
