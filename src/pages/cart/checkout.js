@@ -386,11 +386,11 @@ export class CartCheckout extends Component {
                                 </ul>
                             </div>
                            
-                            <div className="your-order-total">
+                            <div className="your-order-total" >
                                 <ul>
-                                    <li className="order-total">Grand Total</li>
+                                    <li className="order-total" style={{color:"#1860AB"}}>Grand Total</li>
                                     <li className="order-total">  
-                                        <span className="text-right">
+                                        <span className="text-right" style={{color:"#1860AB"}}>
                                             ₹ {this.state.total?this.state.total:this.state.subtotal}
                                         </span>
                                     </li>

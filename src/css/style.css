@@ -7990,6 +7990,7 @@ h3.cart-page-title {
         .grand-totall .total-shipping ul li span {
           float: right; }
   .grand-totall h4.grand-totall-title {
+    font-family: 'Segoe UI',  sans-serif;
     color: #1860AB;
     font-size: 20px;
     font-weight: 500;

@@ -191,6 +191,9 @@ function Cartview() {
                         </div> */}
                         
                         <div className="col-lg-4 col-md-12 offset-lg-8">
+
+                        
+
                             <div className="grand-totall">
                                 <div className="title-wrap">
                                     <h4 className="cart-bottom-title section-bg-gary-cart">Cart Total</h4>
@@ -206,6 +209,7 @@ function Cartview() {
 
                                 </div> */}
                                 <h4 className="grand-totall-title">Grand Total  <span>₹{totalState}</span></h4>
+                            
                                {
                                    store.get("persist")?store.get("persist").length? <a href="/cart/checkout">Proceed to Checkout</a>:null:null
                                }
