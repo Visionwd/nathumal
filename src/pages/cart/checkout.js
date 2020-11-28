@@ -166,9 +166,9 @@ export class CartCheckout extends Component {
                         }
                     })
                     store.set("persist",[])
-                    alert(response.razorpay_payment_id)
-                    alert(response.razorpay_order_id)
-                    alert(response.razorpay_signature)
+                    // alert(response.razorpay_payment_id)
+                    // alert(response.razorpay_order_id)
+                    // alert(response.razorpay_signature)
                    })
                 
             },
@@ -180,6 +180,18 @@ export class CartCheckout extends Component {
         }
 
         const paymentObject = new window.Razorpay(options)
+        paymentObject.on('payment.failed', function (response){
+            navigate("/success/Retry",{state:{
+                data:res.data
+            }})
+            // alert(response.error.code);
+            // alert(response.error.description);
+            // alert(response.error.source);
+            // alert(response.error.step);
+            // alert(response.error.reason);
+            // alert(response.error.metadata.order_id);
+            // alert(response.error.metadata.payment_id);
+    });
         paymentObject.open()
     }
 
