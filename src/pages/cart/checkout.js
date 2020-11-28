@@ -460,7 +460,7 @@ export class CartCheckout extends Component {
                             console.log("btn status",(this.state.subtotal&&this.state.total&&this.state.items.length)?false:true)
                         }
                         <button className="btn-hover" type="submit" 
-                        disabled={(this.state.subtotal&&this.state.total&&this.state.state&&this.state.items.length)?false:true}>Place Order</button>
+                       >Place Order</button>
                     </div>
                 </div>
             </div>

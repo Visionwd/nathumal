@@ -21,7 +21,7 @@ function Footer() {
                             <div className="footer-list">
                                 <ul>
                                     <li><Link to="/pages/about">About us</Link></li> 
-                                    <li><Link to="/pages/store">Order Online</Link></li>
+                                    <li><Link to="/collections/shop">Order Online</Link></li>
                                     <li><Link to="/pages/contact">Contact</Link></li>
                                     
                                 </ul>

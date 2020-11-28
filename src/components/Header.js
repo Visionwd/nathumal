@@ -74,7 +74,7 @@ function Header({className,navColor,total}) {
                    
                     <div className="col-lg-3 col-md-3 col-12">
                         <div className="header-right-wrap">
-                            <div className="same-style header-search">
+                            {/* <div className="same-style header-search">
                                 <a className="search-active" className={navColor} href="#" ><i className="pe-7s-search"></i></a>
                                 <div className="search-content">
                                     <form action="#">
@@ -82,7 +82,8 @@ function Header({className,navColor,total}) {
                                         <button className="button-search" ><i className="pe-7s-search"></i></button>
                                     </form>
                                 </div> 
-                            </div>
+                            </div> */}
+                            
                             {/* <div className="same-style account-satting">
                                 <a className="account-satting-active" className={navColor} href="/" ><i className="pe-7s-user-female"></i></a>
                                 <div className="account-dropdown">
