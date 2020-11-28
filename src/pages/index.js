@@ -234,7 +234,7 @@ export class Home extends Component {
                </div>
 
                <div className="tab-pane active" id="product-3">
-                   <div className="custom-row-4">
+                  
                        <Reodi AddTocart={this.AddTocart}/>
                        
                    {/* {
@@ -242,8 +242,7 @@ export class Home extends Component {
                             return <Product id={item_id} AddTocart={this.AddTocart} key={item_id} name={item_name} img={"https://www.heydemo.ml/nathumalapi/uploads/"+item_img} price={item_price} saleprice={item_saleprice} />
                         })
                     } */}
-                       
-                     </div>
+                    
                </div>
               
            </div>

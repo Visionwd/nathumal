@@ -70,31 +70,6 @@ export class Bhugga extends Component {
                         })
                     }
                    </div>
-                    {/* <OwlCarousel
-    className="owl-theme"
-    loop
-    responsive={{
-      0:{
-          items:2,
-          margin:10
-
-      },
-      1000:{
-          items:5,
-          margin:50
-      }
-  }}
-  center={true}
-> */}
-
-
-
-
-
-        
-        {/* </OwlCarousel> */}
-
-          
                </div>
 
                

@@ -64,7 +64,7 @@ function Header({className,navColor,total}) {
                         </div>
                     </div>
 
-                    <div className="col-md-6 ">
+                    <div className="col-md-6 col-6 ">
                         <div className="logo-hm9 ">
                             <a href="/" >
                                 <img alt="" src={logo} className="logoimg mt-2" />
@@ -72,7 +72,7 @@ function Header({className,navColor,total}) {
                         </div>
                     </div>
                    
-                    <div className="col-lg-3 col-md-3 col-12">
+                    <div className="col-lg-3 col-md-3 col-6">
                         <div className="header-right-wrap">
                             
                             {/* <div className="same-style header-search">
@@ -84,6 +84,7 @@ function Header({className,navColor,total}) {
                                     </form>
                                 </div> 
                             </div> */}
+                            
 
                             {/* <div className="same-style account-satting">
                                 <a className="account-satting-active" className={navColor} href="/" ><i className="pe-7s-user-female"></i></a>

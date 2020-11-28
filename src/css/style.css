@@ -1788,6 +1788,10 @@ a.default-btn {
     .stick .logo,
     .stick .header-right-wrap {
       margin-top: 0px; } }
+      @media only screen and (max-width: 480px) {
+        .stick .logo,
+        .stick .header-right-wrap {
+          margin-top: 32px; } }
   @media only screen and (min-width: 768px) and (max-width: 991px) {
     .stick .logo,
     .stick .header-right-wrap {
@@ -1806,6 +1810,12 @@ a.default-btn {
     .stick .header-right-wrap .same-style .account-dropdown {
       top: 100%;
       margin-top: 14px; } }
+
+      @media only screen and (max-width: 480px){
+        .header-right-wrap .same-style.cart-wrap{
+          margin-top: 32px;
+        }
+      }
 
 .header-right-wrap {
   display: -webkit-box;

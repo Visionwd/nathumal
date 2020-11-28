@@ -16,7 +16,7 @@ export class Bhugga extends Component {
         JSON.stringify({
              "service_request": {
                  "params": {
-                    "cat_id":"4",
+                    "cat_id":"5",
                     "page":"1"
                  },
                  "request_info": {
@@ -62,28 +62,13 @@ export class Bhugga extends Component {
         return (
             <div>
 
-                {/* <OwlCarousel
-    className="owl-theme"
-    loop
-    responsive={{
-      0:{
-          items:2,
-          margin:10
-
-      },
-      1000:{
-          items:5,
-          margin:50
-      }
-  }}
-  center={true}
-> */}
+                
          {
             this.state.items.map(({item_id,item_name,item_img,item_price,item_saleprice})=>{
                 return  <Product id={item_id} AddTocart={this.AddTocart} key={item_id} name={item_name} img={"https://www.heydemo.ml/nathumalapi/uploads/"+item_img}  price={item_price} saleprice={item_saleprice} />
             })
          }
-        {/* </OwlCarousel> */}
+        
 
             </div>
         )

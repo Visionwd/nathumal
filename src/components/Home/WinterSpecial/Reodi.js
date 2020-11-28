@@ -62,38 +62,14 @@ export class Bhugga extends Component {
         return (
            
             <div className="tab-pane active" id="product-1">
-                  
+                   <div className="custom-row-4">
                     {
                         this.state.items.map(({item_id,item_name,item_img,item_price,item_saleprice,cat_id,item_desc})=>{
                             return <Product id={item_id} description={item_desc} AddTocart={this.AddTocart} catid={cat_id} key={item_id} name={item_name} img={"https://www.heydemo.ml/nathumalapi/uploads/"+item_img} price={item_price} saleprice={item_saleprice} />
                         })
                     }
-                  
-                    {/* <OwlCarousel
-    className="owl-theme"
-    loop
-    responsive={{
-      0:{
-          items:2,
-          margin:10
-
-      },
-      1000:{
-          items:5,
-          margin:50
-      }
-  }}
-  center={true}
-> */}
-
-
-
-
-
-        
-        {/* </OwlCarousel> */}
-
-          
+                   </div>
+                    
                </div>
 
                

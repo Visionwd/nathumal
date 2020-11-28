@@ -237,11 +237,12 @@ export class Shop extends Component {
 //        })
 //    }
 
+
    handleSearchFilter=(searchingdata)=>{
     //    e.preventDefault()
        console.log("searching data=>",searchingdata);
        this.FetchData(this.state.catids.length?this.state.catids.join():"",this.state.pageid,searchingdata)
-       
+
           if(!this.state.items.length){
             this.setState({
                 ...this.state,
