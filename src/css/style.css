@@ -2861,6 +2861,16 @@ a.default-btn {
   width: 100%;
 }
 
+.logo-hm9 {
+  text-align: center !important;
+ } 
+
+@media only screen and (max-width: 767px) {
+   .logo-hm9 {
+   text-align: left !important;
+  } 
+}
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .header-hm9 .mean-container a.meanmenu-reveal {
     top: -26px; }

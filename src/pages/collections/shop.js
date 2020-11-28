@@ -40,7 +40,8 @@ export class Shop extends Component {
         pageid:"1",
         catid:"",
         catids:[],
-        filteritem:""
+        filteritem:"",
+        noitemMsg:"Loading..."
 
     }
    
@@ -117,6 +118,8 @@ export class Shop extends Component {
             items:res.data.items,
             totalitems:res.data.total_count
         })
+       
+         
      })
     }
 
@@ -238,9 +241,22 @@ export class Shop extends Component {
     //    e.preventDefault()
        console.log("searching data=>",searchingdata);
        this.FetchData(this.state.catids.length?this.state.catids.join():"",this.state.pageid,searchingdata)
+       
+          if(!this.state.items.length){
+            this.setState({
+                ...this.state,
+                noitemMsg:"No items found"
+            })
+       }else{
+        this.setState({
+            ...this.state,
+            noitemMsg:"Loading..."
+        })
+       }
    }
    
    
+
     render() {
         return (
             <Layout>
@@ -345,7 +361,7 @@ export class Shop extends Component {
                                                 {
                                                     this.state.items.length?this.state.items.map(({item_id,item_name,item_img,item_price,item_saleprice,cat_id,item_desc})=>{
                                                         return <ProductOfCollection id={item_id} description={item_desc} catid={cat_id} AddTocart={this.AddTocart} key={item_id} name={item_name} img={"https://www.heydemo.ml/nathumalapi/uploads/"+item_img} price={item_price} saleprice={item_saleprice} />
-                                                    }):<div className="col-md-12"><h2 className="text-center">No items found</h2></div>
+                                                    }):<div className="col-md-12"><h2 className="text-center">{this.state.noitemMsg}</h2></div>
                                                 }
                                         </div>
                                        
