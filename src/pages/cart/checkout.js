@@ -5,6 +5,7 @@ import { navigate } from "gatsby";
 import Layout from "../../components/Layout"
 import logo from "../../img/logo/logo.png"
 import Banner from "../../components/Reusable/Banner"
+import razorpayImg from "../../img/razorpay/razorpay.png"
 
 function loadScript(src) {
 	return new Promise((resolve) => {
@@ -279,12 +280,12 @@ export class CartCheckout extends Component {
                         <div className="col-lg-6 col-md-6">
                             <div className="form-group">
                                 <label htmlFor="states">State</label>
-                                <select className="form-control" name="state" id="state" onChange={this.handleState}  requiredvalue={this.state.state} placeholder="state">
-                                    <option>select state</option>
+                                <select  className="form-control" name="state" id="state" onChange={this.handleState}   value={this.state.state}  required>
+                                    <option value="">select state</option>
                                 {
                                     this.state.stateslist.length?this.state.stateslist.map(state=>{
                                         return(
-                                            <option key={state.id}>{state.name}</option>
+                                            <option value={state.name} key={state.id}>{state.name}</option>
                                         )
                                     }):null
                                 }
@@ -400,7 +401,7 @@ export class CartCheckout extends Component {
                         </div>
                         <div className="payment-method">
                         <div className="radio">
-                        <label><input type="radio" name="optradio" defaultChecked /> Razorpay</label>
+                        <label><input type="radio" name="optradio" defaultChecked /><img src={razorpayImg} className="ml-1" style={{width:"50%"}} /></label>
                         </div>
                         {/* <img src="https://razorpay.com/assets/razorpay-logo-white.png" alt="razorpay"/> */}
                        

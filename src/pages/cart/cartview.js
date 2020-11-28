@@ -195,9 +195,9 @@ function Cartview() {
                         
 
                             <div className="grand-totall">
-                                <div className="title-wrap">
+                                {/* <div className="title-wrap">
                                     <h4 className="cart-bottom-title section-bg-gary-cart">Cart Total</h4>
-                                </div>
+                                </div> */}
                                 {/* <h5>Total <span>₹{totalState}</span></h5> */}
                                 {/* <div className="total-shipping">
                                     <h5>Total shipping</h5>
