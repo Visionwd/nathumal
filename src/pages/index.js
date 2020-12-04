@@ -283,16 +283,13 @@ export class Home extends Component {
    
    <div className="product-area pb-60 hm9-section-padding">
        <div className="container-fluid">
-           <div className="product-tab-list nav pb-55 text-center">
-
            <div className="tab-content jump">
                <div className="tab-pane active" id="product-1">
                   <Bhaji AddTocart={this.AddTocart} />
                </div>
            </div>
-       </div>
-   </div>
-   </div>
+        </div>
+    </div>
 
 
 {/* <Testimonial />
