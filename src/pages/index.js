@@ -18,7 +18,7 @@ import Product from "../components/Reusable/Product";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Restapitest from "../components/Restapitest";
-
+import Testimonial from "../components/Home/Testimonial"
 
 import store from "store"
 import Bhugga from '../components/Home/WinterSpecial/Bhugga';
@@ -27,6 +27,7 @@ import Reodi from '../components/Home/WinterSpecial/Reodi';
 
 import Sweets from '../components/Home/Sweets';
 import Bhaji from '../components/Home/WeddingBhaji';
+import NewTestimonial from '../components/Home/NewTestimonial';
 
 
 
@@ -294,6 +295,9 @@ export class Home extends Component {
    </div>
 
 
+{/* <Testimonial />
+ */}
+ <NewTestimonial />
 {/* <OwlData /> */}
        <Footer />
        </div>

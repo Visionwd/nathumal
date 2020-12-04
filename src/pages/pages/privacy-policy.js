@@ -64,10 +64,11 @@ function Privacypolicy() {
                 <p class="p5"><span class="s1">If there are any questions regarding this privacy policy you may contact us using the information below.&nbsp;</span></p>
                 <p class="p9"><span class="s1">www.nathuandghudoo.com</span></p>
                 <p class="p1">+91 73031-00009</p>
-                {/* <p class="p1">celebrate@nathuandghudoo.in</p>
-                <p class="p1">instagram/nathuandghudoo</p>
-                <p class="p1">facebook/nathuandghudoo</p>
-                <p class="p1">twitter/nathuandghudoo</p> */}
+                <p><a style={{color:"gray",textDecoration:"none"}} href="mailto:contact@nathuandghudoo.com">contact@nathuandghudoo.com</a></p>
+                <p><a style={{color:"gray",textDecoration:"none"}} href="https://www.instagram.com/nathumalandghudoomal/">https://www.instagram.com/nathumalandghudoomal/</a></p>
+
+                <p><a style={{color:"gray",textDecoration:"none"}} href="https://www.facebook.com/nmgmludhiana/">https://www.facebook.com/nmgmludhiana/</a></p>
+               
                 <p class="p4">&nbsp;</p>
                 </div>
                     </div>

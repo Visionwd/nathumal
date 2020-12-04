@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import store from "store";
 import Layout from "../../components/Layout"
 import Banner from "../../components/Reusable/Banner"
-import { navigate } from "gatsby";
+
 
 class  Thanks extends Component {
     

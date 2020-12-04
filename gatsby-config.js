@@ -15,6 +15,17 @@ module.exports = {
     //     accessToken: `TvZqr9I0vb1DNOo84R8Jrh44lc981-vgJtBuIeQghqc`,
     //   },
     // },
+    `gatsby-transformer-sharp`,
+     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/img/`,
+      },
+    },
+    
+
   
   ],
 }

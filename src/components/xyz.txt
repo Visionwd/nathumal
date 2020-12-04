@@ -1,0 +1,123 @@
+ <div class="section-full  p-t80 p-b50 bg-white" style={{transform: "none"}}>
+				<div class="container" style={{transform: "none"}}>
+                
+                    {/* <!-- BLOG SECTION START --> */}
+                    <div class="section-content" style={{transform: "none"}}>
+                        <div class="row d-flex justify-content-center" style={{transform: "none"}}>
+                        
+                            <div class="col-xl-9 col-lg-8 col-md-12 col-sm-12 m-b30">
+                               {/* <!-- BLOG START --> */}
+                                <div class="blog-post date-style-2 blog-lg">
+                                    <div class="wt-post-media wt-img-effect zoom-slow">
+                                        <a href="javascript:;"><img src={props.data.sanityPost.mainImage.asset.url} alt=""  /></a>
+                                    </div>
+                                    <div class="wt-post-info  bg-white p-t30">
+                                        <div class="wt-post-meta ">
+                                            <ul>
+                                                <li class="post-date"><span>{props.data.sanityPost.publishedAt}</span> </li>
+                                                <li class="post-user"><a href="javascript:void(0);"> By <span class="site-text-primary">{props.data.sanityPost.authors[0].author.name}</span></a> </li>
+                                                {/* <li class="post-comment"><a href="javascript:void(0);">Comment <span class="site-text-primary"> 24</span></a> </li> */}
+                                            </ul>
+                                        </div>                                 
+                                        <div class="wt-post-title ">
+                                            <h3 class="post-title"><a href="javascript:;" class="site-text-primary">{props.data.sanityPost.title}</a></h3>
+                                        </div>
+                                       
+                                        <div class="wt-post-text">
+                                            <p>Blandit feugiat porttitor. Diam amet fermentum, donec ut egestas sit. Sit odio eget molestie eros, nisl pulvinar eros curabitur, neque eget. Hac a per cras purus elementum. Neque augue, sodales vel in sed sed, ultricies dolor. Ac orci sed eros consectetuer adipiscing, velit wisi donec. Urna diam laoreet quam proin eu nulla, commodo maecenas, maecenas dictum sed etiam in, pellentesque congue, ultrices erat urna non vel. Odio non ultricies non maecenas blanditiis nam, suspendisse magna vel auctor phase  llus, quam proin cum, vitae duis magna libero. Quos sapien orci neque nulla pretium purus, parturient wisi, a felis sed adipiscing sed wisi eget, vel id dolor donec at, eu at a. Non at egestas duis quis, place rat leo eu pharetra nullam habitasse mollis, pellentesque commodo consectetuer laoreet ipsum wisi.</p>
+                                            
+                                             <blockquote>
+                                                <i class="fa fa-quote-left font-20"></i>
+                                                <h3>I think it’s important people see themselves in film, but it’s even more important they see people they maybe don’t know as well.</h3>
+                                             </blockquote>                                         
+       
+                                        <p>An eros argumentum vel, elit diceret duo eu, quo et aliquid ornatus delicatissimi. Cu nam tale ferri utroque, eu habemus albucius mel, cu vidit possit ornatus eum. Eu ius postulant salutatus definitionem, an e trud erroribus explicari. Graeci viderer qui ut, at habeo facer solet usu. Pri choro pertinax indoctum ne, ad partiendo persecuti forensibus est.</p>
+                                        </div>  
+                                                        
+                                    </div>
+                                </div>
+    
+                                
+                            </div> 
+                            
+                            {/* <!-- SIDE BAR START --> */}
+                            <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12 rightSidebar  m-b30" style={{position: "relative", overflow: "visible", boxSizing:" border-box", minHeight: "1px"}}>
+                            
+                                
+        
+                            <div class="theiaStickySidebar" style={{paddingTop: "0px", paddingBottom: "1px", position: "static", transform: "none"}}><aside class="side-bar bg-orange-light2 p-t15">
+                                    
+                                        {/* <!-- SEARCH --> */}
+										                    <div class="widget widget-team p-a10">
+                                            <h4 class="widget-title">About Author</h4>
+                                            <div class="widget-post m-b15">
+                                                <img src="images/team/pic1.jpg" alt=""  class="img-responsive" />
+                                            </div>
+                                            <div class="team-detail  text-center">
+                                                <h5 class="m-t0">{props.data.sanityPost.authors[0].author.name}</h5>
+                                                <p>We are the dolor sit ametLorem Ipsum Proin gravida nibh vel velit auctor aliquet.
+                                                  Aenean sollicitudin. 
+                                                 </p>
+                                             </div>                                            
+                                        </div>                                        
+                                                           
+                                        
+                                        {/* <!-- Social --> */}
+                                        <div class="widget p-a10">
+                                            <div class="text-left m-b30">
+                                                <h4 class="widget-title">Follow Us</h4>
+                                                <div class="wt-separator sep-gradient-light"></div>
+                                            </div>                                         
+                                            <div class="widget_social_inks">
+                                                <ul class="social-icons social-square social-darkest social-md">
+                                                    <li><a href="#" class="fa fa-facebook"></a></li>
+                                                    <li><a href="#" class="fa fa-youtube"></a></li>
+                                                    <li><a href="#" class="fa fa-instagram"></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>  
+                                        
+                                        {/* <!-- CATEGORY -->    */}
+                                       <div class="widget widget_services p-a10">
+                                            <div class="text-left m-b30">
+                                                <h4 class="widget-title">Categories</h4>
+                                                <div class="wt-separator sep-gradient-light"></div>
+                                            </div>
+                                            <ul>
+                                                <li><a href="#">Hairslyle</a><span class="badge">28</span></li>
+                                                <li><a href="#">Makeup</a><span class="badge">05</span></li>
+                                                <li><a href="#">Skincare</a><span class="badge">24</span></li>
+                                                <li><a href="#">Lamination</a><span class="badge">15</span></li>
+                                                <li><a href="#">Eyebrows</a><span class="badge">20</span></li>
+                                                <li><a href="#">Beauty</a><span class="badge">15</span></li>
+                                                                                               
+                                            </ul>
+                                        </div>                                               
+                                                                                
+                                        {/* <!-- TAGS --> */}
+                                        <div class="widget widget_tag_cloud p-a10">
+                                            <div class="text-left m-b30">
+                                                <h4 class="widget-title">Tags</h4>
+                                                <div class="wt-separator sep-gradient-light"></div>
+                                            </div>  
+                                                               
+                                            <div class="tagcloud">
+                                                <a href="#">Coloring</a>
+                                                <a href="#">Hairstyle </a>
+                                                <a href="#">Makeup</a>                                            
+                                                <a href="#">Facials</a>
+                                                <a href="#">Nail Art</a>
+                                               
+                                            </div>
+                                        </div>
+
+                                   </aside></div></div>
+                      
+                        </div>
+                          
+                    </div>
+                    
+                </div>
+                
+             </div>
+

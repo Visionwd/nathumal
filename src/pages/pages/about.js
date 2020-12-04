@@ -16,7 +16,7 @@ function About() {
                         <p className="" >Handcrafted with organic ingredients with the extracts of natural flavours, we at
                          Nathu Mal & Ghudoo Mal are passionate about Indian traditions and the authentic centuries old 
                          art of Indian mithai. We are the fourth generation, known for winter delicacies carried by a 
-                         legacy of more than 100 years old business with anew vision and creativity, keeping the century old 
+                         legacy of more than 100 years old business with a new vision and creativity, keeping the century old 
                          handcrafted technique, passion and love alive.
                         </p>
 

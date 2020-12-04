@@ -3206,7 +3206,8 @@ a.default-btn {
       content: "";
       width: 120px;
       height: 2px;
-      background-color: #000000; }
+      /* background-color: #000000;  */
+    }
   .slider-content-2 h1 {
     font-size: 72px;
     line-height: 97px;
@@ -8938,3 +8939,92 @@ h3.cart-page-title {
           background-color: #df5c39; }
           .single-my-account .myaccount-info-wrapper .entries-wrapper .entries-edit-delete a.edit:hover {
             background-color: #a749ff; }
+
+
+
+.section-full{
+  position: relative;
+}
+.p-b70 {
+  padding-bottom: 70px;
+}
+.p-t80 {
+  padding-top: 80px;
+}
+.bg-cover {
+  background-size: cover;
+}
+.center.wt-small-separator-outer {
+  text-align: center;
+}
+.section-head {
+  margin-bottom: 80px;
+}
+.section-head {
+  position: relative;
+  z-index: 1;
+}
+.wt-small-separator {
+  font-family: Poppins,sans-serif;
+  font-size: 19px;
+  line-height: 34px;
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+}
+.center .wt-small-separator div.sep-leaf-left {
+  position: relative;
+  margin-right: 30px;
+}
+.wt-small-separator div {
+  display: inline-block;
+}
+.center .wt-small-separator div.sep-leaf-left:before, .center .wt-small-separator div.sep-leaf-right:before {
+  position: absolute;
+  content: "";
+  background-color: #ff99b8;
+  width: 35px;
+  height: 1px;
+  bottom: 14px;
+}
+.center .wt-small-separator div.sep-leaf-left:before {
+  left: 22px;
+}
+.wt-small-separator img {
+  width: 28px;
+  vertical-align: baseline;
+}
+img {
+  border-style: none;
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+*, :after, :before {
+  box-sizing: border-box;
+}
+.wt-small-separator div {
+  display: inline-block;
+}
+.center .wt-small-separator div.sep-leaf-right {
+  position: relative;
+  margin-left: 30px;
+}
+.center .wt-small-separator div.sep-leaf-right:before {
+  right: 22px;
+}
+.center .wt-small-separator div.sep-leaf-left:before, .center .wt-small-separator div.sep-leaf-right:before {
+  position: absolute;
+  content: "";
+  background-color: #ff99b8;
+  width: 35px;
+  height: 1px;
+  bottom: 14px;
+}
+
+li .slide{
+  background: none;
+}
+
+.carousel .slide{min-width:100%;margin:0;position:relative;text-align:center;
+  background:none !important}
