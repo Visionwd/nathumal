@@ -58,7 +58,7 @@ function Privacypolicy() {
                 <h4><span class="s1"><b></b></span></h4>
                 <h4><span class="s1"><b>Changes to our Privacy Policy&nbsp;</b></span></h4>
                 <p class="p2"><span class="s1">Please note that we may need to update this Policy from time to time to reflect changes in the law. Any changes we may make to our Policy in the future will be posted on this page and, where appropriate, notified to you by e-mail. We recommend that you check this page regularly to ensure that you have read the most recent version and are happy with any changes.</span></p>
-                <h4></h4>
+               
                 <h4>Contact us for orders &amp; queries:</h4>
                 <p class="p1">&nbsp;</p>
                 <p class="p5"><span class="s1">If there are any questions regarding this privacy policy you may contact us using the information below.&nbsp;</span></p>

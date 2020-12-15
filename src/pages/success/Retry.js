@@ -1,9 +1,9 @@
 
 import React, { Component } from 'react'
-import store from "store";
+
 import Layout from "../../components/Layout"
 import Banner from "../../components/Reusable/Banner"
-import { Link, navigate } from "gatsby";
+import { Link,  } from "gatsby";
 
 class  Retry extends Component {
     

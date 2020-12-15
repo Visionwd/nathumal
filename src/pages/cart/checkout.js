@@ -240,6 +240,8 @@ export class CartCheckout extends Component {
             <Layout>
                 
 <Banner  title={"Checkout"}/>
+
+
 <div className="checkout-area pt-95 pb-100">
 <form onSubmit={this.handleSubmit} autoComplete="new-password">
     <div className="container">

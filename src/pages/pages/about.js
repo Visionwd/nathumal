@@ -43,7 +43,7 @@ function About() {
                                 <img src={founderImg} alt="founder" style={{width:"100%"}}/>
                             </div>
                             <div className="col-md-7">
-                                <h3>Founder</h3>
+                                <h3>Our Inspiration</h3>
                                 <p>
                                     Our founder Sh. Lala Ghudoo Mal whose legacy we are carrying on our shoulders to bestow the 
                                     best Reodi, Gachak, Bhugga and Sweets in town with rich and local ingredients. His son Sh. Lala Sudershan Aggarwal 
