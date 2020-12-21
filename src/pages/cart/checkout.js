@@ -250,41 +250,41 @@ if (e.target.value=="inside") {
   handleSubmit = e => {
     e.preventDefault()
     console.log("submitted state data=> ", this.state)
-    // axios
-    //   .post(
-    //     "https://www.heydemo.ml/nathumalapi/appapi/add_order",
-    //     {
-    //       service_request: {
-    //         params: this.state,
-    //         request_info: {
-    //           source_type: "android",
-    //         },
-    //       },
-    //       version: "1.0",
-    //     },
-    //     {
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //       },
-    //     }
-    //   )
-    //   .then(res => {
-    //     console.log("success: ", res)
+    axios
+      .post(
+        "https://www.heydemo.ml/nathumalapi/appapi/add_order",
+        {
+          service_request: {
+            params: this.state,
+            request_info: {
+              source_type: "android",
+            },
+          },
+          version: "1.0",
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then(res => {
+        console.log("success: ", res)
 
-    //     //////////////////////////////////////////////////////
-    //     this.displayRazorpay(res.data.payorderid, res.data.orderid)
-    //     /////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////
+        this.displayRazorpay(res.data.payorderid, res.data.orderid)
+        /////////////////////////////////////////////////////
 
-    //     store.set("order", [res.data])
-    //     // navigate("/success/thanks",{
-    //     //     state:{
-    //     //         data:res.data
-    //     //     }
-    //     // })
-    //   })
-    //   .catch(err => {
-    //     console.log(err)
-    //   })
+        store.set("order", [res.data])
+        // navigate("/success/thanks",{
+        //     state:{
+        //         data:res.data
+        //     }
+        // })
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 
   render() {
