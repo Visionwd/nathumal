@@ -125,9 +125,9 @@ function Cartview() {
                                         return(
                                             <tr key={index}>
                                             <td className="product-thumbnail">
-                                                <a href="#"><img src={product.img} alt="" style={{width:"82px",height:"82px"}} /></a>
+                                                <img src={product.img} alt="" style={{width:"82px",height:"82px"}} />
                                             </td>
-                                            <td className="product-name"><a href="#">{product.name} </a></td>
+                                            <td className="product-name">{product.name} </td>
                                             <td className="product-price-cart"><span className="amount">₹{product.saleprice}</span></td>
                                             <td className="product-quantity">
                                                 <div className="cart-plus-minus">
