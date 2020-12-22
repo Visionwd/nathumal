@@ -387,6 +387,7 @@ if (e.target.value=="inside") {
                                   type="radio"
                                   value={"inside"}
                                   name="gender"
+                                  id="inludhiana"
                                 />
                                 <label
                                   className="form-check-label"
@@ -407,10 +408,11 @@ if (e.target.value=="inside") {
                                   type="radio"
                                   value={"outside"}
                                   name="gender"
+                                  id="outludhiana"
                                 />
                                 <label
                                   className="form-check-label"
-                                  htmlFor="inludhiana"
+                                  htmlFor="outludhiana"
                                 >
                                   Outside Ludhiana
                                 </label>
@@ -467,13 +469,13 @@ if (e.target.value=="inside") {
                               <label>Country</label>
                               <input
                                 onChange={this.handleChange}
-                                required
                                 value={this.state.country}
                                 className="form-control"
                                 type="text"
                                 placeholder="India"
                                 readOnly
                                 disabled
+                                // required={this.state.isLudhiana ? true : false}
                               />
                             </div>
                           </div>
@@ -487,7 +489,7 @@ if (e.target.value=="inside") {
                                 id="state"
                                 onChange={this.handleState}
                                 value={this.state.state}
-                                required
+                                // required={this.state.isLudhiana ? true : false}
                               >
                                 <option value="">select state</option>
                                 {this.state.stateslist.length
@@ -515,11 +517,11 @@ if (e.target.value=="inside") {
                               <label>Town / City</label>
                               <input
                                 onChange={this.handleChange}
-                                required
                                 value={this.state.city}
                                 type="text"
                                 id="city"
                                 name="city"
+                                // required={this.state.isLudhiana ? true : false}
                               />
                             </div>
                           </div>
@@ -529,11 +531,11 @@ if (e.target.value=="inside") {
                               <label>Postcode / ZIP</label>
                               <input
                                 onChange={this.handleChange}
-                                required
                                 value={this.state.postal_code}
                                 type="number"
                                 id="postal_code"
                                 name="postal_code"
+                                // required={this.state.isLudhiana ? true : false}
                               />
                             </div>
                           </div>
