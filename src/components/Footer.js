@@ -96,7 +96,7 @@ function Footer() {
                   <p>Email: consumerservices@nathuandghudoo.com</p>
                   <p>
                     <a
-                      href="https://www.instagram.com/nathumalandghudoomal/"
+                      href="https://www.facebook.com/nmgmludhiana/"
                       style={{
                         width: "3rem",
                         fontSize: "2rem",
@@ -107,7 +107,7 @@ function Footer() {
                       <i class="fab fa-facebook"></i>
                     </a>
                     <a
-                      href="https://www.facebook.com/nmgmludhiana/"
+                      href="https://www.instagram.com/nathumalandghudoomal/"
                       style={{
                         width: "3rem",
                         fontSize: "2rem",
