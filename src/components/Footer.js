@@ -94,7 +94,30 @@ function Footer() {
                   </p>
                   <p>Mobile: +91 7303100009 , 8054949900</p>
                   <p>Email: consumerservices@nathuandghudoo.com</p>
-                  
+                  <p>
+                    <a
+                      href="https://www.instagram.com/nathumalandghudoomal/"
+                      style={{
+                        width: "3rem",
+                        fontSize: "2rem",
+                        color: "#8c370e",
+                      }}
+                      className=""
+                    >
+                      <i class="fab fa-facebook"></i>
+                    </a>
+                    <a
+                      href="https://www.facebook.com/nmgmludhiana/"
+                      style={{
+                        width: "3rem",
+                        fontSize: "2rem",
+                        color: "#8c370e",
+                      }}
+                      className=" ml-2"
+                    >
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                  </p>
                   {/* <div className="subscribe-style">
                         <p>Get E-mail updates about our latest shop and special offers.</p>
                         <div id="mc_embed_signup" className="subscribe-form">
@@ -123,7 +146,7 @@ function Footer() {
                       <img
                         alt="logo"
                         src={logo}
-                        style={{ width: "15%" }}
+                        style={{ width: "150px" }}
                         className="logoimg "
                       />
                     </a>
