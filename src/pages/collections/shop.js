@@ -211,13 +211,15 @@ export class Shop extends Component {
     }
    
       if (!containsObject(item,currentData)) {
-        currentData.push({...item,quantity:1})
+        currentData.push({ ...item, quantity: 1, quantno :1})
       }else{
         currentData.map(cartitem => {
             if (cartitem.id===item.id) {
                 console.log("identical");
-                cartitem.quantity=cartitem.quantity+1
+                cartitem.quantity=1;
+               cartitem.quantno = cartitem.quantno+1;
             }
+             
         })
       }
     console.log("currently item pushed to current data ",currentData);
@@ -307,6 +309,7 @@ export class Shop extends Component {
                                                     )
                                                 })
                                             }
+                                            
                                             {
                                                 console.log("catid",this.state.catid)
                                             }

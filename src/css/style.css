@@ -1160,6 +1160,10 @@ select {
   font-size: 14px;
   color: #333; }
 
+
+a:link {
+  text-decoration:none !important;
+}
 option {
   background: #fff;
   border: 0px solid #626262;
@@ -9028,3 +9032,9 @@ li .slide{
 
 .carousel .slide{min-width:100%;margin:0;position:relative;text-align:center;
   background:none !important}
+
+.top-message {
+    padding: 8px 15px;
+    background: #eaa24e;
+    color: #ffffff;
+}

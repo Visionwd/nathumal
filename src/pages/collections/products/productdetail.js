@@ -107,12 +107,17 @@ class Productdetail extends Component {
         }
        
           if (!containsObject(item,currentData)) {
-            currentData.push({...item,quantity:this.state.newitemqnty*this.state.newitemsize})
+            currentData.push({
+              ...item,
+              quantity: this.state.newitemsize,
+              quantno: this.state.newitemqnty,
+            })
           }else{
             currentData.map(cartitem => {
                 if (cartitem.id===item.id) {
                     console.log("identical");
-                    cartitem.quantity=cartitem.quantity+(this.state.newitemqnty*this.state.newitemsize)
+                    cartitem.quantity=this.state.newitemsize;
+                    cartitem.quantno = cartitem.quantno + this.state.newitemqnty;
                 }
             })
           }
@@ -125,6 +130,7 @@ class Productdetail extends Component {
         //     ...this.setState, 
         //     items:currentData
         // })
+
         store.set("persist",currentData)
         this.setState({
             items:currentData,

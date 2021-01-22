@@ -19,7 +19,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Restapitest from "../components/Restapitest";
 import Testimonial from "../components/Home/Testimonial"
-
+import TopMessage from "../components/Home/TopMessage";
 import store from "store"
 import Bhugga from '../components/Home/WinterSpecial/Bhugga';
 import Gachak from '../components/Home/WinterSpecial/Gachak';
@@ -119,12 +119,13 @@ export class Home extends Component {
         }
        
           if (!containsObject(item,currentData)) {
-            currentData.push({...item,quantity:1})
+            currentData.push({...item,quantity:1,quantno:1})
           }else{
             currentData.map(cartitem => {
                 if (cartitem.id===item.id) {
                     console.log("identical");
-                    cartitem.quantity=cartitem.quantity+1
+                    cartitem.quantity=1;
+                    cartitem.quantno = cartitem.quantno+1;
                 }
             })
           }
@@ -189,6 +190,7 @@ export class Home extends Component {
             <div>
             <HeaderLinks  /> 
             <Restapitest />
+            <TopMessage />
            <Header className={"transparent-bar"} navColor={"text-white"} />
            <ToastContainer />
 

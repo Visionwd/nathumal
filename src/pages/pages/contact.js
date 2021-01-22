@@ -19,6 +19,7 @@ function Contact() {
             [e.target.name]:e.target.value
         })
     }
+
     const handleFormSubmit =()=>{
         console.log(formdata);
     }
@@ -36,8 +37,18 @@ function Contact() {
                     </div>
                     <div className="contact-info-dec">
                       <p style={{ lineHeight: "22px" }}>
-                        +91 7303100009 <br />
-                        +91 8054949900
+                        <a href="tel:+91 7303100009">+91 7303100009</a> <br />
+                         <a href="tel:+91 7303100009"> +91 8054949900</a>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="single-contact-info">
+                    <div className="contact-icon">
+                      <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div className="contact-info-dec">
+                      <p style={{ lineHeight: "22px" }}>
+                        <a href="https://api.whatsapp.com/send?phone=+91 7303100009&amp;text=Hi">+91 7303100009</a>
                       </p>
                     </div>
                   </div>

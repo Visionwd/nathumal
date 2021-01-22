@@ -47,7 +47,8 @@ export class CartCheckout extends Component {
 
     if (store.get("persist")) {
       store.get("persist").map(item => {
-        currentTotal += Number(item.saleprice) * item.quantity
+        currentTotal +=
+          Number(item.saleprice) * item.quantity * Number(item.quantno)
       })
     }
     this.setState({
@@ -77,10 +78,11 @@ export class CartCheckout extends Component {
       shippingCharge: Number(myshipping[0].shipping_charges),
       packaging: Number(myshipping[0].shipping_charges),
     })
+    
     this.state.items.map(
       item =>
         (currentShipping +=
-          Math.ceil(Number(item.quantity)) *
+          Math.ceil(Number(item.quantity * Number(item.quantno))) *
           Number(myshipping[0].shipping_charges))
     )
     console.log(
@@ -592,10 +594,14 @@ if (e.target.value=="inside") {
                                   return (
                                     <li key={item.id}>
                                       <span className="order-middle-left">
-                                        {item.quantity} x {item.name}
+                                        {item.quantno} x {item.quantity}kg x{" "}
+                                        {item.name}
                                       </span>{" "}
                                       <span className="order-price">
-                                        ₹{item.saleprice * item.quantity}{" "}
+                                        ₹
+                                        {item.saleprice *
+                                          item.quantity *
+                                          Number(item.quantno)}{" "}
                                       </span>
                                     </li>
                                   )
@@ -603,6 +609,7 @@ if (e.target.value=="inside") {
                               : null}
                           </ul>
                         </div>
+
 
                         <div className="your-order-total">
                           <ul>
