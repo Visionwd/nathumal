@@ -28,6 +28,7 @@ import Reodi from '../components/Home/WinterSpecial/Reodi';
 import Sweets from '../components/Home/Sweets';
 import Bhaji from '../components/Home/WeddingBhaji';
 import NewTestimonial from '../components/Home/NewTestimonial';
+import Popup from '../components/Home/Popup';
 
 
 
@@ -196,6 +197,8 @@ export class Home extends Component {
 
             <MyCarousel />
    
+            <Popup />
+
    <div className="welcome-area pb-40">
        <div className="container">
            <div className="welcome-content text-center">

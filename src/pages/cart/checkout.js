@@ -24,6 +24,7 @@ function loadScript(src) {
 export class CartCheckout extends Component {
   state = {
     shippingCharge: 0,
+    totalWeight:0,
     shipping: 0,
     packaging: 50,
     items: [],
@@ -72,6 +73,7 @@ export class CartCheckout extends Component {
     )
 
     let currentShipping = Number(myshipping[0].shipping_charges)
+    let totalweight = 0;
     this.setState({
       ...this.state,
       state: myshipping.name,
@@ -81,9 +83,10 @@ export class CartCheckout extends Component {
     
     this.state.items.map(
       item =>
-        (currentShipping +=
-          Math.ceil(Number(item.quantity * Number(item.quantno))) *
-          Number(myshipping[0].shipping_charges))
+        {
+          // currentShipping +=Math.ceil(Number(item.quantity * Number(item.quantno))) * Number(myshipping[0].shipping_charges)
+          totalweight += Number(item.quantity * Number(item.quantno))
+        }
     )
     console.log(
       "Charges=>",
@@ -91,7 +94,9 @@ export class CartCheckout extends Component {
       currentShipping,
       this.state.subtotal
     )
-
+     
+    currentShipping +=
+      Math.ceil(totalweight) * Number(myshipping[0].shipping_charges)
     let currentTotal = Number(this.state.subtotal) + currentShipping
 
     this.setState({
