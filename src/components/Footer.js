@@ -2,6 +2,7 @@ import React from 'react'
 import logo from "../img/logo/logo.png"
 import { Link } from "gatsby";
 import footerBg from "../img/bg/footer_bg_02.jpg"
+import FooterSocialIcon from './Reusable/FooterSocialIcon';
 function Footer() {
     return (
       <div>
@@ -95,28 +96,22 @@ function Footer() {
                   <p>Mobile: +91 7303100009 , 8054949900</p>
                   <p>Email: consumerservices@nathuandghudoo.com</p>
                   <p>
-                    <a
-                      href="https://www.facebook.com/nmgmludhiana/"
-                      style={{
-                        width: "3rem",
-                        fontSize: "2rem",
-                        color: "#8c370e",
-                      }}
-                      className=""
-                    >
-                      <i class="fab fa-facebook"></i>
-                    </a>
-                    <a
-                      href="https://www.instagram.com/nathumalandghudoomal/"
-                      style={{
-                        width: "3rem",
-                        fontSize: "2rem",
-                        color: "#8c370e",
-                      }}
-                      className=" ml-2"
-                    >
-                      <i class="fab fa-instagram"></i>
-                    </a>
+                    <FooterSocialIcon
+                      link="https://www.facebook.com/nmgmludhiana/"
+                      icon="fab fa-facebook"
+                    />
+                    <FooterSocialIcon
+                      link="https://www.instagram.com/nathumalandghudoomal/"
+                      icon="fab fa-instagram"
+                    />
+                    <FooterSocialIcon
+                      link="https://twitter.com/Nathughudooldh?s=08"
+                      icon="fab fa-twitter"
+                    />
+                    <FooterSocialIcon
+                      link="https://youtube.com/user/abz2coolster"
+                      icon="fab fa-youtube"
+                    />
                   </p>
                   {/* <div className="subscribe-style">
                         <p>Get E-mail updates about our latest shop and special offers.</p>

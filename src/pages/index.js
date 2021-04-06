@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link,graphql,useStaticQuery } from "gatsby";
+// import { Link,graphql,useStaticQuery } from "gatsby";
 import HeaderLinks from '../components/HeaderLinks'
 import axios from "axios"
 import "../css/fonts.css"
@@ -12,8 +12,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import MyCarousel from "../components/Carousel"
-import ProductPreview from "../img/product/quickview-l1.jpg"
-import quickPreview from "../img/product/quickview-s1.jpg"
+// import ProductPreview from "../img/product/quickview-l1.jpg"
+// import quickPreview from "../img/product/quickview-s1.jpg"
 import Product from "../components/Reusable/Product";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -21,14 +21,14 @@ import Restapitest from "../components/Restapitest";
 import Testimonial from "../components/Home/Testimonial"
 import TopMessage from "../components/Home/TopMessage";
 import store from "store"
-import Bhugga from '../components/Home/WinterSpecial/Bhugga';
+// import Bhugga from '../components/Home/WinterSpecial/Bhugga';
 import Gachak from '../components/Home/WinterSpecial/Gachak';
 import Reodi from '../components/Home/WinterSpecial/Reodi';
 
 import Sweets from '../components/Home/Sweets';
 import Bhaji from '../components/Home/WeddingBhaji';
 import NewTestimonial from '../components/Home/NewTestimonial';
-import Popup from '../components/Home/Popup';
+
 
 
 
@@ -145,46 +145,7 @@ export class Home extends Component {
        }
 
 
-    //    handleClick=(id)=>{
-    //     axios.post("https://heydemo.ml/nathumalapi/appapi/items",
-    //     JSON.stringify({
-    //          "service_request": {
-    //              "params": {
-    //                 "cat_id":String(id),
-    //                 "page":"1"
-    //              },
-    //              "request_info": {
-    //                  "source_type": "android"
-    //              }
-    //          },
-    //          "version": "1.0"
-    //      }),{
-    //  headers: {
-    //      'Content-Type': 'application/json'
-    //    }
-    // })
-    // .then(res=>{
-    //     console.log(res);
-    //     let {divPush} = this.state
-    //     res.data.items.map(({item_id,item_name,item_img,item_price,item_saleprice})=>{
-    
-    //         divPush.push(
-    //             <Product id={item_id} AddTocart={this.AddTocart} key={item_id} name={item_name} img={"https://www.heydemo.ml/nathumalapi/uploads/"+item_img}  price={item_price} saleprice={item_saleprice} />
-    //         )
-    //         this.setState({
-    //             ...this.state,
-    //            divPush
-    //         })
-    //     })
-    
-    //     this.setState({
-    //         ...this.state,
-    //         items:res.data.items
-    //     })
-    //  })
-
-    //    }
-
+   
 
     render() {
         return (
@@ -192,12 +153,11 @@ export class Home extends Component {
             <HeaderLinks  /> 
             <Restapitest />
             <TopMessage />
-           <Header className={"transparent-bar"} navColor={"text-white"} />
+            <Header className={"transparent-bar"} navColor={"text-white"} />
            <ToastContainer />
 
             <MyCarousel />
    
-            <Popup />
 
    <div className="welcome-area pb-40">
        <div className="container">

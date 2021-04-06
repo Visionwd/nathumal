@@ -3,7 +3,7 @@ import img from '../../img/modal/modal-image.jpeg'
 
 function Popup() {
 
-    const [modalstate ,setModalState] =  useState(true);
+    const [modalstate ,setModalState] =  useState(false);
 
     const handleModal = () =>{
         setModalState(!modalstate);
