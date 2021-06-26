@@ -256,6 +256,10 @@ if (e.target.value=="inside") {
   //////////////////////////////////////////
   handleSubmit = e => {
     e.preventDefault()
+
+    this.state.items && this.state.items.length > 0 && this.state.items.map(item=>{
+      item.itemTotal = (item.quantno * item.quantity) * Number(item.saleprice)
+    })
     console.log("submitted state data=> ", this.state)
     axios
       .post(
@@ -277,7 +281,6 @@ if (e.target.value=="inside") {
       )
       .then(res => {
         console.log("success: ", res)
-
         //////////////////////////////////////////////////////
         this.displayRazorpay(res.data.payorderid, res.data.orderid)
         /////////////////////////////////////////////////////
@@ -293,6 +296,7 @@ if (e.target.value=="inside") {
         console.log(err)
       })
   }
+
 
   render() {
     return (

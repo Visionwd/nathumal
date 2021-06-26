@@ -10,7 +10,7 @@ import category3 from "../img/product/cat33.jpg"
 import bannerImg1 from "../img/Carousel/newbanner1.jpeg"
 import bannerImg2 from "../img/Carousel/newbanner2.jpeg"
 import bannerImg3 from "../img/Carousel/newbanner3.jpeg"
-// import bannerImg4 from "../img/Carousel/new-banner4.jpeg"
+import bannerImg4 from "../img/Carousel/sliderr.jpg"
 // import bannerImg5 from "../img/Carousel/new-banner5.jpeg"
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -51,10 +51,11 @@ function MyCarousel() {
               <CarouselItem bannerImg={bannerImg1} />
               <CarouselItem bannerImg={bannerImg2} />
               <CarouselItem bannerImg={bannerImg3} />
+              <CarouselItem bannerImg={bannerImg4} />
             </Carousel>
           </div>
         </div>
-
+        
         <div
           className="collections-area  pt-50 pb-70 mb-80"
           style={{
@@ -68,7 +69,6 @@ function MyCarousel() {
             <div className="collection-wrap-2">
               <div className="collection-active-2 ">
                 <div className="row">
-                  
                   <div className="collection-product-2 col-md-4  mb-10 ">
                     <Link to="/collections/shop" state={{ id: 1 }}>
                       <img src={category1} alt="sweeet category first" />
