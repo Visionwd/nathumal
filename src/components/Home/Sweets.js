@@ -12,7 +12,7 @@ export class Bhugga extends Component {
 
     componentDidMount(){
         
-        axios.post("https://heydemo.ml/nathumalapi/appapi/items_homepage",
+        axios.post("https://pixelshakers.com/nathumalapi/appapi/items_homepage",
         JSON.stringify({
              "service_request": {
                  "params": {
@@ -39,7 +39,7 @@ export class Bhugga extends Component {
         res.data.items.map(({item_id,item_name,item_img,item_price,item_saleprice})=>{
     
             divPush.push(
-                <Product id={item_id} AddTocart={this.props.AddTocart} key={item_id} name={item_name} img={"https://www.heydemo.ml/nathumalapi/uploads/"+item_img}  price={item_price} saleprice={item_saleprice} />
+                <Product id={item_id} AddTocart={this.props.AddTocart} key={item_id} name={item_name} img={"https://www.pixelshakers.com/nathumalapi/uploads/"+item_img}  price={item_price} saleprice={item_saleprice} />
             )
             this.setState({
                 ...this.state,
@@ -64,7 +64,7 @@ export class Bhugga extends Component {
                    <div className="custom-row-4">
                     {
                         this.state.items.map(({item_id,item_name,item_img,item_price,item_saleprice,cat_id,item_desc})=>{
-                            return <Product id={item_id} description={item_desc} catid={cat_id} AddTocart={this.props.AddTocart} key={item_id} name={item_name} img={"https://www.heydemo.ml/nathumalapi/uploads/"+item_img} price={item_price} saleprice={item_saleprice} />
+                            return <Product id={item_id} description={item_desc} catid={cat_id} AddTocart={this.props.AddTocart} key={item_id} name={item_name} img={"https://www.pixelshakers.com/nathumalapi/uploads/"+item_img} price={item_price} saleprice={item_saleprice} />
                         })
                     }
                    </div>

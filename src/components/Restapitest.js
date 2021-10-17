@@ -6,7 +6,7 @@ export class Restapitest extends Component {
 
     // componentDidMount(){
 
-    //       fetch('https://www.heydemo.ml/myacc/appapi/currency',{
+    //       fetch('https://www.pixelshakers.com/myacc/appapi/currency',{
     //         method: 'POST', // *GET, POST, PUT, DELETE, etc.
     //         mode: 'cors', // no-cors, *cors, same-origin
     //         cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
@@ -37,7 +37,7 @@ export class Restapitest extends Component {
                       
     // // axios({
     // //     method: 'post',
-    // //     url: 'http://cors-anywhere.herokuapp.com/https://www.heydemo.ml/myacc/appapi/currency',
+    // //     url: 'http://cors-anywhere.herokuapp.com/https://www.pixelshakers.com/myacc/appapi/currency',
     // // //     headers:{ 
     // // //     'Access-Control-Allow-Origin' : '*',
     // // //     'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
@@ -66,7 +66,7 @@ export class Restapitest extends Component {
                
 
 
-    //         // axios.post('https://www.heydemo.ml/myacc/appapi/currency',
+    //         // axios.post('https://www.pixelshakers.com/myacc/appapi/currency',
     //         //         {
     //         //             "version": "1.0",
     //         //             "service_request": {

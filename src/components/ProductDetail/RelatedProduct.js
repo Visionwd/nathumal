@@ -22,7 +22,7 @@ class RelatedProduct extends Component {
     componentDidMount(){
         const {id,catid} = store.get("product")
         console.log("===>",id,catid)
-        axios.post("https://www.heydemo.ml/nathumalapi/appapi/relateditems",
+        axios.post("https://www.pixelshakers.com/nathumalapi/appapi/relateditems",
         JSON.stringify({
              "service_request": {
                  "params": {
@@ -67,7 +67,7 @@ class RelatedProduct extends Component {
                                         AddTocart={this.props.AddTocart} 
                                         key={item_id} 
                                         name={item_name} 
-                                        img={"https://www.heydemo.ml/nathumalapi/uploads/"+item_img} 
+                                        img={"https://www.pixelshakers.com/nathumalapi/uploads/"+item_img} 
                                         price={item_price} 
                                         saleprice={item_saleprice} 
                                         refresh="refresh"

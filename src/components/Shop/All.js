@@ -7,7 +7,7 @@ export class All extends Component {
     }
 
     componentDidMount(){
-        axios.post("https://heydemo.ml/nathumalapi/appapi/items",
+        axios.post("https://pixelshakers.com/nathumalapi/appapi/items",
     JSON.stringify({
          "service_request": {
              "params": {
@@ -40,7 +40,7 @@ export class All extends Component {
             <div className="row">
                 {
                     this.state.items?this.state.items.map(({item_id,item_name,item_img,item_price,item_saleprice})=>{
-                        return <ProductOfCollection id={item_id} AddTocart={this.props.AddTocart} key={item_id} name={item_name} img={"https://www.heydemo.ml/nathumalapi/uploads/"+item_img} price={item_price} saleprice={item_saleprice} />
+                        return <ProductOfCollection id={item_id} AddTocart={this.props.AddTocart} key={item_id} name={item_name} img={"https://www.pixelshakers.com/nathumalapi/uploads/"+item_img} price={item_price} saleprice={item_saleprice} />
                     }):null
                 }
             </div>

@@ -92,7 +92,7 @@ export class Shop extends Component {
     }
 
     FetchData=(catid="",pageid="1",text="")=>{
-        axios.post("https://heydemo.ml/nathumalapi/appapi/items",
+        axios.post("https://pixelshakers.com/nathumalapi/appapi/items",
         JSON.stringify({
              "service_request": {
                  "params": {
@@ -124,7 +124,7 @@ export class Shop extends Component {
     }
 
     FetchCategories=()=>{
-        axios.post("https://www.heydemo.ml/nathumalapi/appapi/categories",
+        axios.post("https://www.pixelshakers.com/nathumalapi/appapi/categories",
         JSON.stringify({
              "service_request": {
                  "params": {
@@ -364,7 +364,7 @@ export class Shop extends Component {
                                         <div className="row">
                                                 {
                                                     this.state.items.length?this.state.items.map(({item_id,item_name,item_img,item_price,item_saleprice,cat_id,item_desc})=>{
-                                                        return <ProductOfCollection id={item_id} description={item_desc} catid={cat_id} AddTocart={this.AddTocart} key={item_id} name={item_name} img={"https://www.heydemo.ml/nathumalapi/uploads/"+item_img} price={item_price} saleprice={item_saleprice} />
+                                                        return <ProductOfCollection id={item_id} description={item_desc} catid={cat_id} AddTocart={this.AddTocart} key={item_id} name={item_name} img={"https://www.pixelshakers.com/nathumalapi/uploads/"+item_img} price={item_price} saleprice={item_saleprice} />
                                                     }):<div className="col-md-12"><h2 className="text-center">{this.state.noitemMsg}</h2></div>
                                                 }
                                         </div>

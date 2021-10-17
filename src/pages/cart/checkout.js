@@ -144,7 +144,7 @@ if (e.target.value=="inside") {
   getStates = () => {
     axios
       .post(
-        "https://heydemo.ml/nathumalapi/appapi/get_states",
+        "https://pixelshakers.com/nathumalapi/appapi/get_states",
         JSON.stringify({
           service_request: {
             params: {
@@ -196,7 +196,7 @@ if (e.target.value=="inside") {
       handler: function (response) {
         axios
           .post(
-            "https://www.heydemo.ml/nathumalapi/appapi/update_order",
+            "https://www.pixelshakers.com/nathumalapi/appapi/update_order",
             {
               service_request: {
                 params: {
@@ -263,7 +263,7 @@ if (e.target.value=="inside") {
     console.log("submitted state data=> ", this.state)
     axios
       .post(
-        "https://www.heydemo.ml/nathumalapi/appapi/add_order",
+        "https://www.pixelshakers.com/nathumalapi/appapi/add_order",
         {
           service_request: {
             params: this.state,

@@ -15,7 +15,7 @@ function Mithai() {
     const [categories , setCategories] =  useState([])
 
     useEffect(() => {
-       axios.post("https://www.heydemo.ml/nathumalapi/appapi/categories",
+       axios.post("https://www.pixelshakers.com/nathumalapi/appapi/categories",
            JSON.stringify({
                 "service_request": {
                     "params": {
@@ -38,7 +38,7 @@ function Mithai() {
        })
      
 
-        // fetch("https://www.heydemo.ml/nathumalapi/appapi/categories",{
+        // fetch("https://www.pixelshakers.com/nathumalapi/appapi/categories",{
         //     method: 'POST', // *GET, POST, PUT, DELETE, etc.
         //     mode: 'cors', // no-cors, *cors, same-origin
         //     cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached

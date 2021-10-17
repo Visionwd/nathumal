@@ -11,7 +11,7 @@ export class Api extends Component {
 
     componentDidMount(){
         this.setState({data:"hllo"})
-        axios.post('http://www.heydemo.ml/test.php',{
+        axios.post('http://www.pixelshakers.com/test.php',{
             myvalue:"hello"
         })
           .then(function (response) {
@@ -27,7 +27,7 @@ export class Api extends Component {
             console.log(error);
           });
 
-//   fetch('http://www.heydemo.ml/test.php', {
+//   fetch('http://www.pixelshakers.com/test.php', {
 //   method: 'POST',
 //   body: {
 //     myvalue:"hello"

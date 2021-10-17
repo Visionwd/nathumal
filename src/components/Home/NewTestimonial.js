@@ -15,7 +15,7 @@ export class NewTestimonial extends Component {
 
     componentDidMount(){
              
-    axios.post("https://www.heydemo.ml/nathumalapi/appapi/testimonials",
+    axios.post("https://www.pixelshakers.com/nathumalapi/appapi/testimonials",
     JSON.stringify({
          "service_request": {
              "params": {
