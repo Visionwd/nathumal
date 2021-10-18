@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from "../img/logo/logo.png"
+import paymentlogo from "../img/payments.png"
 import { Link } from "gatsby";
 import footerBg from "../img/bg/footer_bg_02.jpg"
 import FooterSocialIcon from './Reusable/FooterSocialIcon';
@@ -37,6 +38,9 @@ function Footer() {
                           <li>
                             <Link to="/pages/contact">Contact</Link>
                           </li>
+                          <li>
+                            <Link to="/pages/contact">Bulk Orders</Link>
+                          </li>
                         </ul>
                       </div>
                     </div>
@@ -62,6 +66,14 @@ function Footer() {
                       </div>
                     </div>
                   </div>
+                </div>
+                <div className="mb-30 ml-30">
+                    <img
+                        alt="logo"
+                        src={paymentlogo}
+                        style={{ width: "400px" }}
+                        className="logoimg "
+                    />
                 </div>
               </div>
 
@@ -147,7 +159,7 @@ function Footer() {
                     </a>
                   </div>
                   <p className="text-center">
-                    © Copyright 2020 All Rights Reserved. Nathu Mal & Ghudoo Mal
+                    © Copyright 2021 Nathu Mal & Ghudoo Mal. All Rights Reserved. Made with ❤️ by <Link to="https://digimap.in/">Digimap Technologies</Link>
                   </p>
                 </div>
               </div>

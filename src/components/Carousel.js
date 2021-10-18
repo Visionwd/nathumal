@@ -7,11 +7,11 @@ import category1 from "../img/product/cat111.jpg"
 import category2 from "../img/product/cat222.jpg"
 import category3 from "../img/product/cat33.jpg"
 
-import bannerImg1 from "../img/Carousel/newbanner1.jpeg"
-import bannerImg2 from "../img/Carousel/newbanner2.jpeg"
-import bannerImg3 from "../img/Carousel/newbanner3.jpeg"
-import bannerImg4 from "../img/Carousel/sliderr.jpg"
-// import bannerImg5 from "../img/Carousel/new-banner5.jpeg"
+import bannerImg1 from "../img/Carousel/banner1.jpg"
+import bannerImg2 from "../img/Carousel/banner2.jpg"
+import bannerImg3 from "../img/Carousel/banner3.jpg"
+import bannerImg4 from "../img/Carousel/new-banner5.jpeg"
+import bannerImg5 from "../img/Carousel/banner4.jpg"
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
@@ -52,6 +52,7 @@ function MyCarousel() {
               <CarouselItem bannerImg={bannerImg2} />
               <CarouselItem bannerImg={bannerImg3} />
               <CarouselItem bannerImg={bannerImg4} />
+              <CarouselItem bannerImg={bannerImg5} />
             </Carousel>
           </div>
         </div>

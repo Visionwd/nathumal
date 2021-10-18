@@ -5464,7 +5464,8 @@ a.default-btn {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  justify-content: center; }
 
 .custom2-col-5 {
   -webkit-box-flex: 0;
@@ -9035,6 +9036,6 @@ li .slide{
 
 .top-message {
     padding: 8px 15px;
-    background: #eaa24e;
+    background: #a5661e;
     color: #ffffff;
 }
