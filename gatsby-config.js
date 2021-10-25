@@ -24,6 +24,14 @@ module.exports = {
         path: `${__dirname}/src/img/`,
       },
     },
+
+    {
+      resolve: `gatsby-plugin-facebook-pixel`,
+      options: {
+        pixelId: "854340988611860",
+      },
+    },
+
     
 
   
