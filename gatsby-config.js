@@ -16,7 +16,7 @@ module.exports = {
     //   },
     // },
     `gatsby-transformer-sharp`,
-     `gatsby-plugin-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -32,6 +32,14 @@ module.exports = {
       },
     },
 
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: "UA-211783669-1",
+        includeInDevelopment: false,
+        defaultDataLayer: { platform: "gatsby" },
+      },
+    },
     
 
   
