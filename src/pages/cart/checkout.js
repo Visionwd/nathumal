@@ -382,7 +382,7 @@ if (e.target.value=="inside") {
                       </div>
 
                       {/* //////////////////////////////////  in Ludhiana or not ///////////////////////////////////// */}
-                      <div className="col-12">
+                      <div className="col-12 d-none">
                         <div className="billing-info mb-20">
                           <h5 className="mb-3">Delivery Location</h5>
 
@@ -470,9 +470,10 @@ if (e.target.value=="inside") {
 
                       <div
                         className="col-12"
-                        style={{
-                          display: this.state.isLudhiana ? "none" : "block",
-                        }}
+                        // style={{
+                        //   display: this.state.isLudhiana ? "none" : "block",
+                        // }}
+                       
                       >
                         <div className="row">
                           <div className="col-lg-6 col-md-6">

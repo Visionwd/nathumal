@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import img from '../../img/modal/modal-image.jpeg'
+import img from '../../img/modal/nathumalandghudoomal.jpg'
 
 function Popup() {
 
@@ -15,7 +15,7 @@ function Popup() {
         {/* <!-- Modal --> */}
         <div
           className={
-            "modal fade" + (modalstate ? " show d-block" : " d-none")
+            "modal fade" + (modalstate ? " d-none" : " show d-block")
           }
           id="exampleModalCenter"
           tabIndex="-1"

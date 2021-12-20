@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import Layout from '../../components/Layout'
-import Banner from '../../components/Reusable/Banner'
+import Banner from '../../components/Reusable/Banner2'
 import Bg from "../../img/contact/page-header.jpg"
 
 function Contact() {

@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../../components/Layout'
-import Banner from "../../components/Reusable/Banner"
+import Banner from "../../components/Reusable/Banner1"
 import founderImg from "../../img/about/lala-ghudoo-mal-1.jpg"
 import SweetImg from "../../img/about/sweet.jpg"
 

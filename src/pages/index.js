@@ -28,6 +28,7 @@ import Reodi from '../components/Home/WinterSpecial/Reodi';
 import Sweets from '../components/Home/Sweets';
 import Bhaji from '../components/Home/WeddingBhaji';
 import NewTestimonial from '../components/Home/NewTestimonial';
+import Popup from '../components/Home/Popup';
 
 
 
@@ -68,10 +69,10 @@ export class Home extends Component {
          },
          "version": "1.0"
      }),{
- headers: {
-     'Content-Type': 'application/json'
-   }
-})
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
 .then(res=>{
     console.log(res);
     let {divPush} = this.state
@@ -150,6 +151,7 @@ export class Home extends Component {
     render() {
         return (
             <div>
+                <Popup   />
             <HeaderLinks  /> 
             <Restapitest />
             <TopMessage />
