@@ -499,6 +499,7 @@ if (e.target.value=="inside") {
                                 className="form-control"
                                 name="state"
                                 id="state"
+                                required = {true}
                                 onChange={this.handleState}
                                 value={this.state.state}
                                 // required={this.state.isLudhiana ? true : false}
